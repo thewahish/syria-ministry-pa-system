@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Equipment Technical Specifications</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        p { margin: 15px 0; }
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin: 8px 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:hover { background: #f8f9fa; }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .critical {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        strong { color: #2c3e50; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 2px solid #e0e0e0;
+        }
+        .spec-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .requirement {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Equipment Technical Specifications</h1>
+        <h2>For Professional PA System - Syrian Ministry Installation</h2>
+
+        <div class="critical">
+            <strong>⚠️ CRITICAL NOTICE:</strong> This document provides technical specifications only. No specific brands are mentioned. Equipment must be sourced to meet these exact specifications while ensuring compliance with Syrian telecommunications regulations.
+        </div>
+
+        <hr>
+
+        <h2>Project Overview</h2>
+        
+        <div class="spec-box">
+            <strong>Installation Type:</strong> Professional PA System for Government Ministry<br>
+            <strong>Venue Capacity:</strong> 2000 people<br>
+            <strong>Venue Dimensions:</strong> 60m x 50m x 5-8m height<br>
+            <strong>Power Standard:</strong> 220V/50Hz (Syrian standard)<br>
+            <strong>Installation Date:</strong> 2025<br>
+        </div>
+
+        <hr>
+
+        <h2>System Component Requirements</h2>
+
+        <h3>1. WIRELESS MICROPHONE SYSTEM</h3>
+        
+        <div class="requirement">
+            <strong>Quantity Required:</strong> 4-6 wireless microphone channels
+        </div>
+
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Minimum Requirement</th>
+                <th>Preferred Specification</th>
+                <th>Critical Notes</th>
+            </tr>
+            <tr>
+                <td>Technology Type</td>
+                <td>High-quality analog UHF</td>
+                <td>Digital wireless (24-bit/48kHz)</td>
+                <td>Digital provides better audio quality</td>
+            </tr>
+            <tr>
+                <td>Frequency Range</td>
+                <td>UHF band 470-700 MHz</td>
+                <td>518-566 MHz or 606-614 MHz</td>
+                <td><strong>MUST be legal in Syria</strong></td>
+            </tr>
+            <tr>
+                <td>Operating Range</td>
+                <td>100 meters line-of-sight</td>
+                <td>150+ meters</td>
+                <td>Full venue coverage required</td>
+            </tr>
+            <tr>
+                <td>Transmitter Types</td>
+                <td>Dual capability per channel</td>
+                <td>Interchangeable transmitters</td>
+                <td>Handheld OR bodypack per channel</td>
+            </tr>
+            <tr>
+                <td>Audio Latency</td>
+                <td><10ms</td>
+                <td><5ms</td>
+                <td>For live speech applications</td>
+            </tr>
+            <tr>
+                <td>Battery System</td>
+                <td>8+ hour runtime</td>
+                <td>Rechargeable with chargers</td>
+                <td>AA disposable acceptable for budget</td>
+            </tr>
+            <tr>
+                <td>Signal-to-Noise</td>
+                <td>>95 dB</td>
+                <td>>100 dB</td>
+                <td>Professional audio quality</td>
+            </tr>
+            <tr>
+                <td>Frequency Response</td>
+                <td>50 Hz - 15 kHz</td>
+                <td>20 Hz - 20 kHz</td>
+                <td>Full bandwidth preferred</td>
+            </tr>
+        </table>
+
+        <div class="spec-box">
+            <strong>Required Components per Channel:</strong>
+            <ul>
+                <li>1x Receiver (single, dual, or quad-channel acceptable)</li>
+                <li>1x Handheld transmitter with microphone capsule</li>
+                <li>1x Bodypack transmitter</li>
+                <li>1x Lavalier microphone (compatible with bodypack)</li>
+                <li>Battery system (rechargeable preferred)</li>
+                <li>Charging solution (if rechargeable)</li>
+                <li>Antenna system (if required for range)</li>
+            </ul>
+        </div>
+
+        <div class="critical">
+            <strong>FREQUENCY COMPLIANCE REQUIREMENT:</strong> All wireless equipment must operate on frequencies officially approved by Syrian Telecommunications & Post Regulatory Authority (SY-TPRA). Vendor must provide frequency compliance documentation.
+        </div>
+
+        <hr>
+
+        <h3>2. IN-EAR MONITOR SYSTEM</h3>
+        
+        <div class="requirement">
+            <strong>Quantity Required:</strong> 2 complete in-ear monitor systems
+        </div>
+
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Minimum Requirement</th>
+                <th>Preferred Specification</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Technology</td>
+                <td>Analog wireless</td>
+                <td>Digital wireless</td>
+                <td>Same frequency compliance as mics</td>
+            </tr>
+            <tr>
+                <td>Operating Range</td>
+                <td>100 meters</td>
+                <td>150+ meters</td>
+                <td>Full venue coverage</td>
+            </tr>
+            <tr>
+                <td>Audio Mode</td>
+                <td>Stereo operation</td>
+                <td>Stereo with mono compatibility</td>
+                <td>For mix monitoring</td>
+            </tr>
+            <tr>
+                <td>Frequency Response</td>
+                <td>25 Hz - 15 kHz</td>
+                <td>20 Hz - 18 kHz</td>
+                <td>Full audio bandwidth</td>
+            </tr>
+            <tr>
+                <td>Battery Life</td>
+                <td>6+ hours</td>
+                <td>8+ hours rechargeable</td>
+                <td>Full event coverage</td>
+            </tr>
+            <tr>
+                <td>Noise Floor</td>
+                <td><-90 dBu</td>
+                <td><-95 dBu</td>
+                <td>Clean monitoring</td>
+            </tr>
+        </table>
+
+        <div class="spec-box">
+            <strong>Required Components per System:</strong>
+            <ul>
+                <li>1x Transmitter unit (rack-mountable)</li>
+                <li>1x Bodypack receiver with belt clip</li>
+                <li>1x Professional in-ear monitor earpieces</li>
+                <li>Battery system and charger</li>
+                <li>Antenna system (if required)</li>
+                <li>Audio cables for transmitter connection</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3>3. LINE ARRAY SPEAKER SYSTEM</h3>
+        
+        <div class="requirement">
+            <strong>System Configuration:</strong> Lightweight line array for 2000-person venue
+        </div>
+
+        <h4>Main Line Array Elements</h4>
+        
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Requirement</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>12 elements total</td>
+                <td>Configuration: 2 arrays of 6 elements each (L/R)</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Active/Powered speakers</td>
+                <td>Built-in amplification preferred</td>
+            </tr>
+            <tr>
+                <td>Maximum Weight</td>
+                <td>15 kg per element</td>
+                <td>Critical for truss mounting</td>
+            </tr>
+            <tr>
+                <td>SPL Output</td>
+                <td>125 dB @ 1m minimum</td>
+                <td>130 dB @ 1m preferred</td>
+            </tr>
+            <tr>
+                <td>Frequency Response</td>
+                <td>60 Hz - 18 kHz</td>
+                <td>Full range coverage</td>
+            </tr>
+            <tr>
+                <td>Horizontal Coverage</td>
+                <td>80-100° per element</td>
+                <td>Wide dispersion pattern</td>
+            </tr>
+            <tr>
+                <td>Vertical Coverage</td>
+                <td>8-15° per element</td>
+                <td>Line array focusing capability</td>
+            </tr>
+            <tr>
+                <td>Power Input</td>
+                <td>220V/50Hz compatible</td>
+                <td>Syrian power standard</td>
+            </tr>
+            <tr>
+                <td>Rigging</td>
+                <td>Flying frames included</td>
+                <td>Compatible with 290-300mm box truss</td>
+            </tr>
+        </table>
+
+        <h4>Subwoofer System</h4>
+        
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Requirement</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>4 active subwoofers</td>
+                <td>Ground-stack or flyable</td>
+            </tr>
+            <tr>
+                <td>Driver Size</td>
+                <td>18" driver minimum</td>
+                <td>Professional low-frequency reproduction</td>
+            </tr>
+            <tr>
+                <td>SPL Output</td>
+                <td>130 dB @ 1m minimum</td>
+                <td>132 dB @ 1m preferred</td>
+            </tr>
+            <tr>
+                <td>Frequency Response</td>
+                <td>35-150 Hz</td>
+                <td>Deep bass extension</td>
+            </tr>
+            <tr>
+                <td>Power Input</td>
+                <td>220V/50Hz compatible</td>
+                <td>Syrian power standard</td>
+            </tr>
+        </table>
+
+        <div class="spec-box">
+            <strong>Required Rigging and Accessories:</strong>
+            <ul>
+                <li>Flying frames for line array elements (minimum 3 frames)</li>
+                <li>Safety cables for all flown elements</li>
+                <li>Rigging hardware compatible with 290-300mm box truss</li>
+                <li>Speaker cables (minimum 30m lengths)</li>
+                <li>Power cables for all active speakers</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3>4. ADDITIONAL MICROPHONE SYSTEM (ALTERNATIVE OPTION)</h3>
+        
+        <div class="requirement">
+            <strong>Wired Microphone Option:</strong> 2 professional wired microphones for fixed positions
+        </div>
+
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Requirement</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Dynamic cardioid vocal microphones</td>
+                <td>Professional grade for government use</td>
+            </tr>
+            <tr>
+                <td>Frequency Response</td>
+                <td>50 Hz - 15 kHz</td>
+                <td>Optimized for speech</td>
+            </tr>
+            <tr>
+                <td>Build Quality</td>
+                <td>Professional/broadcast grade</td>
+                <td>Rugged construction required</td>
+            </tr>
+            <tr>
+                <td>Accessories</td>
+                <td>Stands and cables included</td>
+                <td>Adjustable boom stands, 15m XLR cables</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>System Integration Requirements</h2>
+
+        <h3>Power Distribution and Consumption</h3>
+        
+        <div class="spec-box">
+            <strong>Total System Power Requirements:</strong>
+            <ul>
+                <li>Line Array System: ~14-16 kW</li>
+                <li>Wireless Systems: ~54W total</li>
+                <li><strong>Total Maximum:</strong> 17 kW</li>
+                <li><strong>Recommended Circuits:</strong> 2 × 30A @ 220V</li>
+                <li><strong>Power Standard:</strong> 220V/50Hz (Syria standard)</li>
+            </ul>
+        </div>
+
+        <h3>Equipment Rack Requirements</h3>
+        
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Rack Space</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Wireless Microphone Receivers</td>
+                <td>2-6U (depending on configuration)</td>
+                <td>Single/dual/quad receivers</td>
+            </tr>
+            <tr>
+                <td>In-Ear Monitor Transmitters</td>
+                <td>2-4U</td>
+                <td>Dual transmitters</td>
+            </tr>
+            <tr>
+                <td>Power Distribution</td>
+                <td>2U</td>
+                <td>Rack power distribution unit</td>
+            </tr>
+            <tr>
+                <td><strong>Total Required</strong></td>
+                <td><strong>12U minimum</strong></td>
+                <td>Professional equipment rack</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Performance Specifications</h2>
+
+        <h3>Venue Coverage Requirements</h3>
+        
+        <div class="spec-box">
+            <strong>Coverage Area:</strong>
+            <ul>
+                <li><strong>Venue Depth:</strong> 60 meters maximum</li>
+                <li><strong>Venue Width:</strong> 50 meters maximum</li>
+                <li><strong>Capacity:</strong> 2000 people seated</li>
+                <li><strong>SPL Distribution:</strong> Even coverage throughout venue</li>
+                <li><strong>Minimum SPL:</strong> 95 dB-A at all audience positions</li>
+                <li><strong>Maximum SPL:</strong> 110 dB-A capability for peak moments</li>
+            </ul>
+        </div>
+
+        <h3>Wireless System Coverage</h3>
+        
+        <table>
+            <tr>
+                <th>System</th>
+                <th>Required Range</th>
+                <th>Coverage Pattern</th>
+            </tr>
+            <tr>
+                <td>Wireless Microphones</td>
+                <td>100-150m line-of-sight</td>
+                <td>Full venue + backstage areas</td>
+            </tr>
+            <tr>
+                <td>In-Ear Monitors</td>
+                <td>100-150m line-of-sight</td>
+                <td>Stage and front-of-house positions</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Installation and Rigging Requirements</h2>
+
+        <h3>Truss System Compatibility</h3>
+        
+        <div class="requirement">
+            <strong>Truss Specifications:</strong>
+            <ul>
+                <li><strong>Type:</strong> 290-300mm aluminum box truss</li>
+                <li><strong>Load Rating:</strong> Minimum 300kg per pick point</li>
+                <li><strong>Safety Factor:</strong> 10:1 minimum</li>
+                <li><strong>Hardware:</strong> All rigging hardware must be included</li>
+            </ul>
+        </div>
+
+        <h3>Setup Requirements</h3>
+        
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Installation Time</th>
+                <th>Crew Requirements</th>
+            </tr>
+            <tr>
+                <td>Wireless System Setup</td>
+                <td>30 minutes</td>
+                <td>1 technician</td>
+            </tr>
+            <tr>
+                <td>Line Array Rigging</td>
+                <td>2 hours</td>
+                <td>2-3 technicians</td>
+            </tr>
+            <tr>
+                <td>System Integration</td>
+                <td>1 hour</td>
+                <td>1-2 technicians</td>
+            </tr>
+            <tr>
+                <td><strong>Total Setup Time</strong></td>
+                <td><strong>3.5 hours</strong></td>
+                <td><strong>2-3 person crew</strong></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Regulatory and Compliance</h2>
+
+        <div class="critical">
+            <h3>⚠️ CRITICAL: Wireless Frequency Authorization</h3>
+            
+            <p><strong>MANDATORY REQUIREMENT:</strong> All wireless equipment must operate on frequencies officially approved by Syrian Telecommunications & Post Regulatory Authority (SY-TPRA).</p>
+
+            <strong>Vendor Responsibilities:</strong>
+            <ul>
+                <li>Confirm equipment availability in Syria-legal frequency bands</li>
+                <li>Provide frequency compliance documentation</li>
+                <li>Supply equipment pre-configured for approved frequencies</li>
+                <li>Include customs clearance documentation</li>
+            </ul>
+
+            <strong>Common Legal Bands in Syria Region:</strong>
+            <ul>
+                <li>518-566 MHz</li>
+                <li>606-614 MHz</li>
+                <li><strong>Note:</strong> Exact bands must be verified with SY-TPRA</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>Equipment Certification Requirements:</strong>
+            <ul>
+                <li>All equipment must be CE marked (European conformity)</li>
+                <li>FCC certification acceptable for wireless equipment</li>
+                <li>All power supplies must support 220V/50Hz operation</li>
+                <li>Professional-grade equipment only (no consumer products)</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Warranty and Support Requirements</h2>
+
+        <table>
+            <tr>
+                <th>Component Category</th>
+                <th>Minimum Warranty</th>
+                <th>Preferred Warranty</th>
+                <th>Support Requirements</th>
+            </tr>
+            <tr>
+                <td>Wireless Systems</td>
+                <td>2 years</td>
+                <td>3-5 years</td>
+                <td>Regional service center access</td>
+            </tr>
+            <tr>
+                <td>Line Array Speakers</td>
+                <td>3 years</td>
+                <td>5-6 years</td>
+                <td>Driver replacement availability</td>
+            </tr>
+            <tr>
+                <td>Electronics</td>
+                <td>2 years</td>
+                <td>3 years</td>
+                <td>Technical phone support</td>
+            </tr>
+            <tr>
+                <td>Cables/Accessories</td>
+                <td>1 year</td>
+                <td>2 years</td>
+                <td>Replacement availability</td>
+            </tr>
+        </table>
+
+        <div class="spec-box">
+            <strong>Required Support Services:</strong>
+            <ul>
+                <li>Technical support hotline (regional language support preferred)</li>
+                <li>Service center access (Syria or neighboring countries)</li>
+                <li>Spare parts availability for minimum 5 years</li>
+                <li>Firmware updates and technical bulletins</li>
+                <li>Remote diagnostic capability (for digital systems)</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Packaging and Shipping Requirements</h2>
+
+        <div class="spec-box">
+            <strong>Shipping and Handling:</strong>
+            <ul>
+                <li><strong>Destination:</strong> Syria (exact location to be specified)</li>
+                <li><strong>Packaging:</strong> Industrial shipping cases recommended</li>
+                <li><strong>Documentation:</strong> Complete customs documentation required</li>
+                <li><strong>Insurance:</strong> Full replacement value coverage</li>
+                <li><strong>Lead Time:</strong> 6-8 weeks typical for professional equipment</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Quality Standards</h2>
+
+        <div class="requirement">
+            <strong>Equipment Quality Requirements:</strong>
+            <ul>
+                <li><strong>Grade:</strong> Professional/broadcast quality only</li>
+                <li><strong>Build Quality:</strong> Tour-grade durability required</li>
+                <li><strong>Brand Recognition:</strong> Established professional audio manufacturers</li>
+                <li><strong>Industry Standards:</strong> Equipment commonly used in government/ministry installations</li>
+                <li><strong>Reliability:</strong> MTBF >10,000 hours for electronic components</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Operating Cost Considerations</h2>
+
+        <table>
+            <tr>
+                <th>System Type</th>
+                <th>Annual Operating Cost</th>
+                <th>Cost Components</th>
+            </tr>
+            <tr>
+                <td>Rechargeable Battery Systems</td>
+                <td>$100-200/year</td>
+                <td>Battery replacements, power consumption</td>
+            </tr>
+            <tr>
+                <td>Disposable Battery Systems</td>
+                <td>$800-1200/year</td>
+                <td>AA batteries for wireless systems</td>
+            </tr>
+            <tr>
+                <td>Line Array System</td>
+                <td>$300-500/year</td>
+                <td>Power consumption, routine maintenance</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Documentation Requirements</h2>
+
+        <div class="spec-box">
+            <strong>Required Documentation Package:</strong>
+            <ul>
+                <li><strong>Technical Manuals:</strong> Complete operation and maintenance manuals</li>
+                <li><strong>Frequency Documentation:</strong> Frequency compliance certificates</li>
+                <li><strong>Warranty Documentation:</strong> Complete warranty terms and procedures</li>
+                <li><strong>Installation Guides:</strong> Professional installation and setup guides</li>
+                <li><strong>Training Materials:</strong> Operator training documentation</li>
+                <li><strong>Service Information:</strong> Service center locations and contact information</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Acceptance Criteria</h2>
+
+        <div class="requirement">
+            <strong>System Acceptance Testing:</strong>
+            <ul>
+                <li>All wireless systems operate without interference across full venue</li>
+                <li>Line array provides even SPL coverage throughout audience area</li>
+                <li>All equipment operates within specified power consumption limits</li>
+                <li>Wireless frequency coordination plan verified and documented</li>
+                <li>All safety and rigging requirements met</li>
+                <li>Complete documentation package delivered</li>
+                <li>Operator training completed successfully</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <strong>Document Version:</strong> Final Revision 1.0<br>
+        <strong>Date:</strong> January 2025<br>
+        <strong>Purpose:</strong> Audio equipment procurement specifications<br>
+        <strong>Note:</strong> This document contains technical specifications only. No specific equipment brands are mentioned to ensure competitive bidding process.
+
+        <hr>
+
+        <div style="text-align: center; color: #7f8c8d; margin-top: 40px;">
+            Professional PA System Technical Specifications - Syrian Ministry Installation<br>
+            For Audio Equipment Vendors - January 2025
+        </div>
+    </div>
+</body>
+</html>

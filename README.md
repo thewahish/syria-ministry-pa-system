@@ -32,6 +32,14 @@ Professional audio system with wireless microphones, in-ear monitors, and line a
 
 ## Available Packages
 
+### 🚨 ULTRA-BUDGET SURVIVAL Package - $22,800 ⚠️
+- 4 Audio-Technica/Samson wireless microphones (analog) + 2 wired mics
+- 2 basic in-ear monitor systems (limited range)
+- 4 powered PA speakers + 2 subwoofers (NO line array)
+- **Best for:** EMERGENCY budget constraint, 800-1000 people MAX
+- **REALITY CHECK:** Post-war Syria budget reality
+- **⚠️ WARNING:** Significant compromises - see full analysis
+
 ### Budget Package - $34,490
 - 6 Shure BLX wireless microphones (analog)
 - Shure PSM 300 in-ear monitors
@@ -41,20 +49,20 @@ Professional audio system with wireless microphones, in-ear monitors, and line a
 ### Budget VALUE Package - $38,040 💰
 - 2 Sennheiser EW-D wireless microphones (digital) + 2 wired mics
 - Sennheiser EW IEM G4 in-ear monitors
-- QSC KLA12 line array + KW181 subwoofers
+- QSC KLA12 line array system (12 elements) + KW181 subwoofers
 - **Best for:** Small events (2-4 speakers), digital quality on budget, full sound!
-- **Smart:** Saves $6,600 vs Mid-Range, same professional sound system!
+- **Smart:** Saves $6,600 vs Mid-Range, same professional line array system!
 
 ### Mid-Range Package - $44,640
 - 6 Sennheiser EW-D wireless microphones (digital)
 - Sennheiser EW IEM G4 in-ear monitors
-- QSC KLA12 line array + KW181 subwoofers
+- QSC KLA12 line array system (12 elements) + KW181 subwoofers
 - **Best for:** Need 6 simultaneous wireless mics
 
 ### Mid-Range VALUE Package - $41,420 ⭐ RECOMMENDED
 - 4 Sennheiser EW-D wireless microphones (digital) + 2 wired mics
 - Sennheiser EW IEM G4 in-ear monitors
-- QSC KLA12 line array + KW181 subwoofers
+- QSC KLA12 line array system (12 elements) + KW181 subwoofers
 - **Best for:** Smart savings ($3,230 less!), same sound quality, up to 2000 people
 - **Smart:** 4 wireless for flexibility + 2 wired for podiums = same coverage!
 
@@ -63,6 +71,17 @@ Professional audio system with wireless microphones, in-ear monitors, and line a
 - Shure PSM 1000 in-ear monitors
 - JBL VTX A8 or d&b Y-Series line array
 - **Best for:** Large venues, no-compromise quality, 2000+ people
+
+---
+
+## Speaker System Clarification
+
+**IMPORTANT:** The packages above use two different speaker approaches:
+
+- **Ultra-Budget Package:** Uses **PA speakers** (individual powered speakers on stands)
+- **All Other Packages:** Use **line array systems** (multiple elements flown from truss)
+
+You choose ONE approach, not both. See [Speaker System Comparison](SPEAKER-SYSTEM-COMPARISON.html) for detailed analysis of PA speakers vs line array benefits and limitations.
 
 ---
 
@@ -105,16 +124,18 @@ Professional audio system with wireless microphones, in-ear monitors, and line a
 
 ## Key Features by Package
 
-| Feature | Budget | Budget Value 💰 | Mid-Range | Mid-Range Value ⭐ | Premium |
-|---------|--------|----------------|-----------|-------------------|---------|
-| Mic Channels | 6 wireless | 2 wireless + 2 wired | 6 wireless | 4 wireless + 2 wired | 6 wireless |
-| Audio Quality | Good (Analog) | Excellent (Digital) | Excellent (Digital) | Excellent (Digital) | Pristine (24-bit) |
-| Wireless Range | 90m | 100-150m | 100-150m | 100-150m | 150m+ |
-| Batteries | AA (disposable) | Rechargeable | Rechargeable | Rechargeable | Rechargeable |
-| Bass Extension | Limited | Full | Full | Full | Full+ |
-| Venue Capacity | 1000 people | 2000 people | 2000 people | 2000 people | 2000+ people |
-| Savings | - | **-$6,600** | - | **-$3,220** | - |
-| Best Value | ❌ | ✅ (small events) | ❌ | ✅ (large events) | ❌ |
+| Feature | Ultra-Budget 🚨 | Budget | Budget Value 💰 | Mid-Range | Mid-Range Value ⭐ | Premium |
+|---------|----------------|--------|----------------|-----------|-------------------|---------|
+| **Total Cost** | **$22,800** | **$34,490** | **$38,040** | **$44,640** | **$41,420** | **$60,010** |
+| Mic Channels | 4 wireless + 2 wired | 6 wireless | 2 wireless + 2 wired | 6 wireless | 4 wireless + 2 wired | 6 wireless |
+| Audio Quality | Basic (Analog) | Good (Analog) | Excellent (Digital) | Excellent (Digital) | Excellent (Digital) | Pristine (24-bit) |
+| Wireless Range | 50-80m ⚠️ | 90m | 100-150m | 100-150m | 100-150m | 150m+ |
+| Speaker Type | PA Speakers ⚠️ | Line Array | Line Array | Line Array | Line Array | Line Array |
+| Bass Extension | Basic | Limited | Full | Full | Full | Full+ |
+| Venue Capacity | 800-1000 ⚠️ | 1000 people | 2000 people | 2000 people | 2000 people | 2000+ people |
+| Professional Look | Basic ⚠️ | Professional | Professional | Professional | Professional | Premium |
+| Reliability | Budget ⚠️ | Good | Excellent | Excellent | Excellent | Premium |
+| Best Value | Emergency only | ❌ | ✅ (small events) | ❌ | ✅ (large events) | ❌ |
 
 ---
 
@@ -406,9 +427,14 @@ For technical questions or to place an order, contact:
 
 ## Document Version History
 
+- **v3.0** - January 2025 - FINAL REVISION
+  - Archived older pricing documents to OLD folder
+  - Created brand-neutral vendor specifications document
+  - Updated pricing to reflect final recommendations
+  - Added comprehensive technical specifications for procurement
 - **v2.0** - January 2025 - Added VALUE packages (4+2 and 2+2 mic options)
-  - Budget VALUE: 2 wireless + 2 wired ($25,920)
-  - Mid-Range VALUE: 4 wireless + 2 wired ($29,300)
+  - Budget VALUE: 2 wireless + 2 wired ($38,040)
+  - Mid-Range VALUE: 4 wireless + 2 wired ($41,420)
   - Added professional services pricing ($11,800)
 - **v1.0** - January 2025 - Initial quotation with three package options
   - Requirements: 6 wireless mics (dual capability), 2 IEMs, lightweight line array
