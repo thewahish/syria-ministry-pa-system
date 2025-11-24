@@ -1,0 +1,447 @@
+/* Bilingual PA System Website Styles */
+/* Supports both Arabic (RTL) and English (LTR) */
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Language-specific body classes */
+body.en {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    direction: ltr;
+    text-align: left;
+}
+
+body.ar {
+    font-family: 'Arial Unicode MS', Tahoma, 'Noto Sans Arabic', 'Amiri', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Common layout */
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Typography */
+h1 {
+    color: #2c3e50;
+    border-bottom: 4px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    color: #2980b9;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    padding: 10px 15px;
+}
+
+/* Language-specific heading borders */
+body.en h2 {
+    border-left: 5px solid #3498db;
+}
+
+body.ar h2 {
+    border-right: 5px solid #3498db;
+}
+
+h3 {
+    color: #34495e;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* Paragraphs and lists */
+p {
+    margin: 15px 0;
+}
+
+ul, ol {
+    margin: 15px 0;
+}
+
+body.en ul, body.en ol {
+    margin-left: 30px;
+}
+
+body.ar ul, body.ar ol {
+    margin-right: 30px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+}
+
+body.en th {
+    text-align: left;
+}
+
+body.ar th {
+    text-align: right;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+body.en td {
+    text-align: left;
+}
+
+body.ar td {
+    text-align: right;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* Package boxes */
+.package {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.package:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.package.recommended {
+    border-color: #27ae60;
+    background: #f0fff4;
+}
+
+.package.value {
+    border-color: #f39c12;
+    background: #fffaf0;
+}
+
+.package.emergency {
+    border-color: #ff6b6b;
+    background: #fff5f5;
+}
+
+/* Price styling */
+.price {
+    font-size: 2em;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.price.emergency {
+    color: #d63031;
+}
+
+/* Badges */
+.badge {
+    background: #27ae60;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.badge.value {
+    background: #f39c12;
+}
+
+.badge.emergency {
+    background: #d63031;
+}
+
+/* Alert boxes */
+.warning {
+    background: #fff3cd;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+body.en .warning {
+    border-left: 4px solid #ffc107;
+}
+
+body.ar .warning {
+    border-right: 4px solid #ffc107;
+}
+
+.critical {
+    background: #f8d7da;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+body.en .critical {
+    border-left: 4px solid #dc3545;
+}
+
+body.ar .critical {
+    border-right: 4px solid #dc3545;
+}
+
+.info {
+    background: #e8f5e8;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+body.en .info {
+    border-left: 4px solid #4caf50;
+}
+
+body.ar .info {
+    border-right: 4px solid #4caf50;
+}
+
+/* Navigation links */
+.nav-links {
+    background: #e8f4f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 30px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-links a:hover {
+    background: #3498db;
+    color: white;
+    transform: translateX(5px);
+}
+
+body.ar .nav-links a:hover {
+    transform: translateX(-5px);
+}
+
+/* Special styling for English terms in Arabic text */
+.english-terms {
+    font-family: Arial, sans-serif;
+    direction: ltr;
+    display: inline-block;
+    color: #2980b9;
+    font-weight: bold;
+    background: rgba(52, 152, 219, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 0 2px;
+}
+
+/* Comparison tables */
+.winner {
+    background: #d4edda !important;
+    font-weight: bold;
+    color: #155724;
+}
+
+.partial {
+    background: #fff3cd !important;
+    color: #856404;
+}
+
+.no {
+    background: #f8d7da !important;
+    color: #721c24;
+}
+
+.highlight {
+    background: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .package {
+        padding: 15px;
+    }
+
+    .price {
+        font-size: 1.5em;
+    }
+
+    table {
+        font-size: 0.85em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    .package:hover {
+        transform: none;
+    }
+
+    .language-toggle {
+        display: none;
+    }
+
+    .nav-links a:hover {
+        transform: none;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .package {
+        border-width: 3px;
+    }
+
+    .warning, .critical, .info {
+        border-width: 6px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .container {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    .package {
+        background: #3a3a3a;
+        border-color: #555;
+    }
+
+    .nav-links {
+        background: #404040;
+    }
+
+    .nav-links a {
+        background: #4a4a4a;
+        color: #e0e0e0;
+    }
+
+    .nav-links a:hover {
+        background: #3498db;
+    }
+}
