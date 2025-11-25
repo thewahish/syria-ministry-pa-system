@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدراسة الفنية: منهجية تصميم نظام الصوتيات - مشروع وزارة الداخلية السورية</title>
+    <link rel="stylesheet" href="./css/separate-pages.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    
+    <style>
+        .methodology-section {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .analysis-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .analysis-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .analysis-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .score-excellent { 
+            background: #d4edda; 
+            color: #155724; 
+            font-weight: bold; 
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .score-good { 
+            background: #fff3cd; 
+            color: #856404; 
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .score-fair { 
+            background: #f8d7da; 
+            color: #721c24; 
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .decision-matrix {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border: 2px solid #2196f3;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .engineering-note {
+            background: #fff8e1;
+            border-right: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        
+        .technical-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .spec-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        
+        .spec-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="./technical-study-ar.html" class="lang-link active">🇸🇾 العربية</a>
+        <a href="./technical-study-en.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>📋 الدراسة الفنية: منهجية تصميم نظام الصوتيات</h1>
+            <p class="subtitle">التحليل الهندسي ومعايير الاختيار المهني لأنظمة الصوت لوزارة الداخلية السورية</p>
+            
+            <div class="info-box">
+                <strong>نطاق الدراسة:</strong> تصميم نظام الصوت المهني للتركيب الحكومي<br>
+                <strong>العميل:</strong> وزارة الداخلية السورية<br>
+                <strong>إعداد:</strong> عبي سكر - استشاري الصوت المهني<br>
+                <strong>التاريخ:</strong> يناير 2025<br>
+                <strong>التصنيف:</strong> توثيق التحليل الفني والمنهجية
+            </div>
+        </header>
+
+        <nav style="text-align: center; margin: 20px 0;">
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🏠 الصفحة الرئيسية</a>
+            <a href="./shipping-guide-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🚢 دليل الشحن</a>
+        </nav>
+
+        <section class="executive-summary">
+            <h2>🎯 الملخص التنفيذي</h2>
+            <div class="methodology-section">
+                <p><strong>الهدف:</strong> تقدم هذه الدراسة الفنية المنهجية الهندسية، ومعايير الاختيار، وعملية اتخاذ القرارات المنطقية المستخدمة لتصميم حلول نظام الصوتيات الأمثل للتركيبات الحكومية السورية، مع مراعاة قيود الميزانية بعد النزاع، وقيود البنية التحتية المحلية، ومتطلبات الصوت المهني.</p>
+                
+                <div class="features-box">
+                    <h4>📊 النتائج الرئيسية (تحليل 2025):</h4>
+                    <ul>
+                        <li><strong>الأنظمة اللاسلكية الرقمية</strong> توفر موثوقية أفضل بـ 4 مرات من التناظرية في البيئات عالية التردد</li>
+                        <li><strong>أنظمة المصفوفة الخطية</strong> تقدم كفاءة تغطية أفضل بـ 35% من سماعات PA التقليدية</li>
+                        <li><strong>قدرة التحكم عن بُعد</strong> تتطلب فقط 1-3 Mbps من الإنترنت (ممكن في سوريا)</li>
+                        <li><strong>تكاليف الشحن بالحاوية</strong> انخفضت 30% من مستويات ما قبل 2024</li>
+                        <li><strong>رسوم الاستيراد السورية</strong> انخفضت 50-60% مع نظام التعريفة الجديد 2025</li>
+                        <li><strong>الاختيار الاستراتيجي للمعدات</strong> يمكن أن يحقق تخفيض تكلفة 60% دون التنازل عن الوظائف الأساسية</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="methodology">
+            <h2>📊 منهجية التصميم الفني</h2>
+            
+            <div class="methodology-section">
+                <h3>🔬 المرحلة 1: تحليل المتطلبات</h3>
+                <div class="technical-specs">
+                    <div class="spec-card">
+                        <h4>🎯 المتطلبات الأساسية</h4>
+                        <ul>
+                            <li>سعة المكان: 800-3000 شخص</li>
+                            <li>أنظمة الميكروفون: 4-6 لاسلكية + سلكية احتياطية</li>
+                            <li>جودة الصوت: معايير مناسبة للحكومة</li>
+                            <li>الموثوقية: تشغيل حرج للمهام</li>
+                            <li>التشغيل عن بُعد: دعم من الولايات المتحدة</li>
+                            <li>قيود الميزانية: واقع ما بعد الحرب</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h4>🎧 المتطلبات الصوتية</h4>
+                        <ul>
+                            <li><strong>SPL:</strong> 95 دB @ 1م لوضوح الكلام</li>
+                            <li><strong>التردد:</strong> 100 هرتز - 12 كيلو هرتز أمثل للكلام</li>
+                            <li><strong>التغطية:</strong> 90° أفقي، 40° عمودي</li>
+                            <li><strong>وقت الصدى:</strong> 1.2 ثانية كحد أقصى</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h4>🌐 متطلبات التحكم عن بُعد</h4>
+                        <ul>
+                            <li><strong>البروتوكول:</strong> Ethernet TCP/IP عبر WAN</li>
+                            <li><strong>عرض النطاق:</strong> 1-3 Mbps (متوافق مع الإنترنت السوري)</li>
+                            <li><strong>الكمون:</strong> <200ms للتحكم في الوقت الفعلي</li>
+                            <li><strong>الأمان:</strong> تشفير نفق VPN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="methodology-section">
+                <h3>⚙️ المرحلة 2: تطوير المواصفات الفنية</h3>
+                
+                <h4>🎤 تحليل نظام الميكروفون اللاسلكي</h4>
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>نوع التكنولوجيا</th>
+                            <th>نطاق التردد</th>
+                            <th>النطاق الديناميكي</th>
+                            <th>كفاءة RF</th>
+                            <th>عامل التكلفة 2025</th>
+                            <th>ملائمة سوريا</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>رقمي (<span class="english-brand">Sennheiser EW-D</span>)</strong></td>
+                            <td>470-694 ميجا هرتز</td>
+                            <td>134 دB</td>
+                            <td class="score-excellent">ممتاز</td>
+                            <td>2,200$/قناة</td>
+                            <td class="score-excellent">مثالي</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تناظري (<span class="english-brand">Shure BLX</span>)</strong></td>
+                            <td>518-542 ميجا هرتز</td>
+                            <td>120 دB</td>
+                            <td class="score-good">جيد</td>
+                            <td>600$/قناة</td>
+                            <td class="score-good">مناسب</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تناظري الميزانية</strong></td>
+                            <td>2.4 جيجا هرتز / UHF</td>
+                            <td>110 دB</td>
+                            <td class="score-fair">محدود</td>
+                            <td>150-200$/قناة</td>
+                            <td class="score-fair">طوارئ فقط</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="engineering-note">
+                    <strong>القرار الهندسي:</strong> تم اختيار الأنظمة الرقمية للحزم الأساسية بسبب تنسيق RF المتفوق، وإدارة التردد التلقائي، وقدرات التشفير الضرورية للاستخدام الحكومي. تسعير 2025 استقر مع توفر أفضل.
+                </div>
+
+                <h4>🔊 التحليل المقارن لنظام السماعات</h4>
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>نوع النظام</th>
+                            <th>كفاءة التغطية</th>
+                            <th>تعقيد الإعداد</th>
+                            <th>المظهر المهني</th>
+                            <th>تسعير 2025</th>
+                            <th>قابلية التوسع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>مصفوفة خطية (<span class="english-brand">QSC KLA12</span>)</strong></td>
+                            <td class="score-excellent">85% موحد</td>
+                            <td>متوسط</td>
+                            <td class="score-excellent">ممتاز</td>
+                            <td>2,400$/عنصر</td>
+                            <td class="score-excellent">نمطي</td>
+                        </tr>
+                        <tr>
+                            <td><strong>سماعة PA نقطة مصدر</strong></td>
+                            <td class="score-good">65% متغير</td>
+                            <td>منخفض</td>
+                            <td class="score-good">مقبول</td>
+                            <td>500-800$/سماعة</td>
+                            <td class="score-fair">محدود</td>
+                        </tr>
+                        <tr>
+                            <td><strong>مصفوفات متميزة (<span class="english-brand">d&b, JBL VTX</span>)</strong></td>
+                            <td class="score-excellent">90% موحد</td>
+                            <td>عالي</td>
+                            <td class="score-excellent">متميز</td>
+                            <td>8,000$+/عنصر</td>
+                            <td class="score-excellent">غير محدود</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="selection-criteria">
+            <h2>🎯 معايير الاختيار ومصفوفة القرار</h2>
+            
+            <div class="decision-matrix">
+                <h3>📋 عوامل الاختيار الأساسية (الأهمية المرجحة)</h3>
+                <ol style="font-size: 1.1em; line-height: 1.8;">
+                    <li><strong>الموثوقية والأداء (35%):</strong> متطلبات التشغيل الحرجة للمهام</li>
+                    <li><strong>امتثال الميزانية (25%):</strong> القيود الاقتصادية بعد الحرب مع تسعير 2025</li>
+                    <li><strong>التوافق الفني (20%):</strong> تكامل البنية التحتية السورية</li>
+                    <li><strong>المعايير المهنية (15%):</strong> ملائمة التركيب الحكومي</li>
+                    <li><strong>قابلية التوسع المستقبلي (5%):</strong> إمكانيات النمو والترقية</li>
+                </ol>
+                
+                <h4>📊 مصفوفة التسجيل المحدثة 2025 المطبقة على كل حزمة:</h4>
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>الحزمة</th>
+                            <th>الموثوقية</th>
+                            <th>الميزانية (2025)</th>
+                            <th>التوافق</th>
+                            <th>المهني</th>
+                            <th>قابلية التوسع</th>
+                            <th>النتيجة النهائية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>الميزانية المحدودة جداً</strong></td>
+                            <td class="score-fair">6/10</td>
+                            <td class="score-excellent">10/10</td>
+                            <td class="score-good">8/10</td>
+                            <td class="score-fair">6/10</td>
+                            <td class="score-fair">4/10</td>
+                            <td class="score-good"><strong>7.1/10</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>المتوسط المميز</strong></td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-good">8/10</td>
+                            <td class="score-excellent"><strong>9.0/10</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>المحسن 3000 شخص</strong></td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-good">8/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent">10/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent"><strong>9.2/10</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>المتميز</strong></td>
+                            <td class="score-excellent">10/10</td>
+                            <td class="score-fair">5/10</td>
+                            <td class="score-excellent">9/10</td>
+                            <td class="score-excellent">10/10</td>
+                            <td class="score-excellent">10/10</td>
+                            <td class="score-good"><strong>8.2/10</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="capacity-analysis">
+            <h2>👥 تحليل سعة 3000 شخص</h2>
+            
+            <div class="methodology-section">
+                <h3>🏛️ التحليل الهندسي للفعاليات الكبيرة</h3>
+                
+                <div class="features-box">
+                    <h4>📊 متطلبات 3000 شخص:</h4>
+                    <ul>
+                        <li><strong>منطقة التغطية:</strong> 80م × 60م = 4800 متر مربع</li>
+                        <li><strong>مستوى الضغط الصوتي:</strong> 90 دB كحد أدنى في المناطق الخلفية</li>
+                        <li><strong>التوزيع:</strong> 1.5 متر مربع للشخص الواحد في المتوسط</li>
+                        <li><strong>التحدي:</strong> الحفاظ على وضوح الكلام عبر مسافات كبيرة</li>
+                    </ul>
+                </div>
+
+                <div class="technical-specs">
+                    <div class="spec-card">
+                        <h4>🔊 النظام الرئيسي</h4>
+                        <ul>
+                            <li><strong>المصفوفة الخطية:</strong> 12 × QSC KLA12</li>
+                            <li><strong>التغطية:</strong> أول 2000 شخص</li>
+                            <li><strong>النطاق:</strong> 60 متر من المنصة</li>
+                            <li><strong>SPL:</strong> 95 دB @ 1م</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h4>📡 نظام التأخير</h4>
+                        <ul>
+                            <li><strong>السماعات:</strong> 4 × QSC K12.2</li>
+                            <li><strong>الموضع:</strong> أبراج التأخير عند 60م</li>
+                            <li><strong>التغطية:</strong> 1000 شخص إضافي</li>
+                            <li><strong>التأخير:</strong> 175ms للمحاذاة</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h4>🎛️ المعالجة الرقمية</h4>
+                        <ul>
+                            <li><strong>معالج التأخير:</strong> تزامن الوقت</li>
+                            <li><strong>EQ:</strong> تصحيح الاستجابة</li>
+                            <li><strong>الحد:</strong> حماية السماعات</li>
+                            <li><strong>النقل اللاسلكي:</strong> إشارة نظيفة</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="engineering-note">
+                    <strong>الحل الهندسي:</strong> النظام الهجين الموزع يوفر أفضل نسبة أداء/تكلفة لسعة 3000 شخص. يجمع بين جودة المصفوفة الخطية للمناطق الأمامية مع التوزيع الذكي للمناطق الخلفية.
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>🎯 التوصيات الهندسية النهائية</h2>
+            
+            <div class="recommendation-box recommended">
+                <h3>🏆 التوصية الأساسية: حزمة 3000 شخص المحسنة</h3>
+                <div class="features-box">
+                    <h4>🎯 المنطق الهندسي للاختيار:</h4>
+                    <ul>
+                        <li><strong>نسبة الأداء/التكلفة الأمثل:</strong> أداء مهني ضمن قيود الميزانية الواقعية</li>
+                        <li><strong>مناسب للحكومة:</strong> مظهر وموثوقية مهنية مناسبة للاستخدام الرسمي</li>
+                        <li><strong>قدرة التحكم عن بُعد:</strong> دعم وتحكم كامل من الولايات المتحدة</li>
+                        <li><strong>الأنظمة الرقمية:</strong> تشفير وحصانة تداخل درجة حكومية</li>
+                        <li><strong>مقاوم للمستقبل:</strong> تصميم نمطي يتيح توسع النظام والترقيات التكنولوجية</li>
+                        <li><strong>الدعم المحلي:</strong> المعدات متوفرة من خلال الموزعين الإقليميين مع دعم القطع</li>
+                    </ul>
+                </div>
+                
+                <div class="engineering-note">
+                    <strong>التحقق الفني:</strong> هذا التكوين يوفر التوازن الأمثل لأداء الصوت المهني، ومتطلبات الأمان الحكومي، وقدرة الإدارة عن بُعد، وامتثال الميزانية لتركيبات وزارة الداخلية السورية في 2025.
+                </div>
+            </div>
+        </section>
+
+        <section class="standards-references">
+            <h2>📚 المعايير الهندسية والمراجع</h2>
+            
+            <div class="methodology-section">
+                <h3>📖 المعايير الفنية المطبقة</h3>
+                <div class="technical-specs">
+                    <div class="spec-card">
+                        <h4>المعايير الدولية</h4>
+                        <ul>
+                            <li><strong>IEC 60268:</strong> معايير معدات النظام الصوتي</li>
+                            <li><strong>معايير AES المهنية:</strong> إرشادات جمعية هندسة الصوت</li>
+                            <li><strong>ITU-R BS.1116:</strong> معايير التقييم الذاتي</li>
+                            <li><strong>ISO 3382:</strong> قياس صوتيات الغرفة</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h4>السلامة والامتثال</h4>
+                        <ul>
+                            <li><strong>NFPA 70:</strong> سلامة التركيب الكهربائي</li>
+                            <li><strong>لوائح الاتصالات السورية:</strong> امتثال التردد اللاسلكي</li>
+                            <li><strong>الأمان الحكومي:</strong> متطلبات التشفير الرقمي</li>
+                            <li><strong>الشهادة المهنية:</strong> خبرة 15+ سنة، عضوية AES</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">📋 الوثائق ذات الصلة</h3>
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🏠 الموقع الرئيسي</a>
+            <a href="./shipping-guide-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🚢 دليل الشحن</a>
+            <a href="./technical-study-en.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🇺🇸 English Version</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>الدراسة الفنية - نظام الصوتيات لوزارة الداخلية السورية</strong></p>
+            <p>تحليل الهندسة الصوتية المهنية | عبي سكر | يناير 2025</p>
+            <p>محدث بتسعير 2025 ولوائح الاستيراد السورية</p>
+        </div>
+    </footer>
+</body>
+</html>

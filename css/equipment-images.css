@@ -1,0 +1,239 @@
+/* Professional Equipment Images Integration */
+
+.equipment-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.equipment-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+.equipment-image {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 10px;
+}
+
+/* Image placeholders with professional styling */
+.image-placeholder {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+    background: #6b7280;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Equipment specific placeholders - Modern, elegant styling */
+.qsc-k12-placeholder {
+    background: #2563eb;
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.2);
+}
+
+.qsc-k12-placeholder::before {
+    content: "🔊";
+}
+
+.qsc-kla-placeholder {
+    background: #059669;
+    box-shadow: 0 8px 32px rgba(5, 150, 105, 0.2);
+}
+
+.qsc-kla-placeholder::before {
+    content: "📢";
+}
+
+.sennheiser-placeholder {
+    background: #dc2626;
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.2);
+}
+
+.sennheiser-placeholder::before {
+    content: "🎤";
+}
+
+.audio-technica-placeholder {
+    background: #7c3aed;
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+}
+
+.audio-technica-placeholder::before {
+    content: "🎙️";
+}
+
+/* Equipment details styling */
+.equipment-title {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.equipment-specs {
+    text-align: left;
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #495057;
+}
+
+.equipment-specs h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.equipment-specs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.equipment-specs li {
+    padding: 3px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.equipment-specs li:last-child {
+    border-bottom: none;
+}
+
+.equipment-specs li::before {
+    content: "▸ ";
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Professional gallery layout */
+.equipment-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-caption h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.gallery-caption p {
+    color: #6c757d;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .equipment-showcase {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .equipment-image,
+    .image-placeholder {
+        max-width: 100%;
+        height: 160px;
+    }
+    
+    .equipment-card {
+        padding: 20px;
+    }
+    
+    .equipment-title {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .equipment-image,
+    .image-placeholder {
+        height: 140px;
+        font-size: 2.5em;
+    }
+    
+    .equipment-card {
+        padding: 15px;
+    }
+}
+
+/* Professional branding colors - Modern, clean accent borders */
+.qsc-brand {
+    border-left: 4px solid #2563eb;
+}
+
+.sennheiser-brand {
+    border-left: 4px solid #dc2626;
+}
+
+.audio-technica-brand {
+    border-left: 4px solid #7c3aed;
+}

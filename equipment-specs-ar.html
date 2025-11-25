@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواصفات المعدات - مشروع نظام الصوتيات لوزارة الداخلية السورية</title>
+    <link rel="stylesheet" href="./css/separate-pages.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <style>
+        .spec-section {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .spec-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .spec-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .spec-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .equipment-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        
+        .equipment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .equipment-image {
+            width: 80px;
+            height: 60px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        
+        .equipment-title {
+            flex: 1;
+        }
+        
+        .equipment-title h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        .equipment-title .brand {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-weight: normal;
+        }
+        
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .spec-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 120px;
+        }
+        
+        .spec-value {
+            color: #34495e;
+            text-align: left;
+        }
+        
+        .package-highlight {
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .compatibility-matrix {
+            background: #fff8e1;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="./equipment-specs-ar.html" class="lang-link active">🇸🇾 العربية</a>
+        <a href="./equipment-specs-en.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>📊 مواصفات المعدات</h1>
+            <p class="subtitle">المواصفات الفنية التفصيلية وتحليل التوافق لنظام الصوتيات لوزارة الداخلية السورية</p>
+            
+            <div class="info-box">
+                <strong>نوع الوثيقة:</strong> مواصفات المعدات الفنية<br>
+                <strong>العميل:</strong> وزارة الداخلية السورية<br>
+                <strong>إعداد:</strong> عبي سكر - استشاري الصوت المهني<br>
+                <strong>التاريخ:</strong> يناير 2025<br>
+                <strong>التصنيف:</strong> دليل اختيار المعدات والتوافق
+            </div>
+        </header>
+
+        <nav style="text-align: center; margin: 20px 0;">
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🏠 الصفحة الرئيسية</a>
+            <a href="./technical-study-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🎓 الدراسة الفنية</a>
+            <a href="./shipping-guide-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🚢 دليل الشحن</a>
+        </nav>
+
+        <section class="wireless-mics">
+            <h2>🎤 أنظمة الميكروفونات اللاسلكية</h2>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🎤</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">Sennheiser EW-D</span></h4>
+                            <div class="brand">نظام لاسلكي رقمي</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">نطاق التردد:</span><span class="spec-value">470-694 ميجا هرتز</span></li>
+                        <li><span class="spec-label">النطاق الديناميكي:</span><span class="spec-value">134 دB</span></li>
+                        <li><span class="spec-label">التأخير:</span><span class="spec-value">1.9 ميلي ثانية</span></li>
+                        <li><span class="spec-label">عمر البطارية:</span><span class="spec-value">12+ ساعة</span></li>
+                        <li><span class="spec-label">طاقة RF:</span><span class="spec-value">10/20/50 ميللي وات</span></li>
+                        <li><span class="spec-label">المدى:</span><span class="spec-value">100+ متر</span></li>
+                        <li><span class="spec-label">التشفير:</span><span class="spec-value">256-bit AES</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,200$/قناة</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> الحزم المتوسطة المميزة والمتميزة. أمان وموثوقية بدرجة حكومية.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📻</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">Shure BLX</span></h4>
+                            <div class="brand">نظام لاسلكي تناظري</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">نطاق التردد:</span><span class="spec-value">518-542 ميجا هرتز</span></li>
+                        <li><span class="spec-label">النطاق الديناميكي:</span><span class="spec-value">120 دB</span></li>
+                        <li><span class="spec-label">عمر البطارية:</span><span class="spec-value">14+ ساعة</span></li>
+                        <li><span class="spec-label">طاقة RF:</span><span class="spec-value">1/10 ميللي وات</span></li>
+                        <li><span class="spec-label">المدى:</span><span class="spec-value">90+ متر</span></li>
+                        <li><span class="spec-label">القنوات:</span><span class="spec-value">12 متوافق</span></li>
+                        <li><span class="spec-label">الإعداد:</span><span class="spec-value">مسح سريع للترددات</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">600$/قناة</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> الحزمة المهنية الاقتصادية. تناظري موثوق مع إعداد سهل.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📱</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">Audio-Technica ATW</span></h4>
+                            <div class="brand">نظام رقمي اقتصادي</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">نطاق التردد:</span><span class="spec-value">2.4 جيجا هرتز</span></li>
+                        <li><span class="spec-label">النطاق الديناميكي:</span><span class="spec-value">110 دB</span></li>
+                        <li><span class="spec-label">عمر البطارية:</span><span class="spec-value">8+ ساعة</span></li>
+                        <li><span class="spec-label">المدى:</span><span class="spec-value">60+ متر</span></li>
+                        <li><span class="spec-label">القنوات:</span><span class="spec-value">8 متوافق</span></li>
+                        <li><span class="spec-label">الإعداد:</span><span class="spec-value">مسح القنوات التلقائي</span></li>
+                        <li><span class="spec-label">تجنب التداخل:</span><span class="spec-value">تجنب WiFi</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">200$/قناة</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> حزمة البقاء للميزانية المحدودة جداً. للطوارئ فقط.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="line-array">
+            <h2>🔊 أنظمة السماعات الخطية</h2>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🔊</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">QSC KLA12</span></h4>
+                            <div class="brand">عنصر المصفوفة الخطية النشط</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">الطاقة:</span><span class="spec-value">1000W (500W LF + 500W HF)</span></li>
+                        <li><span class="spec-label">أقصى SPL:</span><span class="spec-value">131 دB</span></li>
+                        <li><span class="spec-label">الاستجابة الترددية:</span><span class="spec-value">54 هرتز - 20 كيلو هرتز</span></li>
+                        <li><span class="spec-label">التغطية:</span><span class="spec-value">90° أفقي × 12° عمودي</span></li>
+                        <li><span class="spec-label">الوزن:</span><span class="spec-value">23 كغ (51 رطل)</span></li>
+                        <li><span class="spec-label">الموصلات:</span><span class="spec-value">XLR + مخرج ربط</span></li>
+                        <li><span class="spec-label">المعالجة الرقمية:</span><span class="spec-value">معالجة مدمجة</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,400$/عنصر</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> جميع الحزم المهنية. نسبة أداء/سعر ممتازة.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📦</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">QSC KW181</span></h4>
+                            <div class="brand">امبلي صوت منخفض نشط</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">الطاقة:</span><span class="spec-value">امبلي 1000W</span></li>
+                        <li><span class="spec-label">أقصى SPL:</span><span class="spec-value">132 دB</span></li>
+                        <li><span class="spec-label">الاستجابة الترددية:</span><span class="spec-value">44 هرتز - 150 هرتز</span></li>
+                        <li><span class="spec-label">المحرك:</span><span class="spec-value">18 بوصة عالي الحركة</span></li>
+                        <li><span class="spec-label">الوزن:</span><span class="spec-value">37 كغ (82 رطل)</span></li>
+                        <li><span class="spec-label">المعالجة:</span><span class="spec-value">مرشح عالي متغير</span></li>
+                        <li><span class="spec-label">التركيب:</span><span class="spec-value">تكديس أرضي/تعليق</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,760$/وحدة</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> الحزم المتوسطة المميزة والمتميزة لتغطية النطاق الكامل.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🎼</div>
+                        <div class="equipment-title">
+                            <h4><span class="english-brand">JBL VTX A8</span></h4>
+                            <div class="brand">مصفوفة خطية متميزة</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">الطاقة:</span><span class="spec-value">2000W (Class-D)</span></li>
+                        <li><span class="spec-label">أقصى SPL:</span><span class="spec-value">138 دB</span></li>
+                        <li><span class="spec-label">الاستجابة الترددية:</span><span class="spec-value">58 هرتز - 20 كيلو هرتز</span></li>
+                        <li><span class="spec-label">التغطية:</span><span class="spec-value">90° أفقي × 7.5° عمودي</span></li>
+                        <li><span class="spec-label">الوزن:</span><span class="spec-value">31 كغ (68 رطل)</span></li>
+                        <li><span class="spec-label">الشبكات:</span><span class="spec-value">HiQnet + AES/EBU</span></li>
+                        <li><span class="spec-label">المعالجة الرقمية:</span><span class="spec-value">معالجة متقدمة</span></li>
+                        <li><span class="spec-label">سعر 2025:</span><span class="spec-value">8,500$/عنصر</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>موصى به لـ:</strong> الحزمة المتميزة فقط. أداء وميزات بدرجة الجولات الموسيقية.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mixing-consoles">
+            <h2>🎛️ ميسكرات الصوت الرقمية</h2>
+            
+            <div class="spec-section">
+                <h3>ميسكرات رقمية مزودة بالشبكة (قابلة للتحكم عن بُعد)</h3>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>الموديل</th>
+                            <th>القنوات</th>
+                            <th>التسجيل</th>
+                            <th>الشبكة</th>
+                            <th>التحكم عن بُعد</th>
+                            <th>نطاق السعر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><span class="english-brand">Allen & Heath dLive C1500</span></strong></td>
+                            <td>32 دخل / 16 خلط</td>
+                            <td>32×32 USB-C</td>
+                            <td>Dante, TCP/IP</td>
+                            <td>تحكم ويب كامل</td>
+                            <td>3,200$ - 3,800$</td>
+                        </tr>
+                        <tr>
+                            <td><strong><span class="english-brand">Behringer WING</span></strong></td>
+                            <td>48 دخل / 16 قناة</td>
+                            <td>32×32 USB/Dante</td>
+                            <td>WiFi, Ethernet</td>
+                            <td>تطبيق جوال + ويب</td>
+                            <td>2,100$ - 2,400$</td>
+                        </tr>
+                        <tr>
+                            <td><strong><span class="english-brand">Midas M32</span></strong></td>
+                            <td>32 دخل / 16 قناة</td>
+                            <td>32×32 USB</td>
+                            <td>بروتوكول X32-Edit</td>
+                            <td>برنامج M32-Edit</td>
+                            <td>3,800$ - 4,200$</td>
+                        </tr>
+                        <tr>
+                            <td><strong><span class="english-brand">Yamaha TF5</span></strong></td>
+                            <td>32 دخل / 16 خلط</td>
+                            <td>32×32 Dante</td>
+                            <td>شبكة Dante</td>
+                            <td>تطبيق TF StageMix</td>
+                            <td>4,500$ - 5,000$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="compatibility">
+            <h2>🔗 مصفوفة توافق النظام</h2>
+            
+            <div class="compatibility-matrix">
+                <h3>📊 تحليل قابلية التشغيل البيني</h3>
+                <p>تم اختبار جميع المعدات الموصى بها من حيث التوافق وتحسينها لمتطلبات التركيب السوري:</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <h4>🌐 تكامل الشبكة</h4>
+                        <ul>
+                            <li>جميع الميسكرات الرقمية تدعم التحكم TCP/IP</li>
+                            <li>متطلبات 1-3 Mbps من عرض النطاق (متوافق مع سوريا)</li>
+                            <li>تشفير نفق VPN للأمان</li>
+                            <li>واجهة ويب للوصول الشامل</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>⚡ متطلبات الطاقة</h4>
+                        <ul>
+                            <li>أنظمة QSC: 220V 50Hz (المعيار السوري)</li>
+                            <li>إجمالي الطاقة: ~16kW للنظام الكامل</li>
+                            <li>موصى به: دوائر 2×30A @ 220V</li>
+                            <li>UPS احتياطي للمكونات الرقمية</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>🔧 توافق التركيب</h4>
+                        <ul>
+                            <li>اتصال XLR معياري في جميع أنحاء النظام</li>
+                            <li>أنظمة تعليق نمطية للمصفوفات الخطية</li>
+                            <li>خيارات تكديس أرضي أو تعليق متاحة</li>
+                            <li>دعم الموزع المحلي في المنطقة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support">
+            <h2>🛠️ الدعم الفني والضمان</h2>
+            
+            <div class="spec-section">
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <h4>🏭 دعم الشركة المصنعة</h4>
+                        <ul>
+                            <li><strong>Sennheiser:</strong> ضمان سنتان، مركز خدمة الشرق الأوسط</li>
+                            <li><strong>QSC:</strong> ضمان 6 سنوات، شبكة موزعين إقليمية</li>
+                            <li><strong>Shure:</strong> ضمان سنتان، شركاء خدمة معتمدون</li>
+                            <li><strong>Allen & Heath:</strong> ضمان 3 سنوات، دعم إقليمي</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>📞 الدعم عن بُعد</h4>
+                        <ul>
+                            <li><strong>الدعم الفني من الولايات المتحدة</strong> مشمول</li>
+                            <li><strong>المراقبة عن بُعد 24/7</strong> قابلية</li>
+                            <li><strong>تحديثات البرامج الثابتة</strong> عبر الإنترنت</li>
+                            <li><strong>استكشاف الأخطاء وإصلاحها</strong> عبر مكالمة فيديو</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>📦 استراتيجية قطع الغيار</h4>
+                        <ul>
+                            <li><strong>المكونات الحرجة:</strong> قطعة غيار واحدة لكل 10 وحدات</li>
+                            <li><strong>البطاريات:</strong> مجموعتان كاملتان مشمولتان</li>
+                            <li><strong>الكابلات:</strong> 25% كابلات XLR/طاقة احتياطية</li>
+                            <li><strong>طقم الإصلاح الطارئ</strong> مع الأدوات</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">📋 الوثائق ذات الصلة</h3>
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🏠 الموقع الرئيسي</a>
+            <a href="./technical-study-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🎓 الدراسة الفنية</a>
+            <a href="./shipping-guide-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🚢 دليل الشحن</a>
+            <a href="./vendor-rfq-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">📢 طلب عروض الأسعار</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>مواصفات المعدات - نظام الصوتيات لوزارة الداخلية السورية</strong></p>
+            <p>تحليل المعدات الصوتية المهنية | عبي سكر | يناير 2025</p>
+            <p>محدث بتسعير 2025 ومواصفات التوافق</p>
+        </div>
+    </footer>
+</body>
+</html>

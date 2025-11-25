@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة التسوق الكاملة: نظام الصوتيات لوزارة الداخلية السورية - معدات صوتية مهنية 2025</title>
+    <link rel="stylesheet" href="./css/separate-pages.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+    
+    <style>
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .package-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        
+        .package-card.recommended {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff9c4, #ffffff);
+        }
+        
+        .package-card.value {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #d4edda, #ffffff);
+        }
+        
+        .package-card.emergency {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #f8d7da, #ffffff);
+        }
+        
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .package-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .package-badge {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .package-badge.recommended {
+            background: #ffc107;
+            color: #000;
+        }
+        
+        .package-badge.value {
+            background: #28a745;
+        }
+        
+        .package-badge.emergency {
+            background: #dc3545;
+        }
+        
+        .price-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .main-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e74c3c;
+            line-height: 1;
+        }
+        
+        .price-breakdown {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .equipment-section {
+            margin: 20px 0;
+        }
+        
+        .section-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .equipment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .equipment-table th {
+            background: #f8f9fa;
+            padding: 8px;
+            text-align: right;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 600;
+        }
+        
+        .equipment-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: right;
+        }
+        
+        .equipment-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 4px 0;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .feature-list li::before {
+            content: "✅";
+            position: absolute;
+            right: 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .highlight-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .professional-services {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+            margin: 10px 0;
+        }
+        
+        .english-brand {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="./complete-shopping-list-ar.html" class="lang-link active">🇸🇾 العربية</a>
+        <a href="./complete-shopping-list-en.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🛒 قائمة التسوق الكاملة: نظام الصوتيات لوزارة الداخلية السورية</h1>
+            <p class="subtitle">معدات الصوت المهنية مع تسعير 2025 والشحن إلى سوريا</p>
+            
+            <div class="info-box">
+                <strong>المشروع:</strong> نظام صوتي مهني مع صوت لاسلكي ومصفوفة خطية<br>
+                <strong>العميل:</strong> وزارة الداخلية السورية<br>
+                <strong>محدث:</strong> يناير 2025 مع التسعير الحالي<br>
+                <strong>العملة:</strong> دولار أمريكي (الأسعار تشمل المعدات + الشحن)<br>
+                <strong>التغطية:</strong> خيارات سعة 800-3000 شخص
+            </div>
+        </header>
+
+        <nav style="text-align: center; margin: 20px 0;">
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🏠 الصفحة الرئيسية</a>
+            <a href="./technical-study-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">📋 الدراسة الفنية</a>
+            <a href="./equipment-specs-ar.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">📊 مواصفات المعدات</a>
+        </nav>
+
+        <section class="system-requirements">
+            <h2>🎯 ملخص متطلبات النظام</h2>
+            <div class="highlight-box">
+                <div class="package-grid">
+                    <div>
+                        <h4>🎤 متطلبات الميكروفونات</h4>
+                        <ul class="feature-list">
+                            <li>4-6 ميكروفونات لاسلكية (قدرة مزدوجة: طوق أو يدوي)</li>
+                            <li>2 ميكروفون سلكي (اختياري للمواضع الثابتة مثل المنصات)</li>
+                            <li>جودة مهنية مع أمان مناسب للحكومة</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>🎧 متطلبات المراقبة والتحكم</h4>
+                        <ul class="feature-list">
+                            <li>2 نظام سماعات مراقبة داخلية (مدى ممتد للتغطية الكاملة)</li>
+                            <li>وحدة تحكم رقمية مع قدرة التحكم عن بُعد</li>
+                            <li>قدرة تسجيل متعدد المسارات 32 قناة <span class="english-brand">USB</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="package-grid">
+                    <div>
+                        <h4>🔊 تعزيز الصوت</h4>
+                        <ul class="feature-list">
+                            <li>نظام المصفوفة الخطية (خفيف الوزن، قابل للتركيب على الجسور)</li>
+                            <li>مكبرات الصوت المنخفض للتغطية الترددية الكاملة</li>
+                            <li>خيارات تغطية 800-3000 شخص</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>🌐 التشغيل عن بُعد</h4>
+                        <ul class="feature-list">
+                            <li>تحكم كامل عن بُعد من الولايات المتحدة (يتطلب 1-3 ميجابايت/ثانية إنترنت)</li>
+                            <li>وحدة تحكم رقمية مزودة بالشبكة</li>
+                            <li>أمان <span class="english-brand">VPN</span> للتركيبات الحكومية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="package-options">
+            <h2>📦 خيارات الحزم الكاملة (تسعير 2025)</h2>
+            
+            <div class="package-grid">
+                <!-- حزمة البقاء للميزانية المحدودة جداً -->
+                <div class="package-card emergency">
+                    <div class="package-header">
+                        <h3 class="package-title">🚨 حزمة البقاء للميزانية المحدودة جداً</h3>
+                        <span class="package-badge emergency">طوارئ فقط</span>
+                    </div>
+                    
+                    <div class="price-display">
+                        <div class="main-price">24,500$</div>
+                        <div class="price-breakdown">المعدات: 21,500$ + الشحن: 3,000$</div>
+                    </div>
+
+                    <div class="equipment-section">
+                        <div class="section-title">🎤 النظام اللاسلكي - تناظري أساسي</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>السعر</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1,600$</td><td>4 أنظمة</td><td><span class="english-brand">Audio-Technica/Samson UHF</span> لاسلكي (تناظري)</td></tr>
+                                <tr><td>200$</td><td>2</td><td><span class="english-brand">Shure SM58</span> ميكروفونات سلكية</td></tr>
+                                <tr><td>800$</td><td>2</td><td>نظام مراقبة أساسي</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="section-title">🔊 نظام الصوت - <span class="english-brand">PA</span> أساسي</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>السعر</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>3,200$</td><td>4</td><td>سماعات <span class="english-brand">PA</span> (مدعومة)</td></tr>
+                                <tr><td>2,400$</td><td>2</td><td>مكبرات الصوت المنخفض (أساسي)</td></tr>
+                                <tr><td>1,500$</td><td>1</td><td>ميسكر رقمي أساسي</td></tr>
+                                <tr><td>800$</td><td>1 مجموعة</td><td>كابلات وملحقات</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <ul class="feature-list" style="margin-top: 15px;">
+                            <li><strong>السعة:</strong> 800-1000 شخص كحد أقصى</li>
+                            <li><strong>الجودة:</strong> أساسية لكن وظيفية</li>
+                            <li><strong>الأفضل لـ:</strong> واقع الميزانية بعد الحرب</li>
+                            <li><strong>القيود:</strong> مدى محدود، جودة أساسية، إعداد معقد</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- الحزمة المتوسطة المميزة -->
+                <div class="package-card recommended">
+                    <div class="package-header">
+                        <h3 class="package-title">⭐ الحزمة المتوسطة المميزة</h3>
+                        <span class="package-badge recommended">أفضل قيمة</span>
+                    </div>
+                    
+                    <div class="price-display">
+                        <div class="main-price">45,920$</div>
+                        <div class="price-breakdown">المعدات: 41,920$ + الشحن: 4,000$</div>
+                    </div>
+
+                    <div class="equipment-section">
+                        <div class="section-title">🎤 <span class="english-brand">Sennheiser EW-D</span> رقمي لاسلكي (4 قنوات + 2 سلكي)</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>المجموع</th><th>سعر الوحدة</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2,200$</td><td>1,100$</td><td>2</td><td><span class="english-brand">EW-D EM 2</span> مستقبل قناة مزدوجة</td></tr>
+                                <tr><td>2,200$</td><td>550$</td><td>4</td><td><span class="english-brand">EW-D SKM-S</span> أجهزة إرسال يدوية (<span class="english-brand">e835</span>)</td></tr>
+                                <tr><td>2,000$</td><td>500$</td><td>4</td><td><span class="english-brand">EW-D SK</span> أجهزة إرسال <span class="english-brand">Bodypack</span></td></tr>
+                                <tr><td>520$</td><td>130$</td><td>4</td><td><span class="english-brand">ME 2-II</span> ميكروفونات طوق</td></tr>
+                                <tr><td>520$</td><td>65$</td><td>8</td><td><span class="english-brand">BA 70</span> بطاريات قابلة للشحن</td></tr>
+                                <tr><td>440$</td><td>220$</td><td>2</td><td><span class="english-brand">L 70 USB</span> مجموعات الشاحن</td></tr>
+                                <tr><td>320$</td><td>160$</td><td>2</td><td><span class="english-brand">Shure SM58</span> ميكروفونات سلكية + حوامل</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="section-title">🎧 <span class="english-brand">Sennheiser EW IEM G4</span> نظام المراقبة</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>المجموع</th><th>سعر الوحدة</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1,400$</td><td>700$</td><td>2</td><td><span class="english-brand">SR IEM G4</span> جهاز إرسال ستيريو</td></tr>
+                                <tr><td>1,300$</td><td>650$</td><td>2</td><td><span class="english-brand">EK IEM G4</span> مستقبل <span class="english-brand">Bodypack</span></td></tr>
+                                <tr><td>220$</td><td>110$</td><td>2</td><td><span class="english-brand">IE 40 PRO</span> سماعات مراقبة داخلية</td></tr>
+                                <tr><td>320$</td><td>320$</td><td>1</td><td><span class="english-brand">A 2003-UHF</span> مجموعة هوائي</td></tr>
+                                <tr><td>360$</td><td>360$</td><td>1 مجموعة</td><td>بطاريات قابلة للشحن وشاحن</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="section-title">🔊 <span class="english-brand">QSC KLA12</span> مصفوفة خطية + مكبرات الصوت المنخفض</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>المجموع</th><th>سعر الوحدة</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>19,800$</td><td>1,650$</td><td>12</td><td><span class="english-brand">KLA12</span> عناصر المصفوفة الخطية النشطة</td></tr>
+                                <tr><td>3,900$</td><td>1,950$</td><td>2</td><td><span class="english-brand">KW181</span> مكبرات الصوت المنخفض النشطة (18")</td></tr>
+                                <tr><td>1,350$</td><td>450$</td><td>3 مجموعات</td><td><span class="english-brand">KLA AF</span> إطارات طائرة وتركيبات</td></tr>
+                                <tr><td>2,500$</td><td>2,500$</td><td>1</td><td>ميسكر رقمي مزود بالشبكة</td></tr>
+                                <tr><td>1,500$</td><td>1,500$</td><td>1 مجموعة</td><td>كابلات، طاقة، ملحقات</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <ul class="feature-list" style="margin-top: 15px;">
+                            <li><strong>السعة:</strong> 2000 شخص مع تغطية ممتازة</li>
+                            <li><strong>الجودة:</strong> أنظمة مهنية درجة حكومية</li>
+                            <li><strong>التحكم عن بُعد:</strong> قدرة دعم كاملة من الولايات المتحدة</li>
+                            <li><strong>الأمان:</strong> أنظمة رقمية مع تشفير</li>
+                            <li><strong>الضمان:</strong> ضمان الشركة المصنعة 2-6 سنوات</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- حزمة 3000 شخص المحسنة -->
+                <div class="package-card value">
+                    <div class="package-header">
+                        <h3 class="package-title">🏛️ حزمة 3000 شخص المحسنة</h3>
+                        <span class="package-badge value">للمناسبات الكبيرة</span>
+                    </div>
+                    
+                    <div class="price-display">
+                        <div class="main-price">51,420$</div>
+                        <div class="price-breakdown">المعدات: 47,420$ + الشحن: 4,000$</div>
+                    </div>
+
+                    <div class="equipment-section">
+                        <div class="section-title">🎤 نفس النظام اللاسلكي المهني (تكوين 4+2)</div>
+                        <p style="font-style: italic; color: #6c757d;">مطابق للحزمة المتوسطة المميزة: 8,200$</p>
+                        
+                        <div class="section-title">🎧 نفس نظام المراقبة</div>
+                        <p style="font-style: italic; color: #6c757d;">مطابق للحزمة المتوسطة المميزة: 3,600$</p>
+                        
+                        <div class="section-title">🔊 نظام الصوت الموزع المحسن</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>التكلفة</th><th>التغطية</th><th>الغرض</th><th>المكون</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>25,050$</td>
+                                    <td>أول 2000 شخص</td>
+                                    <td>التغطية الأساسية</td>
+                                    <td><strong>المصفوفة الخطية الرئيسية</strong><br>12 × <span class="english-brand">QSC KLA12</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7,200$</td>
+                                    <td>1000 شخص إضافي</td>
+                                    <td>تغطية المنطقة الخلفية</td>
+                                    <td><strong>أبراج التأخير</strong><br>4 × <span class="english-brand">QSC K12.2</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1,500$</td>
+                                    <td>صوت متزامن</td>
+                                    <td>محاذاة الوقت</td>
+                                    <td><strong>معالجة التأخير الرقمية</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>2,870$</td>
+                                    <td>إدارة عن بُعد</td>
+                                    <td>تحكم النظام</td>
+                                    <td><strong>ميسكر شبكة متقدم</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <ul class="feature-list" style="margin-top: 15px;">
+                            <li><strong>السعة:</strong> 3000 شخص مع تغطية موحدة</li>
+                            <li><strong>التكنولوجيا:</strong> تصميم النظام الموزع الهجين</li>
+                            <li><strong>التغطية:</strong> 80م × 60م (4800 متر مربع)</li>
+                            <li><strong>الجودة:</strong> معيار المؤتمرات/الفعاليات المهنية</li>
+                            <li><strong>قابلية التوسع:</strong> تصميم نمطي للتوسع السهل</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- الحزمة المتميزة -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">👑 الحزمة المتميزة</h3>
+                        <span class="package-badge">أعلى جودة</span>
+                    </div>
+                    
+                    <div class="price-display">
+                        <div class="main-price">68,010$</div>
+                        <div class="price-breakdown">المعدات: 63,010$ + الشحن: 5,000$</div>
+                    </div>
+
+                    <div class="equipment-section">
+                        <div class="section-title">🎤 <span class="english-brand">Shure ULXD</span> رقمي لاسلكي (24-bit)</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>المجموع</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>6,900$</td><td>3</td><td><span class="english-brand">ULXD4D</span> مستقبلات قناة مزدوجة</td></tr>
+                                <tr><td>8,700$</td><td>6 كل</td><td><span class="english-brand">ULXD2</span> يدوي + <span class="english-brand">ULXD1</span> حزام</td></tr>
+                                <tr><td>2,400$</td><td>مجموعة كاملة</td><td>ميكروفونات متميزة، بطاريات، شواحن</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="section-title">🎧 <span class="english-brand">Shure PSM 1000</span> نظام المراقبة</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>المجموع</th><th>الكمية</th><th>العنصر</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>6,600$</td><td>2 + 2</td><td><span class="english-brand">P10T</span> أجهزة إرسال + <span class="english-brand">P10R</span> مستقبلات</td></tr>
+                                <tr><td>1,100$</td><td>2</td><td><span class="english-brand">SE535</span> سماعات ثلاثية التشغيل</td></tr>
+                                <tr><td>850$</td><td>1</td><td><span class="english-brand">UA874</span> نظام هوائي نشط</td></tr>
+                                <tr><td>650$</td><td>مجموعة كاملة</td><td>بطاريات، شواحن، ملحقات</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="section-title">🔊 <span class="english-brand">JBL VTX A8</span> أو <span class="english-brand">d&b Y-Series</span> مصفوفة خطية</div>
+                        <table class="equipment-table">
+                            <thead>
+                                <tr><th>التكلفة</th><th>الخصائص</th><th>خيار النظام</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>30,800$</td>
+                                    <td>2100W لكل عنصر، 136 ديسيبل</td>
+                                    <td><strong><span class="english-brand">JBL VTX A8</span></strong><br>6 عناصر + 2 مكبر صوت منخفض</td>
+                                </tr>
+                                <tr>
+                                    <td>32,200$</td>
+                                    <td>11 كيلو لكل عنصر (الأخف!)</td>
+                                    <td><strong><span class="english-brand">d&b Y-Series</span></strong><br>8 عناصر + 2 مكبر صوت منخفض</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <ul class="feature-list" style="margin-top: 15px;">
+                            <li><strong>جودة الصوت:</strong> رقمي نقي 24-bit/48kHz</li>
+                            <li><strong>المدى:</strong> 150م+ مع أنظمة هوائي نشطة</li>
+                            <li><strong>السعة:</strong> 2000+ شخص مع وضوح متميز</li>
+                            <li><strong>المميزات:</strong> تشفير <span class="english-brand">AES-256</span>، شبكات <span class="english-brand">Dante</span></li>
+                            <li><strong>الدعم:</strong> دعم متميز من الشركة المصنعة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- جدول مقارنة الحزم -->
+        <section class="comparison">
+            <h2>📊 مصفوفة مقارنة الحزم</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>المتميزة</th>
+                        <th>المحسنة 3000</th>
+                        <th>المتوسطة المميزة ⭐</th>
+                        <th>الميزانية المحدودة</th>
+                        <th>الميزة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>68,010$</strong></td>
+                        <td><strong>51,420$</strong></td>
+                        <td><strong>45,920$</strong></td>
+                        <td><strong>24,500$</strong></td>
+                        <td><strong>إجمالي التكلفة</strong></td>
+                    </tr>
+                    <tr>
+                        <td>6 رقمي (24-bit)</td>
+                        <td>4 رقمي + 2 سلكي</td>
+                        <td>4 رقمي + 2 سلكي</td>
+                        <td>4 تناظري + 2 سلكي</td>
+                        <td><strong>قنوات الميكروفون</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2000+ شخص</td>
+                        <td>3000 شخص</td>
+                        <td>2000 شخص</td>
+                        <td>800-1000 شخص</td>
+                        <td><strong>سعة المكان</strong></td>
+                    </tr>
+                    <tr>
+                        <td>نقي (24-bit)</td>
+                        <td>ممتاز (رقمي)</td>
+                        <td>ممتاز (رقمي)</td>
+                        <td>أساسي (تناظري)</td>
+                        <td><strong>جودة الصوت</strong></td>
+                    </tr>
+                    <tr>
+                        <td>دعم كامل من الولايات المتحدة</td>
+                        <td>دعم كامل من الولايات المتحدة</td>
+                        <td>دعم كامل من الولايات المتحدة</td>
+                        <td>محدود</td>
+                        <td><strong>التحكم عن بُعد</strong></td>
+                    </tr>
+                    <tr>
+                        <td>12+ ساعة (ليثيوم)</td>
+                        <td>8+ ساعات (قابلة للشحن)</td>
+                        <td>8+ ساعات (قابلة للشحن)</td>
+                        <td>6-8 ساعات (يمكن التخلص منها)</td>
+                        <td><strong>عمر البطارية</strong></td>
+                    </tr>
+                    <tr>
+                        <td>درجة جولة متميزة</td>
+                        <td>درجة المؤتمرات</td>
+                        <td>مناسب للحكومة</td>
+                        <td>أساسي</td>
+                        <td><strong>الدرجة المهنية</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2-5 سنوات</td>
+                        <td>2-6 سنوات</td>
+                        <td>2-6 سنوات</td>
+                        <td>1-2 سنة</td>
+                        <td><strong>الضمان</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- قسم الخدمات المهنية -->
+        <section class="professional-services">
+            <h2>🎓 الخدمات المهنية والتركيب (اختياري)</h2>
+            
+            <div class="highlight-box" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+                <h3 style="color: white; margin-top: 0;">حزمة التركيب الكاملة الشاملة</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>📞 الاستشارة عن بُعد</h4>
+                        <div class="service-price">1,500$</div>
+                        <p>لا سفر - دعم عن بُعد فقط</p>
+                        <ul class="feature-list" style="text-align: right;">
+                            <li>التخطيط قبل التركيب</li>
+                            <li>إرشاد تكوين المعدات</li>
+                            <li>اختبار النظام عن بُعد</li>
+                            <li>دعم المتابعة 30 يوماً</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>🔧 التركيب الأساسي</h4>
+                        <div class="service-price">2,500$</div>
+                        <p>إعداد المعدات + التدريب الأساسي</p>
+                        <ul class="feature-list" style="text-align: right;">
+                            <li>تركيب النظام واختبار</li>
+                            <li>تدريب المشغل الأساسي</li>
+                            <li>توثيق النظام</li>
+                            <li>دعم المتابعة عن بُعد</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>⚙️ التركيب المهني</h4>
+                        <div class="service-price">5,500$</div>
+                        <p>تركيب كامل مع تدريب كامل</p>
+                        <ul class="feature-list" style="text-align: right;">
+                            <li>تركيب النظام الكامل</li>
+                            <li>تدريب شامل (8+ ساعات)</li>
+                            <li>تنسيق الترددات</li>
+                            <li>توثيق بالعربية</li>
+                            <li>دعم 90 يوماً</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>🏆 الحزمة الكاملة</h4>
+                        <div class="service-price">8,500$</div>
+                        <p>خدمة كاملة مع دعم ممتد</p>
+                        <ul class="feature-list" style="text-align: right;">
+                            <li>تركيب مهني</li>
+                            <li>برنامج تدريب ممتد</li>
+                            <li>توثيق كامل بالعربية</li>
+                            <li>دعم عن بُعد 6 أشهر</li>
+                            <li>تحسين النظام</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <p><strong style="color: #fff;">تكاليف السفر (للخدمات في الموقع):</strong> 2,500-4,000$ إضافية</p>
+                <p style="color: #fff; margin: 5px 0;"><strong>خيارات تقاسم التكاليف:</strong> إذا شاركت وزارات متعددة، يمكن تقاسم التكاليف بشكل متناسب</p>
+            </div>
+        </section>
+
+        <!-- التوصيات النهائية -->
+        <section class="recommendations">
+            <h2>🎯 التوصيات النهائية</h2>
+            
+            <div class="highlight-box">
+                <h3>🏆 للاستخدام الحكومي المهني</h3>
+                <p><strong>الحزمة المتوسطة المميزة + التركيب المهني = 54,420$ إجمالي</strong></p>
+                <ul class="feature-list">
+                    <li>45,920$ معدات (شامل الشحن)</li>
+                    <li>5,500$ تركيب مهني</li>
+                    <li>3,000$ تكاليف السفر</li>
+                    <li>مظهر مهني مناسب لاستخدام الوزارة</li>
+                    <li>قدرة التحكم الكاملة عن بُعد من الولايات المتحدة</li>
+                    <li>تسجيل متعدد المسارات 32 قناة</li>
+                    <li>يغطي 2000 شخص بجودة صوت ممتازة</li>
+                    <li>موثوقية 5+ سنوات مع ضمان مهني</li>
+                    <li>أنظمة رقمية مع تشفير درجة حكومية</li>
+                </ul>
+            </div>
+            
+            <div class="package-grid" style="margin-top: 20px;">
+                <div class="highlight-box" style="background: #d4edda; border-color: #28a745;">
+                    <h4>💰 لقيود الميزانية</h4>
+                    <p><strong>الميزانية المحدودة + الدعم عن بُعد = 26,000$ إجمالي</strong></p>
+                    <ul>
+                        <li>يغطي 800-1000 شخص كحد أقصى</li>
+                        <li>جودة أساسية لكن وظيفية</li>
+                        <li>يمكن ترقيته لاحقاً عندما تسمح الميزانية</li>
+                        <li>مناسب لواقع الميزانية بعد الحرب</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box" style="background: #e3f2fd; border-color: #2196f3;">
+                    <h4>🏛️ للفعاليات الكبيرة</h4>
+                    <p><strong>المحسنة 3000 + المهني = 59,920$ إجمالي</strong></p>
+                    <ul>
+                        <li>يغطي 3000 شخص مع تغطية موحدة</li>
+                        <li>تصميم النظام الموزع المتقدم</li>
+                        <li>مثالي للفعاليات الحكومية الكبرى</li>
+                        <li>معيار المؤتمرات المهنية</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <nav style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">📋 الوثائق ذات الصلة</h3>
+            <a href="./index-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🏠 الموقع الرئيسي</a>
+            <a href="./technical-study-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">📋 الدراسة الفنية</a>
+            <a href="./equipment-specs-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">📊 مواصفات المعدات</a>
+            <a href="./shipping-guide-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🚢 دليل الشحن</a>
+            <a href="./vendor-rfq-ar.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">📢 طلب عروض الموردين</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>قائمة التسوق الكاملة - نظام الصوتيات لوزارة الداخلية السورية</strong></p>
+            <p>حلول المعدات الصوتية المهنية | عبي سكر | يناير 2025</p>
+            <p>محدث بتسعير 2025، تكاليف الشحن، واللوائح السورية للاستيراد</p>
+        </div>
+    </footer>
+</body>
+</html>

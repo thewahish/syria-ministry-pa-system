@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Specifications - Syria Ministry PA System Project</title>
+    <link rel="stylesheet" href="./css/separate-pages.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <style>
+        .spec-section {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .spec-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .spec-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .spec-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .equipment-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        
+        .equipment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .equipment-image {
+            width: 80px;
+            height: 60px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        
+        .equipment-title {
+            flex: 1;
+        }
+        
+        .equipment-title h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        .equipment-title .brand {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            font-weight: normal;
+        }
+        
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .spec-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 120px;
+        }
+        
+        .spec-value {
+            color: #34495e;
+            text-align: right;
+        }
+        
+        .package-highlight {
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .compatibility-matrix {
+            background: #fff8e1;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="./equipment-specs-en.html" class="lang-link active">🇺🇸 English</a>
+        <a href="./equipment-specs-ar.html" class="lang-link">🇸🇾 العربية</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>📊 Equipment Specifications</h1>
+            <p class="subtitle">Detailed Technical Specifications and Compatibility Analysis for Syria Ministry PA System</p>
+            
+            <div class="info-box">
+                <strong>Document Type:</strong> Technical Equipment Specifications<br>
+                <strong>Client:</strong> Syria Ministry of Interior<br>
+                <strong>Prepared by:</strong> Obai Sukar - Professional Audio Consultant<br>
+                <strong>Date:</strong> January 2025<br>
+                <strong>Classification:</strong> Equipment Selection and Compatibility Guide
+            </div>
+        </header>
+
+        <nav style="text-align: center; margin: 20px 0;">
+            <a href="./index-en.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🏠 Main Page</a>
+            <a href="./technical-study-en.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🎓 Technical Study</a>
+            <a href="./shipping-guide-en.html" style="color: #3498db; text-decoration: none; margin: 0 10px;">🚢 Shipping Guide</a>
+        </nav>
+
+        <section class="wireless-mics">
+            <h2>🎤 Wireless Microphone Systems</h2>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🎤</div>
+                        <div class="equipment-title">
+                            <h4>Sennheiser EW-D</h4>
+                            <div class="brand">Digital Wireless System</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Frequency Range:</span><span class="spec-value">470-694 MHz</span></li>
+                        <li><span class="spec-label">Dynamic Range:</span><span class="spec-value">134 dB</span></li>
+                        <li><span class="spec-label">Latency:</span><span class="spec-value">1.9 ms</span></li>
+                        <li><span class="spec-label">Battery Life:</span><span class="spec-value">12+ hours</span></li>
+                        <li><span class="spec-label">RF Power:</span><span class="spec-value">10/20/50 mW</span></li>
+                        <li><span class="spec-label">Range:</span><span class="spec-value">100+ meters</span></li>
+                        <li><span class="spec-label">Encryption:</span><span class="spec-value">256-bit AES</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,200/channel</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> Mid-Range VALUE and Premium packages. Government-grade security and reliability.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📻</div>
+                        <div class="equipment-title">
+                            <h4>Shure BLX</h4>
+                            <div class="brand">Analog Wireless System</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Frequency Range:</span><span class="spec-value">518-542 MHz</span></li>
+                        <li><span class="spec-label">Dynamic Range:</span><span class="spec-value">120 dB</span></li>
+                        <li><span class="spec-label">Battery Life:</span><span class="spec-value">14+ hours</span></li>
+                        <li><span class="spec-label">RF Power:</span><span class="spec-value">1/10 mW</span></li>
+                        <li><span class="spec-label">Range:</span><span class="spec-value">90+ meters</span></li>
+                        <li><span class="spec-label">Channels:</span><span class="spec-value">12 compatible</span></li>
+                        <li><span class="spec-label">Setup:</span><span class="spec-value">QuickScan frequency</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$600/channel</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> Budget Professional package. Reliable analog with easy setup.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📱</div>
+                        <div class="equipment-title">
+                            <h4>Audio-Technica ATW</h4>
+                            <div class="brand">Budget Digital System</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Frequency Range:</span><span class="spec-value">2.4 GHz</span></li>
+                        <li><span class="spec-label">Dynamic Range:</span><span class="spec-value">110 dB</span></li>
+                        <li><span class="spec-label">Battery Life:</span><span class="spec-value">8+ hours</span></li>
+                        <li><span class="spec-label">Range:</span><span class="spec-value">60+ meters</span></li>
+                        <li><span class="spec-label">Channels:</span><span class="spec-value">8 compatible</span></li>
+                        <li><span class="spec-label">Setup:</span><span class="spec-value">Auto channel scan</span></li>
+                        <li><span class="spec-label">Interference:</span><span class="spec-value">WiFi avoidance</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$200/channel</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> Ultra-Budget Survival package. Emergency use only.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="line-array">
+            <h2>🔊 Line Array Speaker Systems</h2>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🔊</div>
+                        <div class="equipment-title">
+                            <h4>QSC KLA12</h4>
+                            <div class="brand">Active Line Array Element</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Power:</span><span class="spec-value">1000W (500W LF + 500W HF)</span></li>
+                        <li><span class="spec-label">SPL Max:</span><span class="spec-value">131 dB</span></li>
+                        <li><span class="spec-label">Frequency Response:</span><span class="spec-value">54 Hz - 20 kHz</span></li>
+                        <li><span class="spec-label">Coverage:</span><span class="spec-value">90° H × 12° V</span></li>
+                        <li><span class="spec-label">Weight:</span><span class="spec-value">23 kg (51 lbs)</span></li>
+                        <li><span class="spec-label">Connectors:</span><span class="spec-value">XLR + Link out</span></li>
+                        <li><span class="spec-label">DSP:</span><span class="spec-value">Built-in processing</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,400/element</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> All professional packages. Excellent performance/price ratio.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">📦</div>
+                        <div class="equipment-title">
+                            <h4>QSC KW181</h4>
+                            <div class="brand">Active Subwoofer</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Power:</span><span class="spec-value">1000W amplifier</span></li>
+                        <li><span class="spec-label">SPL Max:</span><span class="spec-value">132 dB</span></li>
+                        <li><span class="spec-label">Frequency Response:</span><span class="spec-value">44 Hz - 150 Hz</span></li>
+                        <li><span class="spec-label">Driver:</span><span class="spec-value">18" high excursion</span></li>
+                        <li><span class="spec-label">Weight:</span><span class="spec-value">37 kg (82 lbs)</span></li>
+                        <li><span class="spec-label">Processing:</span><span class="spec-value">Variable HPF</span></li>
+                        <li><span class="spec-label">Mounting:</span><span class="spec-value">Ground stack/fly</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,760/unit</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> Mid-Range VALUE and Premium packages for full-range coverage.
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-header">
+                        <div class="equipment-image">🎼</div>
+                        <div class="equipment-title">
+                            <h4>JBL VTX A8</h4>
+                            <div class="brand">Premium Line Array</div>
+                        </div>
+                    </div>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Power:</span><span class="spec-value">2000W (Class-D)</span></li>
+                        <li><span class="spec-label">SPL Max:</span><span class="spec-value">138 dB</span></li>
+                        <li><span class="spec-label">Frequency Response:</span><span class="spec-value">58 Hz - 20 kHz</span></li>
+                        <li><span class="spec-label">Coverage:</span><span class="spec-value">90° H × 7.5° V</span></li>
+                        <li><span class="spec-label">Weight:</span><span class="spec-value">31 kg (68 lbs)</span></li>
+                        <li><span class="spec-label">Networking:</span><span class="spec-value">HiQnet + AES/EBU</span></li>
+                        <li><span class="spec-label">DSP:</span><span class="spec-value">Advanced processing</span></li>
+                        <li><span class="spec-label">2025 Price:</span><span class="spec-value">$8,500/element</span></li>
+                    </ul>
+                    <div class="package-highlight">
+                        <strong>Recommended for:</strong> Premium package only. Tour-grade performance and features.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mixing-consoles">
+            <h2>🎛️ Digital Mixing Consoles</h2>
+            
+            <div class="spec-section">
+                <h3>Network-Enabled Digital Mixers (Remote Control Capable)</h3>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Channels</th>
+                            <th>Recording</th>
+                            <th>Network</th>
+                            <th>Remote Control</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Allen & Heath dLive C1500</strong></td>
+                            <td>32 Input / 16 Mix</td>
+                            <td>32×32 USB-C</td>
+                            <td>Dante, TCP/IP</td>
+                            <td>Full web control</td>
+                            <td>$3,200 - $3,800</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Behringer WING</strong></td>
+                            <td>48 Input / 16 Bus</td>
+                            <td>32×32 USB/Dante</td>
+                            <td>WiFi, Ethernet</td>
+                            <td>Mobile app + web</td>
+                            <td>$2,100 - $2,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Midas M32</strong></td>
+                            <td>32 Input / 16 Bus</td>
+                            <td>32×32 USB</td>
+                            <td>X32-Edit protocol</td>
+                            <td>M32-Edit software</td>
+                            <td>$3,800 - $4,200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yamaha TF5</strong></td>
+                            <td>32 Input / 16 Mix</td>
+                            <td>32×32 Dante</td>
+                            <td>Dante networking</td>
+                            <td>TF StageMix app</td>
+                            <td>$4,500 - $5,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="compatibility">
+            <h2>🔗 System Compatibility Matrix</h2>
+            
+            <div class="compatibility-matrix">
+                <h3>📊 Interoperability Analysis</h3>
+                <p>All recommended equipment has been tested for compatibility and optimized for Syrian installation requirements:</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <h4>🌐 Network Integration</h4>
+                        <ul>
+                            <li>All digital mixers support TCP/IP control</li>
+                            <li>1-3 Mbps bandwidth requirement (Syria compatible)</li>
+                            <li>VPN tunnel encryption for security</li>
+                            <li>Web-based interface for universal access</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>⚡ Power Requirements</h4>
+                        <ul>
+                            <li>QSC systems: 220V 50Hz (Syria standard)</li>
+                            <li>Total power: ~16kW for full system</li>
+                            <li>Recommended: 2×30A circuits @ 220V</li>
+                            <li>UPS backup for digital components</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>🔧 Installation Compatibility</h4>
+                        <ul>
+                            <li>Standard XLR connectivity throughout</li>
+                            <li>Modular rigging systems for line arrays</li>
+                            <li>Ground stack or fly options available</li>
+                            <li>Local distributor support in region</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support">
+            <h2>🛠️ Technical Support and Warranty</h2>
+            
+            <div class="spec-section">
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <h4>🏭 Manufacturer Support</h4>
+                        <ul>
+                            <li><strong>Sennheiser:</strong> 2-year warranty, Middle East service center</li>
+                            <li><strong>QSC:</strong> 6-year warranty, regional distributor network</li>
+                            <li><strong>Shure:</strong> 2-year warranty, authorized service partners</li>
+                            <li><strong>Allen & Heath:</strong> 3-year warranty, regional support</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>📞 Remote Support</h4>
+                        <ul>
+                            <li><strong>USA-based technical support</strong> included</li>
+                            <li><strong>24/7 remote monitoring</strong> capability</li>
+                            <li><strong>Firmware updates</strong> via internet</li>
+                            <li><strong>Troubleshooting</strong> via video call</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <h4>📦 Spare Parts Strategy</h4>
+                        <ul>
+                            <li><strong>Critical components:</strong> 1 spare per 10 units</li>
+                            <li><strong>Batteries:</strong> 2× full set included</li>
+                            <li><strong>Cables:</strong> 25% spare XLR/power cables</li>
+                            <li><strong>Emergency repair kit</strong> with tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">📋 Related Documents</h3>
+            <a href="./index-en.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🏠 Main Website</a>
+            <a href="./technical-study-en.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🎓 Technical Study</a>
+            <a href="./shipping-guide-en.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">🚢 Shipping Guide</a>
+            <a href="./vendor-rfq-en.html" style="color: #3498db; text-decoration: none; margin: 0 15px;">📢 Vendor RFQ</a>
+        </nav>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Equipment Specifications - Syria Ministry PA System</strong></p>
+            <p>Professional Audio Equipment Analysis | Obai Sukar | January 2025</p>
+            <p>Updated with 2025 pricing and compatibility specifications</p>
+        </div>
+    </footer>
+</body>
+</html>
