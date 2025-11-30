@@ -1,23 +1,751 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=./index-en.html">
-    <title>Syria Ministry PA System - Professional Audio Solutions</title>
+    <title data-en="Syria Ministry PA System - Professional Audio Solutions | 2025" data-ar="نظام الصوتيات لوزارة الداخلية السورية - حلول الصوت المهنية | 2025">Syria Ministry PA System - Professional Audio Solutions | 2025</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
-</head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f5f7fa;">
-    <h1>🎤 Syria Ministry PA System</h1>
-    <p>Professional Audio Solutions</p>
-    <p>Redirecting to main website...</p>
-    <p>If not redirected automatically, <a href="./index-en.html" style="color: #3498db;">click here for English</a> or <a href="./index-ar.html" style="color: #3498db;">هنا للعربية</a></p>
+    <meta name="author" content="Obai Sukar - Professional Audio Consultant">
     
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .update-badge {
+            background: #e53e3e;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        /* Charts and Images */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .chart-item {
+            text-align: center;
+        }
+        
+        .chart-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .chart-title {
+            margin: 1rem 0;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        
+        /* Equipment Cards */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .equipment-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .equipment-card:hover {
+            border-color: #cbd5e0;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .equipment-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+        
+        /* Pricing Cards - Clean Design */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            border-color: #4299e1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.emergency {
+            border-color: #e53e3e;
+        }
+        
+        .pricing-card.recommended {
+            border-color: #38a169;
+        }
+        
+        .pricing-card.recommended::before {
+            content: attr(data-badge);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #38a169;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 1rem 0;
+        }
+        
+        .price.emergency {
+            color: #e53e3e;
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #38a169;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Buttons - Clean Design */
+        .btn {
+            display: inline-block;
+            background: #4299e1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #4299e1;
+            border: 2px solid #4299e1;
+        }
+        
+        .btn-outline:hover {
+            background: #4299e1;
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #edf2f7;
+            border-left-color: #38a169;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .features {
+            text-align: right;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="🎤 Syria Ministry PA System" data-ar="🎤 نظام الصوتيات لوزارة الداخلية السورية">🎤 Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Professional Audio Solutions for Government Facilities" data-ar="حلول الصوت المهنية للمرافق الحكومية">Professional Audio Solutions for Government Facilities</p>
+            <span class="update-badge" data-en="2025 Updated Pricing" data-ar="تسعير محدث 2025">2025 Updated Pricing</span>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#overview" data-en="🏠 Overview" data-ar="🏠 نظرة عامة">🏠 Overview</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Hero Section -->
+            <div class="section" id="overview">
+                <div style="text-align: center;">
+                    <img src="./assets/heroes/graduation-ceremony-hero.png" alt="Professional PA System for Government Events" class="hero-image">
+                    <h2 style="margin: 2rem 0 1rem;">Professional Audio Solutions for Syrian Graduation Ceremonies</h2>
+                    <p style="font-size: 1.1rem; color: #718096;">Engineered by أبي سكر, built for reliability, designed for memorable graduations</p>
+                </div>
+            </div>
+            
+            <!-- Professional Analytics -->
+            <div class="section">
+                <h2>📊 Professional System Analysis</h2>
+                <div class="chart-grid">
+                    <div class="chart-item">
+                        <img src="./assets/charts/3-tier-comparison-2025.png" alt="3-Tier System Comparison" class="chart-image">
+                        <h3 class="chart-title">3-Tier System Comparison</h3>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/charts/equipment-count-comparison.png" alt="Equipment Analysis" class="chart-image">
+                        <h3 class="chart-title">Equipment Count Analysis</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipment Showcase -->
+            <div class="section">
+                <h2>🎵 Professional Audio Equipment - 2025 Pricing</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="QSC Speaker" class="equipment-image">
+                        <h3>QSC K12.2 Active Speaker</h3>
+                        <p>2000W Class-D power with professional DSP and integrated mixing capabilities</p>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="Professional Setup" class="equipment-image">
+                        <h3>Line Array Configuration</h3>
+                        <p>Professional mounting and deployment for maximum coverage and clarity</p>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/microphones/shure-mx418.png" alt="Professional Microphone" class="equipment-image">
+                        <h3>Digital Wireless Systems</h3>
+                        <p>Sennheiser EW-D with government-grade security and crystal clear audio</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Packages -->
+            <div class="section">
+                <h2>💰 System Packages - 2025 Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card emergency">
+                        <h3>Emergency Package</h3>
+                        <div class="price emergency">$21,500</div>
+                        <div class="price-note">Equipment only - remote support available</div>
+                        <ul class="features">
+                            <li>4 analog wireless microphones + 2 wired</li>
+                            <li>Basic in-ear monitoring systems</li>
+                            <li>PA speakers + subwoofers (no line array)</li>
+                            <li>800-1000 people capacity</li>
+                            <li>Limited remote control</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">View Details</a>
+                    </div>
+                    
+                    <div class="pricing-card recommended" data-badge="RECOMMENDED">
+                        <h3>Mid-Range VALUE</h3>
+                        <div class="price">$41,420</div>
+                        <div class="price-note">Professional graduation ceremony package</div>
+                        <ul class="features">
+                            <li>4 Sennheiser EW-D digital wireless + 2 wired</li>
+                            <li>Professional in-ear monitoring</li>
+                            <li>QSC KLA12 line array system</li>
+                            <li>2000 people capacity</li>
+                            <li>Full remote control from USA</li>
+                            <li>Government-grade security</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">View Details</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Premium Package</h3>
+                        <div class="price">$60,010</div>
+                        <div class="price-note">Complete premium solution</div>
+                        <ul class="features">
+                            <li>6 Sennheiser EW-D digital wireless + 2 wired</li>
+                            <li>Extended-range in-ear monitoring</li>
+                            <li>12x QSC KLA12 line array + 8x delay towers</li>
+                            <li>3000+ people capacity</li>
+                            <li>Distributed sound system</li>
+                            <li>Complete venue coverage</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coverage Analysis -->
+            <div class="section">
+                <h2>📐 Coverage Analysis</h2>
+                <div class="chart-grid">
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier1-portable.png" alt="Tier 1 Coverage" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #4299e1;">Tier 1: Portable (50-150 people)</h4>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier2-standard.png" alt="Tier 2 Coverage" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #38a169;">Tier 2: Standard (150-800 people)</h4>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier3-large.png" alt="Tier 3 Coverage" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #e53e3e;">Tier 3: Large (800+ people)</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="section contact-section">
+                <h2>📞 Ready to Proceed?</h2>
+                <p style="margin: 1rem 0;">Professional technical consultation and project management by Obai Sukar</p>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="mailto:obai@obaisukar.com" class="btn">📧 Contact Engineer</a>
+                    <a href="technical-study.html" class="btn btn-outline">📋 Technical Study</a>
+                    <a href="shipping-guide.html" class="btn btn-outline">🚢 Shipping Guide</a>
+                </div>
+                <div style="background: #f7fafc; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>Remote Technical Support:</strong> Complete installation guidance via video consultation</p>
+                    <p><strong>Project Management:</strong> US-based coordination with Syrian technical teams</p>
+                    <p><strong>Budget Flexibility:</strong> Professional services adaptable to ministry requirements</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- Hero Section -->
+            <div class="section" id="overview-ar">
+                <div style="text-align: center;">
+                    <img src="./assets/heroes/graduation-ceremony-hero.png" alt="نظام PA مهني للفعاليات الحكومية" class="hero-image">
+                    <h2 style="margin: 2rem 0 1rem;">حلول الصوت المهنية لاحتفالات التخرج السورية</h2>
+                    <p style="font-size: 1.1rem; color: #718096;">مُصمم من قبل أبي سكر، مُبني للاعتمادية، مُخطط لذكريات التخرج المميزة</p>
+                </div>
+            </div>
+            
+            <!-- Professional Analytics -->
+            <div class="section">
+                <h2>📊 التحليل المهني للنظام</h2>
+                <div class="chart-grid">
+                    <div class="chart-item">
+                        <img src="./assets/charts/3-tier-comparison-2025.png" alt="مقارنة النظام ثلاثي المستويات" class="chart-image">
+                        <h3 class="chart-title">مقارنة النظام ثلاثي المستويات</h3>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/charts/equipment-count-comparison.png" alt="تحليل المعدات" class="chart-image">
+                        <h3 class="chart-title">تحليل عدد المعدات</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipment Showcase -->
+            <div class="section">
+                <h2>🎵 معدات الصوت المهنية - تسعير 2025</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="سماعة QSC" class="equipment-image">
+                        <h3>QSC K12.2 سماعة نشطة</h3>
+                        <p>قوة 2000 واط من الفئة D مع معالج رقمي مهني وقدرات خلط متكاملة</p>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="إعداد مهني" class="equipment-image">
+                        <h3>تكوين المصفوفة الخطية</h3>
+                        <p>التركيب والنشر المهني لأقصى تغطية ووضوح</p>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="./assets/equipment/microphones/shure-mx418.png" alt="ميكروفون مهني" class="equipment-image">
+                        <h3>الأنظمة اللاسلكية الرقمية</h3>
+                        <p>Sennheiser EW-D بأمان حكومي وصوت واضح تماماً</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Packages -->
+            <div class="section">
+                <h2>💰 حزم النظام - تسعير 2025</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card emergency">
+                        <h3>الحزمة الطارئة</h3>
+                        <div class="price emergency">21,500$</div>
+                        <div class="price-note">المعدات فقط - الدعم عن بُعد متاح</div>
+                        <ul class="features">
+                            <li>4 ميكروفونات لاسلكية تناظرية + 2 سلكية</li>
+                            <li>أنظمة مراقبة داخلية أساسية</li>
+                            <li>سماعات PA + مضخمات (بدون مصفوفة خطية)</li>
+                            <li>سعة 800-1000 شخص</li>
+                            <li>تحكم عن بُعد محدود</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
+                    </div>
+                    
+                    <div class="pricing-card recommended" data-badge="موصى به">
+                        <h3>القيمة المتوسطة</h3>
+                        <div class="price">41,420$</div>
+                        <div class="price-note">حزمة احتفال التخرج المهنية</div>
+                        <ul class="features">
+                            <li>4 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
+                            <li>مراقبة داخلية مهنية</li>
+                            <li>نظام مصفوفة خطية QSC KLA12</li>
+                            <li>سعة 2000 شخص</li>
+                            <li>تحكم كامل عن بُعد من الولايات المتحدة</li>
+                            <li>أمان حكومي</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>الحزمة المتميزة</h3>
+                        <div class="price">60,010$</div>
+                        <div class="price-note">حل متميز كامل</div>
+                        <ul class="features">
+                            <li>6 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
+                            <li>مراقبة داخلية ممتدة المدى</li>
+                            <li>12x مصفوفة خطية QSC KLA12 + 8x أبراج تأخير</li>
+                            <li>سعة 3000+ شخص</li>
+                            <li>نظام صوتي موزع</li>
+                            <li>تغطية كاملة للمكان</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coverage Analysis -->
+            <div class="section">
+                <h2>📐 تحليل التغطية</h2>
+                <div class="chart-grid">
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier1-portable.png" alt="تغطية المستوى الأول" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #4299e1;">المستوى الأول: محمول (50-150 شخص)</h4>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier2-standard.png" alt="تغطية المستوى الثاني" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #38a169;">المستوى الثاني: قياسي (150-800 شخص)</h4>
+                    </div>
+                    <div class="chart-item">
+                        <img src="./assets/diagrams/coverage-tier3-large.png" alt="تغطية المستوى الثالث" class="chart-image">
+                        <h4 style="margin: 1rem 0; color: #e53e3e;">المستوى الثالث: كبير (800+ شخص)</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="section contact-section">
+                <h2>📞 مستعد للمتابعة؟</h2>
+                <p style="margin: 1rem 0;">استشارة فنية مهنية وإدارة مشاريع من قبل أبي سكر</p>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="mailto:obai@obaisukar.com" class="btn">📧 اتصل بالمهندس</a>
+                    <a href="technical-study.html" class="btn btn-outline">📋 الدراسة الفنية</a>
+                    <a href="shipping-guide.html" class="btn btn-outline">🚢 دليل الشحن</a>
+                </div>
+                <div style="background: #f7fafc; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>الدعم الفني عن بُعد:</strong> إرشادات التركيب الكاملة عبر استشارة الفيديو</p>
+                    <p><strong>إدارة المشاريع:</strong> التنسيق من الولايات المتحدة مع الفرق الفنية السورية</p>
+                    <p><strong>مرونة الميزانية:</strong> خدمات مهنية قابلة للتكيف مع متطلبات الوزارة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p data-en="© 2025 Syria Ministry PA System Project | Professional Audio Engineering by Obai Sukar" data-ar="© 2025 مشروع نظام الصوتيات لوزارة الداخلية السورية | هندسة صوتية مهنية من أبي سكر">© 2025 Syria Ministry PA System Project | Professional Audio Engineering by Obai Sukar</p>
+            <p data-en="Technical Support: obai@obaisukar.com" data-ar="الدعم الفني: obai@obaisukar.com">Technical Support: obai@obaisukar.com</p>
+        </div>
+    </div>
+
     <script>
-        // Fallback redirect in case meta refresh doesn't work
-        setTimeout(function() {
-            window.location.href = './index-en.html';
-        }, 1000);
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            // Update recommended badges
+            const recommendedCards = document.querySelectorAll('.pricing-card.recommended');
+            recommendedCards.forEach(card => {
+                const badge = lang === 'ar' ? 'موصى به' : 'RECOMMENDED';
+                card.setAttribute('data-badge', badge);
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
     </script>
 </body>
 </html>

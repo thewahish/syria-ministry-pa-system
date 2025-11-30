@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Installation Guide - Syria Ministry PA System" data-ar="دليل التركيب - نظام PA وزارة الداخلية السورية">Installation Guide - Syria Ministry PA System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Installation Timeline */
+        .timeline-container {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            background: white;
+            border: 2px solid #4299e1;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            position: relative;
+            padding-left: 4rem;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: attr(data-day);
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #4299e1;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-desc {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-tasks {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .timeline-tasks li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-tasks li:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-tasks li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        /* Phase Headers */
+        .phase-header {
+            background: #1a202c;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Task Grid */
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .task-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-color: #4299e1;
+        }
+        
+        .task-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .task-icon {
+            font-size: 1.5rem;
+        }
+        
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .task-list li {
+            padding: 0.3rem 0;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        /* Service Options */
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-card.recommended {
+            border-color: #38a169;
+        }
+        
+        .service-card.remote {
+            border-color: #4299e1;
+        }
+        
+        .service-card.premium {
+            border-color: #805ad5;
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .service-badge.recommended {
+            background: #38a169;
+        }
+        
+        .service-badge.remote {
+            background: #4299e1;
+        }
+        
+        .service-badge.premium {
+            background: #805ad5;
+        }
+        
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .service-price.recommended {
+            color: #38a169;
+        }
+        
+        .service-price.remote {
+            color: #4299e1;
+        }
+        
+        .service-price.premium {
+            color: #805ad5;
+        }
+        
+        /* Tools & Requirements */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .req-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .req-section h4 {
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .req-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .req-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .req-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .req-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+            font-weight: bold;
+        }
+        
+        /* Safety Guidelines */
+        .safety-warning {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .safety-warning h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .safety-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .safety-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .safety-list li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Remote Support Section */
+        .remote-support {
+            background: #e6f3ff;
+            border: 2px solid #4299e1;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .remote-support h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .timeline-item {
+            padding-right: 4rem;
+            padding-left: 2rem;
+        }
+        
+        [dir="rtl"] .timeline-item::before {
+            right: -20px;
+            left: auto;
+        }
+        
+        [dir="rtl"] .timeline-tasks li {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .timeline-tasks li::before {
+            right: 0;
+            left: auto;
+        }
+        
+        [dir="rtl"] .req-list li {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .req-list li::before {
+            right: 0;
+            left: auto;
+        }
+        
+        [dir="rtl"] .safety-list li {
+            padding-right: 2rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .safety-list li::before {
+            right: 0;
+            left: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .timeline-item {
+                padding-left: 2rem;
+            }
+            
+            .timeline-item::before {
+                left: -15px;
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="⚙️ Installation Guide: Syria Ministry PA System" data-ar="⚙️ دليل التركيب: نظام PA وزارة الداخلية السورية">⚙️ Installation Guide: Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Professional Setup and Configuration Guide for Graduation Ceremonies" data-ar="دليل الإعداد والتكوين المهني لاحتفالات التخرج">Professional Setup and Configuration Guide for Graduation Ceremonies</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Installation Scope:</strong> Complete PA system setup for graduation ceremonies<br>
+                    <strong>Service Options:</strong> Remote guidance, on-site installation, or complete training packages<br>
+                    <strong>Lead Engineer:</strong> أبي سكر - Professional Audio Consultant<br>
+                    <strong>Support:</strong> USA-based remote technical assistance available 24/7<br>
+                    <strong>Timeline:</strong> 2-5 days depending on package and service level selected
+                </div>
+                <div data-lang="ar">
+                    <strong>نطاق التركيب:</strong> إعداد نظام PA كامل لاحتفالات التخرج<br>
+                    <strong>خيارات الخدمة:</strong> الإرشاد عن بُعد، التركيب في الموقع، أو حزم التدريب الكاملة<br>
+                    <strong>كبير المهندسين:</strong> أبي سكر - استشاري صوتي مهني<br>
+                    <strong>الدعم:</strong> المساعدة الفنية عن بُعد من الولايات المتحدة متاحة 24/7<br>
+                    <strong>الجدول الزمني:</strong> 2-5 أيام حسب الحزمة ومستوى الخدمة المختار
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Service Options -->
+            <section class="section">
+                <h2>🛠️ Installation Service Options</h2>
+                <div class="service-options">
+                    <div class="service-card remote">
+                        <div class="service-badge remote">REMOTE</div>
+                        <h3>Remote Consultation</h3>
+                        <div class="service-price remote">$1,500</div>
+                        <p style="margin-bottom: 1rem;">Complete video-guided installation support from USA</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Video call technical guidance</li>
+                            <li>Real-time troubleshooting</li>
+                            <li>Configuration assistance</li>
+                            <li>Documentation in Arabic & English</li>
+                            <li>No travel costs required</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>Best for:</strong> Technically capable local teams</p>
+                    </div>
+                    
+                    <div class="service-card recommended">
+                        <div class="service-badge recommended">RECOMMENDED</div>
+                        <h3>Professional Installation</h3>
+                        <div class="service-price recommended">$5,500</div>
+                        <p style="margin-bottom: 1rem;">Complete on-site installation with training</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>On-site professional setup</li>
+                            <li>System calibration and testing</li>
+                            <li>Local team training</li>
+                            <li>Arabic documentation</li>
+                            <li>3-month remote support</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>Best for:</strong> Most graduation ceremony installations</p>
+                    </div>
+                    
+                    <div class="service-card premium">
+                        <div class="service-badge premium">PREMIUM</div>
+                        <h3>Complete Training Package</h3>
+                        <div class="service-price premium">$8,500</div>
+                        <p style="margin-bottom: 1rem;">Full installation, extended training, and certification</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Complete professional installation</li>
+                            <li>Extended 3-day training program</li>
+                            <li>Technical certification</li>
+                            <li>Comprehensive Arabic documentation</li>
+                            <li>6-month remote support</li>
+                            <li>Graduation ceremony dry run</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>Best for:</strong> Permanent installations requiring full training</p>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center;">
+                    <h3 style="color: #38a169; margin-bottom: 1rem;">💡 Professional Installation Recommendation</h3>
+                    <p>For graduation ceremonies, the <strong>Professional Installation ($5,500)</strong> provides the optimal balance of on-site expertise, local training, and ongoing support to ensure flawless ceremony audio.</p>
+                    <p style="margin-top: 1rem;"><strong>Travel costs:</strong> Additional $2,500-4,000 for USA to Syria travel expenses</p>
+                </div>
+            </section>
+            
+            <!-- Installation Timeline -->
+            <section class="section">
+                <h2>📅 Installation Timeline</h2>
+                <div class="phase-header">Professional Installation Process</div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item" data-day="1">
+                        <div class="timeline-title">Equipment Arrival & Inspection</div>
+                        <div class="timeline-desc">Complete equipment check and venue assessment for graduation ceremony setup.</div>
+                        <ul class="timeline-tasks">
+                            <li>Unpack and inspect all PA equipment</li>
+                            <li>Verify equipment list against order</li>
+                            <li>Conduct venue acoustic assessment</li>
+                            <li>Plan optimal speaker placement for graduation seating</li>
+                            <li>Check power requirements and connections</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="2">
+                        <div class="timeline-title">System Assembly & Setup</div>
+                        <div class="timeline-desc">Professional assembly and initial configuration of the entire PA system.</div>
+                        <ul class="timeline-tasks">
+                            <li>Assemble line array speakers and stands</li>
+                            <li>Install and configure wireless microphone systems</li>
+                            <li>Set up mixing console and processors</li>
+                            <li>Run all audio and power cables</li>
+                            <li>Install in-ear monitoring systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="3">
+                        <div class="timeline-title">Calibration & Testing</div>
+                        <div class="timeline-desc">Professional system tuning and comprehensive testing for graduation ceremony requirements.</div>
+                        <ul class="timeline-tasks">
+                            <li>Audio system calibration using professional meters</li>
+                            <li>EQ adjustment for venue acoustics</li>
+                            <li>Wireless frequency coordination</li>
+                            <li>System integration testing</li>
+                            <li>Remote control setup and testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="4">
+                        <div class="timeline-title">Training & Documentation</div>
+                        <div class="timeline-desc">Comprehensive training for local technicians and ceremony coordinators.</div>
+                        <ul class="timeline-tasks">
+                            <li>Hands-on training for local technical team</li>
+                            <li>Operation procedures for graduation ceremonies</li>
+                            <li>Troubleshooting and basic maintenance</li>
+                            <li>Arabic documentation handover</li>
+                            <li>Emergency contact procedures setup</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="5">
+                        <div class="timeline-title">Final Testing & Handover</div>
+                        <div class="timeline-desc">Final system verification and official handover for graduation ceremony use.</div>
+                        <ul class="timeline-tasks">
+                            <li>Full system graduation ceremony simulation</li>
+                            <li>Final performance verification</li>
+                            <li>Local team competency verification</li>
+                            <li>System handover and acceptance</li>
+                            <li>Remote support activation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Requirements & Tools -->
+            <section class="section">
+                <h2>🔧 Installation Requirements</h2>
+                <div class="requirements-grid">
+                    <div class="req-section">
+                        <h4><span style="color: #4299e1;">⚡</span> Power Requirements</h4>
+                        <ul class="req-list">
+                            <li>240V Syrian standard electrical supply</li>
+                            <li>15-amp dedicated circuits for PA system</li>
+                            <li>UPS backup power recommended</li>
+                            <li>Proper grounding for audio equipment</li>
+                            <li>Power distribution units included</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #38a169;">🏗️</span> Venue Preparation</h4>
+                        <ul class="req-list">
+                            <li>Graduation ceremony seating layout finalized</li>
+                            <li>Speaker mounting points identified</li>
+                            <li>Cable routing paths planned</li>
+                            <li>Mixing position established</li>
+                            <li>Security for equipment overnight</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #e53e3e;">👥</span> Local Team Requirements</h4>
+                        <ul class="req-list">
+                            <li>2-3 technically capable local assistants</li>
+                            <li>Basic English communication ability</li>
+                            <li>Familiarity with graduation ceremony procedures</li>
+                            <li>Access to venue during installation</li>
+                            <li>Transportation and accommodation arranged</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #805ad5;">🔗</span> Connectivity</h4>
+                        <ul class="req-list">
+                            <li>Reliable internet for remote support setup</li>
+                            <li>Ethernet connection to mixing position</li>
+                            <li>Wi-Fi network for wireless monitoring</li>
+                            <li>Video conferencing capability for training</li>
+                            <li>Phone coverage for emergency support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Safety Guidelines -->
+            <section class="section">
+                <h2>⚠️ Safety & Best Practices</h2>
+                <div class="safety-warning">
+                    <h3><span style="font-size: 1.5rem;">🛡️</span> Critical Safety Guidelines</h3>
+                    <ul class="safety-list">
+                        <li><strong>Electrical Safety:</strong> All power connections must be made by qualified electricians</li>
+                        <li><strong>Lifting Equipment:</strong> Use proper lifting techniques for speakers and line arrays</li>
+                        <li><strong>Height Safety:</strong> Secure all overhead installations with proper rigging</li>
+                        <li><strong>Audio Levels:</strong> Never exceed safe SPL limits during testing</li>
+                        <li><strong>Cable Management:</strong> Secure all cables to prevent tripping hazards</li>
+                        <li><strong>Equipment Protection:</strong> Use weather protection if outdoor ceremony</li>
+                    </ul>
+                </div>
+                
+                <div class="task-grid">
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">🎓</span>
+                            Graduation Ceremony Specific
+                        </div>
+                        <ul class="task-list">
+                            <li>Test audio during actual graduation rehearsal</li>
+                            <li>Plan speaker placement for processional music</li>
+                            <li>Configure microphones for multiple speakers</li>
+                            <li>Set up recording capability if requested</li>
+                            <li>Plan for outdoor weather contingency</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">🔧</span>
+                            Technical Checklist
+                        </div>
+                        <ul class="task-list">
+                            <li>All equipment powered up and functional</li>
+                            <li>Wireless systems frequency coordinated</li>
+                            <li>Audio levels optimized for venue</li>
+                            <li>All connections secure and labeled</li>
+                            <li>Remote access configured and tested</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">📚</span>
+                            Documentation
+                        </div>
+                        <ul class="task-list">
+                            <li>System diagram with all connections</li>
+                            <li>Operating procedures in Arabic</li>
+                            <li>Troubleshooting guide provided</li>
+                            <li>Equipment warranty information</li>
+                            <li>Emergency contact information</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Remote Support -->
+            <section class="section">
+                <h2>🌐 Remote Support & Maintenance</h2>
+                <div class="remote-support">
+                    <h3>USA-Based Technical Support</h3>
+                    <p>Complete remote monitoring and support capability for ongoing graduation ceremony operations</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #4299e1; margin-bottom: 1rem;">🖥️ Remote Monitoring</h4>
+                        <ul style="margin-left: 1rem;">
+                            <li>Real-time system status monitoring</li>
+                            <li>Performance analytics and reporting</li>
+                            <li>Proactive maintenance alerts</li>
+                            <li>Remote diagnostics capability</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #38a169; margin-bottom: 1rem;">📞 Emergency Support</h4>
+                        <ul style="margin-left: 1rem;">
+                            <li>24/7 emergency hotline available</li>
+                            <li>Video troubleshooting sessions</li>
+                            <li>Remote system reconfiguration</li>
+                            <li>Graduation day priority support</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #e53e3e; margin-bottom: 1rem;">🔄 Ongoing Maintenance</h4>
+                        <ul style="margin-left: 1rem;">
+                            <li>Quarterly system health checks</li>
+                            <li>Software updates and patches</li>
+                            <li>Annual recalibration services</li>
+                            <li>Equipment upgrade recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- Service Options -->
+            <section class="section">
+                <h2>🛠️ خيارات خدمة التركيب</h2>
+                <div class="service-options">
+                    <div class="service-card remote">
+                        <div class="service-badge remote">عن بُعد</div>
+                        <h3>الاستشارة عن بُعد</h3>
+                        <div class="service-price remote">1,500$</div>
+                        <p style="margin-bottom: 1rem;">دعم التركيب الكامل المُوجه بالفيديو من الولايات المتحدة</p>
+                        <ul style="text-align: right; margin: 1rem 0;">
+                            <li>الإرشاد الفني عبر مكالمة فيديو</li>
+                            <li>استكشاف الأخطاء وإصلاحها في الوقت الفعلي</li>
+                            <li>مساعدة التكوين</li>
+                            <li>التوثيق باللغة العربية والإنجليزية</li>
+                            <li>لا تكاليف سفر مطلوبة</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>الأفضل لـ:</strong> الفرق المحلية القادرة تقنياً</p>
+                    </div>
+                    
+                    <div class="service-card recommended">
+                        <div class="service-badge recommended">موصى به</div>
+                        <h3>التركيب المهني</h3>
+                        <div class="service-price recommended">5,500$</div>
+                        <p style="margin-bottom: 1rem;">التركيب الكامل في الموقع مع التدريب</p>
+                        <ul style="text-align: right; margin: 1rem 0;">
+                            <li>الإعداد المهني في الموقع</li>
+                            <li>معايرة النظام والاختبار</li>
+                            <li>تدريب الفريق المحلي</li>
+                            <li>التوثيق باللغة العربية</li>
+                            <li>الدعم عن بُعد لمدة 3 أشهر</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>الأفضل لـ:</strong> معظم تركيبات احتفالات التخرج</p>
+                    </div>
+                    
+                    <div class="service-card premium">
+                        <div class="service-badge premium">متميز</div>
+                        <h3>حزمة التدريب الكاملة</h3>
+                        <div class="service-price premium">8,500$</div>
+                        <p style="margin-bottom: 1rem;">التركيب الكامل والتدريب الممتد والشهادة</p>
+                        <ul style="text-align: right; margin: 1rem 0;">
+                            <li>التركيب المهني الكامل</li>
+                            <li>برنامج تدريبي ممتد لمدة 3 أيام</li>
+                            <li>الشهادة الفنية</li>
+                            <li>التوثيق الشامل باللغة العربية</li>
+                            <li>الدعم عن بُعد لمدة 6 أشهر</li>
+                            <li>تجربة جافة لاحتفال التخرج</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #718096;"><strong>الأفضل لـ:</strong> التركيبات الدائمة التي تتطلب تدريباً كاملاً</p>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center;">
+                    <h3 style="color: #38a169; margin-bottom: 1rem;">💡 توصية التركيب المهني</h3>
+                    <p>لاحتفالات التخرج، يوفر <strong>التركيب المهني (5,500$)</strong> التوازن الأمثل للخبرة في الموقع والتدريب المحلي والدعم المستمر لضمان صوت مثالي للاحتفال.</p>
+                    <p style="margin-top: 1rem;"><strong>تكاليف السفر:</strong> إضافية 2,500-4,000$ لمصاريف السفر من الولايات المتحدة إلى سوريا</p>
+                </div>
+            </section>
+            
+            <!-- Installation Timeline -->
+            <section class="section">
+                <h2>📅 الجدول الزمني للتركيب</h2>
+                <div class="phase-header">عملية التركيب المهنية</div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item" data-day="1">
+                        <div class="timeline-title">وصول المعدات والفحص</div>
+                        <div class="timeline-desc">فحص شامل للمعدات وتقييم المكان لإعداد احتفال التخرج.</div>
+                        <ul class="timeline-tasks">
+                            <li>إخراج وفحص جميع معدات PA</li>
+                            <li>التحقق من قائمة المعدات مقابل الطلب</li>
+                            <li>إجراء تقييم صوتي للمكان</li>
+                            <li>التخطيط للوضع الأمثل للسماعات لمقاعد التخرج</li>
+                            <li>فحص متطلبات الطاقة والاتصالات</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="2">
+                        <div class="timeline-title">تجميع النظام والإعداد</div>
+                        <div class="timeline-desc">التجميع المهني والتكوين الأولي لنظام PA بأكمله.</div>
+                        <ul class="timeline-tasks">
+                            <li>تجميع سماعات المصفوفة الخطية والحوامل</li>
+                            <li>تركيب وتكوين أنظمة الميكروفونات اللاسلكية</li>
+                            <li>إعداد وحدة التحكم في الخلط والمعالجات</li>
+                            <li>تشغيل جميع كابلات الصوت والطاقة</li>
+                            <li>تركيب أنظمة المراقبة الداخلية</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="3">
+                        <div class="timeline-title">المعايرة والاختبار</div>
+                        <div class="timeline-desc">ضبط النظام المهني والاختبار الشامل لمتطلبات احتفال التخرج.</div>
+                        <ul class="timeline-tasks">
+                            <li>معايرة نظام الصوت باستخدام عدادات مهنية</li>
+                            <li>تعديل EQ لصوتيات المكان</li>
+                            <li>تنسيق تردد اللاسلكي</li>
+                            <li>اختبار تكامل النظام</li>
+                            <li>إعداد واختبار التحكم عن بُعد</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="4">
+                        <div class="timeline-title">التدريب والتوثيق</div>
+                        <div class="timeline-desc">التدريب الشامل للفنيين المحليين ومنسقي الاحتفال.</div>
+                        <ul class="timeline-tasks">
+                            <li>التدريب العملي للفريق التقني المحلي</li>
+                            <li>إجراءات التشغيل لاحتفالات التخرج</li>
+                            <li>استكشاف الأخطاء والصيانة الأساسية</li>
+                            <li>تسليم التوثيق باللغة العربية</li>
+                            <li>إعداد إجراءات الاتصال الطارئ</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item" data-day="5">
+                        <div class="timeline-title">الاختبار النهائي والتسليم</div>
+                        <div class="timeline-desc">التحقق النهائي من النظام والتسليم الرسمي لاستخدام احتفال التخرج.</div>
+                        <ul class="timeline-tasks">
+                            <li>محاكاة كاملة لاحتفال التخرج للنظام</li>
+                            <li>التحقق من الأداء النهائي</li>
+                            <li>التحقق من كفاءة الفريق المحلي</li>
+                            <li>تسليم النظام والقبول</li>
+                            <li>تفعيل الدعم عن بُعد</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Requirements & Tools -->
+            <section class="section">
+                <h2>🔧 متطلبات التركيب</h2>
+                <div class="requirements-grid">
+                    <div class="req-section">
+                        <h4><span style="color: #4299e1;">⚡</span> متطلبات الطاقة</h4>
+                        <ul class="req-list">
+                            <li>إمداد كهربائي 240 فولت المعيار السوري</li>
+                            <li>دوائر مخصصة 15 أمبير لنظام PA</li>
+                            <li>طاقة احتياطية UPS موصى بها</li>
+                            <li>تأريض مناسب لمعدات الصوت</li>
+                            <li>وحدات توزيع الطاقة مدرجة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #38a169;">🏗️</span> إعداد المكان</h4>
+                        <ul class="req-list">
+                            <li>تخطيط مقاعد احتفال التخرج مكتمل</li>
+                            <li>نقاط تركيب السماعات محددة</li>
+                            <li>مسارات توجيه الكابلات مخططة</li>
+                            <li>موضع الخلط محدد</li>
+                            <li>الأمان للمعدات طوال الليل</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #e53e3e;">👥</span> متطلبات الفريق المحلي</h4>
+                        <ul class="req-list">
+                            <li>2-3 مساعدين محليين قادرين تقنياً</li>
+                            <li>قدرة تواصل أساسية بالإنجليزية</li>
+                            <li>الإلمام بإجراءات احتفال التخرج</li>
+                            <li>الوصول للمكان أثناء التركيب</li>
+                            <li>النقل والإقامة منظمة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="req-section">
+                        <h4><span style="color: #805ad5;">🔗</span> الاتصال</h4>
+                        <ul class="req-list">
+                            <li>إنترنت موثوق لإعداد الدعم عن بُعد</li>
+                            <li>اتصال Ethernet لموضع الخلط</li>
+                            <li>شبكة Wi-Fi للمراقبة اللاسلكية</li>
+                            <li>قدرة مؤتمر فيديو للتدريب</li>
+                            <li>تغطية هاتفية للدعم الطارئ</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Safety Guidelines -->
+            <section class="section">
+                <h2>⚠️ الأمان وأفضل الممارسات</h2>
+                <div class="safety-warning">
+                    <h3><span style="font-size: 1.5rem;">🛡️</span> إرشادات الأمان الحرجة</h3>
+                    <ul class="safety-list">
+                        <li><strong>الأمان الكهربائي:</strong> يجب أن تتم جميع توصيلات الطاقة بواسطة كهربائيين مؤهلين</li>
+                        <li><strong>معدات الرفع:</strong> استخدام تقنيات الرفع المناسبة للسماعات والمصفوفات الخطية</li>
+                        <li><strong>أمان الارتفاع:</strong> تأمين جميع التركيبات العلوية بالتجهيز المناسب</li>
+                        <li><strong>مستويات الصوت:</strong> عدم تجاوز حدود SPL الآمنة أثناء الاختبار أبداً</li>
+                        <li><strong>إدارة الكابلات:</strong> تأمين جميع الكابلات لمنع مخاطر التعثر</li>
+                        <li><strong>حماية المعدات:</strong> استخدام الحماية من الطقس إذا كان الاحتفال في الهواء الطلق</li>
+                    </ul>
+                </div>
+                
+                <div class="task-grid">
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">🎓</span>
+                            خاص باحتفال التخرج
+                        </div>
+                        <ul class="task-list">
+                            <li>اختبار الصوت أثناء بروفة التخرج الفعلية</li>
+                            <li>التخطيط لوضع السماعات لموسيقى الموكب</li>
+                            <li>تكوين الميكروفونات لمتحدثين متعددين</li>
+                            <li>إعداد قدرة التسجيل إذا طُلب</li>
+                            <li>التخطيط لطوارئ الطقس الخارجي</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">🔧</span>
+                            قائمة المراجعة الفنية
+                        </div>
+                        <ul class="task-list">
+                            <li>جميع المعدات مشغلة وعاملة</li>
+                            <li>أنظمة لاسلكية منسقة التردد</li>
+                            <li>مستويات الصوت محسنة للمكان</li>
+                            <li>جميع الاتصالات آمنة ومُوسمة</li>
+                            <li>الوصول عن بُعد مُكوّن ومختبر</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="task-card">
+                        <div class="task-title">
+                            <span class="task-icon">📚</span>
+                            التوثيق
+                        </div>
+                        <ul class="task-list">
+                            <li>مخطط النظام مع جميع الاتصالات</li>
+                            <li>إجراءات التشغيل باللغة العربية</li>
+                            <li>دليل استكشاف الأخطاء مقدم</li>
+                            <li>معلومات ضمان المعدات</li>
+                            <li>معلومات الاتصال الطارئ</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Remote Support -->
+            <section class="section">
+                <h2>🌐 الدعم عن بُعد والصيانة</h2>
+                <div class="remote-support">
+                    <h3>الدعم الفني من الولايات المتحدة</h3>
+                    <p>قدرة مراقبة ودعم عن بُعد كاملة لعمليات احتفال التخرج المستمرة</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #4299e1; margin-bottom: 1rem;">🖥️ المراقبة عن بُعد</h4>
+                        <ul style="margin-right: 1rem;">
+                            <li>مراقبة حالة النظام في الوقت الفعلي</li>
+                            <li>تحليل الأداء والتقارير</li>
+                            <li>تنبيهات الصيانة الاستباقية</li>
+                            <li>قدرة التشخيص عن بُعد</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #38a169; margin-bottom: 1rem;">📞 الدعم الطارئ</h4>
+                        <ul style="margin-right: 1rem;">
+                            <li>خط ساخن طارئ متاح 24/7</li>
+                            <li>جلسات استكشاف أخطاء بالفيديو</li>
+                            <li>إعادة تكوين النظام عن بُعد</li>
+                            <li>دعم أولوية يوم التخرج</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h4 style="color: #e53e3e; margin-bottom: 1rem;">🔄 الصيانة المستمرة</h4>
+                        <ul style="margin-right: 1rem;">
+                            <li>فحوصات صحة النظام الفصلية</li>
+                            <li>التحديثات والرقع البرمجية</li>
+                            <li>خدمات إعادة المعايرة السنوية</li>
+                            <li>توصيات ترقية المعدات</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <p data-en="© 2025 Installation Guide - Syria Ministry PA System | Professional Installation by أبي سكر" data-ar="© 2025 دليل التركيب - نظام PA وزارة الداخلية السورية | التركيب المهني من أبي سكر">© 2025 Installation Guide - Syria Ministry PA System | Professional Installation by أبي سكر</p>
+            <p data-en="Complete professional installation and training for graduation ceremony PA systems" data-ar="التركيب والتدريب المهني الكامل لأنظمة PA لاحتفال التخرج">Complete professional installation and training for graduation ceremony PA systems</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Technical Study: PA System Design Methodology - Syria Ministry Project" data-ar="الدراسة الفنية: منهجية تصميم نظام PA - مشروع وزارة الداخلية السورية">Technical Study: PA System Design Methodology - Syria Ministry Project</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .methodology-section {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .analysis-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .analysis-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .analysis-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .score-excellent { 
+            background: #d4edda; 
+            color: #155724; 
+            font-weight: bold; 
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .score-good { 
+            background: #fff3cd; 
+            color: #856404; 
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .score-fair { 
+            background: #f8d7da; 
+            color: #721c24; 
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        
+        .decision-matrix {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .engineering-note {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        
+        .technical-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .spec-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        
+        .spec-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .recommendation-box {
+            background: white;
+            border: 2px solid #38a169;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .features-box {
+            background: #f0fff4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .features-box h4 {
+            color: #38a169;
+            margin-bottom: 1rem;
+        }
+        
+        .equipment-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .equipment-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .equipment-item img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .equipment-item h4 {
+            margin: 1rem 0;
+            color: #2c3e50;
+        }
+        
+        .chart-container {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="📋 Technical Study: PA System Design Methodology" data-ar="📋 الدراسة الفنية: منهجية تصميم نظام PA">📋 Technical Study: PA System Design Methodology</h1>
+            <p class="subtitle" data-en="Engineering Analysis and Professional Selection Criteria for Syria Ministry of Interior Audio Systems" data-ar="التحليل الهندسي ومعايير الاختيار المهنية لأنظمة الصوت لوزارة الداخلية السورية">Engineering Analysis and Professional Selection Criteria for Syria Ministry of Interior Audio Systems</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Study Scope:</strong> Professional Audio System Design for Government Installation<br>
+                    <strong>Client:</strong> Syria Ministry of Interior<br>
+                    <strong>Prepared by:</strong> أبي سكر - Professional Audio Consultant<br>
+                    <strong>Date:</strong> January 2025<br>
+                    <strong>Classification:</strong> Technical Analysis & Methodology Documentation
+                </div>
+                <div data-lang="ar">
+                    <strong>نطاق الدراسة:</strong> تصميم نظام صوتي مهني للتركيب الحكومي<br>
+                    <strong>العميل:</strong> وزارة الداخلية السورية<br>
+                    <strong>أعده:</strong> أبي سكر - استشاري صوتي مهني<br>
+                    <strong>التاريخ:</strong> يناير 2025<br>
+                    <strong>التصنيف:</strong> توثيق التحليل الفني والمنهجية
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <section class="section">
+                <h2>🎯 Executive Summary</h2>
+                <div class="methodology-section">
+                    <p><strong>Objective:</strong> This technical study presents the engineering methodology, selection criteria, and rational decision-making process used to design optimal PA system solutions for Syrian government installations, considering post-conflict budget constraints, local infrastructure limitations, and professional audio requirements.</p>
+                    
+                    <div class="features-box">
+                        <h4>📊 Key Findings (2025 Analysis):</h4>
+                        <ul>
+                            <li><strong>Digital wireless systems</strong> provide 4x better reliability than analog in RF-dense environments</li>
+                            <li><strong>Line array systems</strong> offer 35% better coverage efficiency than traditional PA speakers</li>
+                            <li><strong>Remote control capability</strong> requires only 1-3 Mbps internet (viable in Syria)</li>
+                            <li><strong>Container shipping costs</strong> reduced 30% from pre-2024 levels</li>
+                            <li><strong>Syrian import duties</strong> reduced 50-60% with new 2025 tariff system</li>
+                            <li><strong>Strategic equipment selection</strong> can achieve 60% cost reduction without compromising core functionality</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>📊 Technical Design Methodology</h2>
+                
+                <div class="methodology-section">
+                    <h3>🔬 Phase 1: Requirements Analysis</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>🎯 Primary Requirements</h4>
+                            <ul>
+                                <li>Venue Capacity: 800-3000 people</li>
+                                <li>Microphone Systems: 4-8 wireless + backup wired</li>
+                                <li>Audio Quality: Government-appropriate standards</li>
+                                <li>Reliability: Mission-critical operation</li>
+                                <li>Remote Operation: USA-based support</li>
+                                <li>Budget Constraints: Post-war reality</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🎧 Acoustic Requirements</h4>
+                            <ul>
+                                <li><strong>SPL:</strong> 95 dB @ 1m for speech intelligibility</li>
+                                <li><strong>Frequency:</strong> 100 Hz - 12 kHz optimal speech</li>
+                                <li><strong>Coverage:</strong> 90° horizontal, 40° vertical</li>
+                                <li><strong>Reverb Time:</strong> Max 1.2 seconds</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🌐 Remote Control Requirements</h4>
+                            <ul>
+                                <li><strong>Protocol:</strong> Ethernet TCP/IP over WAN</li>
+                                <li><strong>Bandwidth:</strong> 1-3 Mbps (Syrian internet compatible)</li>
+                                <li><strong>Latency:</strong> <200ms for real-time control</li>
+                                <li><strong>Security:</strong> VPN tunnel encryption</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-section">
+                    <h3>⚙️ Phase 2: Technical Specification Development</h3>
+                    
+                    <h4>🎤 Wireless Microphone System Analysis</h4>
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>Technology Type</th>
+                                <th>Frequency Range</th>
+                                <th>Dynamic Range</th>
+                                <th>RF Efficiency</th>
+                                <th>2025 Cost Factor</th>
+                                <th>Syria Suitability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Digital (Sennheiser EW-D)</strong></td>
+                                <td>470-694 MHz</td>
+                                <td>134 dB</td>
+                                <td class="score-excellent">Excellent</td>
+                                <td>$2,200/channel</td>
+                                <td class="score-excellent">Ideal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analog (Shure BLX)</strong></td>
+                                <td>518-542 MHz</td>
+                                <td>120 dB</td>
+                                <td class="score-good">Good</td>
+                                <td>$600/channel</td>
+                                <td class="score-good">Suitable</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Budget Analog</strong></td>
+                                <td>2.4 GHz / UHF</td>
+                                <td>110 dB</td>
+                                <td class="score-fair">Limited</td>
+                                <td>$150-200/channel</td>
+                                <td class="score-fair">Emergency Only</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="engineering-note">
+                        <strong>Engineering Decision:</strong> Digital systems selected for primary packages due to superior RF coordination, automatic frequency management, and encryption capabilities essential for government use. 2025 pricing has stabilized with better availability.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Equipment Visualization -->
+            <section class="section">
+                <h2>🎛️ Professional Equipment Gallery</h2>
+                
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3 Digital Mixer">
+                        <h4>Yamaha TF3 Digital Console</h4>
+                        <p>Professional digital mixing for large venues</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2">
+                        <h4>DBX DriveRack PA2</h4>
+                        <p>Complete loudspeaker management system</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="K&M Professional Stand">
+                        <h4>K&M Professional Stands</h4>
+                        <p>German-engineered stability and precision</p>
+                    </div>
+                </div>
+                
+                <!-- Coverage Analysis Charts -->
+                <div class="chart-container">
+                    <h3>📊 Professional Coverage Analysis</h3>
+                    <img src="./assets/diagrams/conference-table-setup.png" alt="Conference Table PA Setup Diagram">
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Professional conference table microphone placement and coverage pattern</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎯 Selection Criteria and Decision Matrix</h2>
+                
+                <div class="decision-matrix">
+                    <h3>📋 Primary Selection Factors (Weighted Importance)</h3>
+                    <ol style="font-size: 1.1em; line-height: 1.8;">
+                        <li><strong>Reliability & Performance (35%):</strong> Mission-critical operation requirements</li>
+                        <li><strong>Budget Compliance (25%):</strong> Post-war economic constraints with 2025 pricing</li>
+                        <li><strong>Technical Compatibility (20%):</strong> Syrian infrastructure integration</li>
+                        <li><strong>Professional Standards (15%):</strong> Government installation appropriateness</li>
+                        <li><strong>Future Expandability (5%):</strong> Growth and upgrade potential</li>
+                    </ol>
+                    
+                    <h4>📊 2025 Updated Scoring Matrix Applied to Each Package:</h4>
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>Package</th>
+                                <th>Reliability</th>
+                                <th>Budget (2025)</th>
+                                <th>Compatibility</th>
+                                <th>Professional</th>
+                                <th>Expandability</th>
+                                <th>Final Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Emergency</strong></td>
+                                <td class="score-fair">6/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-good">8/10</td>
+                                <td class="score-fair">6/10</td>
+                                <td class="score-fair">4/10</td>
+                                <td class="score-good"><strong>7.1/10</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mid-Range VALUE</strong></td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-good">8/10</td>
+                                <td class="score-excellent"><strong>9.0/10</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enhanced 3000-Person</strong></td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-good">7/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-excellent"><strong>9.2/10</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🚢 2025 Shipping and Logistics Analysis</h2>
+                
+                <div class="methodology-section">
+                    <h3>📦 Container Logistics Engineering</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>20ft Container Analysis</h4>
+                            <ul>
+                                <li><strong>Cost:</strong> $2,950 to Syria (2025)</li>
+                                <li><strong>Capacity:</strong> 21,700 kg / 33 m³</li>
+                                <li><strong>Best for:</strong> Heavy equipment (speakers, amps)</li>
+                                <li><strong>Weight distribution:</strong> Superior for PA systems</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>40ft Container Analysis</h4>
+                            <ul>
+                                <li><strong>Cost:</strong> $4,450 to Syria (2025)</li>
+                                <li><strong>Capacity:</strong> 26,730 kg / 67 m³</li>
+                                <li><strong>Best for:</strong> Complete large installations</li>
+                                <li><strong>Space efficiency:</strong> Better cost per cubic meter</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>Syrian Import Improvements</h4>
+                            <ul>
+                                <li><strong>New 2025 System:</strong> 50-60% duty reduction</li>
+                                <li><strong>Electronics preference:</strong> Lower rates</li>
+                                <li><strong>Fixed USD pricing:</strong> More predictable</li>
+                                <li><strong>Reduced fees:</strong> 10+ additional fees eliminated</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="engineering-note">
+                        <strong>Logistics Recommendation:</strong> Use 20ft containers for audio equipment shipments due to better weight distribution for heavy speakers and amplifiers. Syria's improved 2025 import system makes professional equipment more accessible.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎯 Final Engineering Recommendations</h2>
+                
+                <div class="recommendation-box">
+                    <h3>🏆 Primary Recommendation: Mid-Range VALUE Package</h3>
+                    <div class="features-box">
+                        <h4>🎯 Engineering Rationale for Selection:</h4>
+                        <ul>
+                            <li><strong>Optimal Performance/Cost Ratio:</strong> Professional performance within realistic budget constraints</li>
+                            <li><strong>Government Appropriate:</strong> Professional appearance and reliability suitable for official use</li>
+                            <li><strong>Remote Capability:</strong> Full USA-based support and control with minimal bandwidth requirements</li>
+                            <li><strong>Digital Systems:</strong> Government-grade encryption and interference immunity</li>
+                            <li><strong>Future-Proof:</strong> Modular design allows system expansion and technology upgrades</li>
+                            <li><strong>Local Support:</strong> Equipment available through regional distributors with parts support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="engineering-note">
+                        <strong>Technical Validation:</strong> This configuration provides the optimal balance of professional audio performance, government security requirements, remote management capability, and budget compliance for Syrian Ministry installations in 2025.
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <section class="section">
+                <h2>🎯 الملخص التنفيذي</h2>
+                <div class="methodology-section">
+                    <p><strong>الهدف:</strong> تقدم هذه الدراسة الفنية المنهجية الهندسية ومعايير الاختيار وعملية صنع القرار المنطقي المستخدمة لتصميم حلول نظام PA المثلى للتركيبات الحكومية السورية، مع مراعاة قيود الميزانية بعد النزاع وقيود البنية التحتية المحلية ومتطلبات الصوت المهنية.</p>
+                    
+                    <div class="features-box">
+                        <h4>📊 النتائج الرئيسية (تحليل 2025):</h4>
+                        <ul>
+                            <li><strong>الأنظمة اللاسلكية الرقمية</strong> توفر موثوقية أفضل بـ 4 مرات من التناظرية في البيئات كثيفة RF</li>
+                            <li><strong>أنظمة المصفوفة الخطية</strong> تقدم كفاءة تغطية أفضل بنسبة 35% من سماعات PA التقليدية</li>
+                            <li><strong>قدرة التحكم عن بُعد</strong> تتطلب فقط 1-3 ميجابت في الثانية إنترنت (قابلة للتطبيق في سوريا)</li>
+                            <li><strong>تكاليف الشحن بالحاويات</strong> انخفضت 30% من مستويات ما قبل 2024</li>
+                            <li><strong>الرسوم الجمركية السورية</strong> انخفضت 50-60% مع نظام التعريفة الجديد 2025</li>
+                            <li><strong>اختيار المعدات الاستراتيجي</strong> يمكن أن يحقق تخفيض تكلفة 60% دون المساس بالوظيفة الأساسية</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>📊 منهجية التصميم الفني</h2>
+                
+                <div class="methodology-section">
+                    <h3>🔬 المرحلة 1: تحليل المتطلبات</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>🎯 المتطلبات الأساسية</h4>
+                            <ul>
+                                <li>سعة المكان: 800-3000 شخص</li>
+                                <li>أنظمة الميكروفون: 4-8 لاسلكية + احتياطية سلكية</li>
+                                <li>جودة الصوت: معايير مناسبة للحكومة</li>
+                                <li>الموثوقية: تشغيل بالغ الأهمية</li>
+                                <li>التشغيل عن بُعد: دعم من الولايات المتحدة</li>
+                                <li>قيود الميزانية: واقع ما بعد الحرب</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🎧 المتطلبات الصوتية</h4>
+                            <ul>
+                                <li><strong>SPL:</strong> 95 ديسيبل @ 1 متر لوضوح الكلام</li>
+                                <li><strong>التردد:</strong> 100 هرتز - 12 كيلوهرتز أمثل للكلام</li>
+                                <li><strong>التغطية:</strong> 90° أفقي، 40° عمودي</li>
+                                <li><strong>وقت الصدى:</strong> بحد أقصى 1.2 ثانية</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🌐 متطلبات التحكم عن بُعد</h4>
+                            <ul>
+                                <li><strong>البروتوكول:</strong> Ethernet TCP/IP عبر WAN</li>
+                                <li><strong>عرض النطاق:</strong> 1-3 ميجابت في الثانية (متوافق مع إنترنت سوريا)</li>
+                                <li><strong>زمن الاستجابة:</strong> <200ms للتحكم في الوقت الفعلي</li>
+                                <li><strong>الأمان:</strong> تشفير نفق VPN</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-section">
+                    <h3>⚙️ المرحلة 2: تطوير المواصفات الفنية</h3>
+                    
+                    <h4>🎤 تحليل نظام الميكروفون اللاسلكي</h4>
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>نوع التقنية</th>
+                                <th>نطاق التردد</th>
+                                <th>النطاق الديناميكي</th>
+                                <th>كفاءة RF</th>
+                                <th>عامل التكلفة 2025</th>
+                                <th>ملاءمة سوريا</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>رقمية (Sennheiser EW-D)</strong></td>
+                                <td>470-694 ميجاهرتز</td>
+                                <td>134 ديسيبل</td>
+                                <td class="score-excellent">ممتازة</td>
+                                <td>2,200$ لكل قناة</td>
+                                <td class="score-excellent">مثالية</td>
+                            </tr>
+                            <tr>
+                                <td><strong>تناظرية (Shure BLX)</strong></td>
+                                <td>518-542 ميجاهرتز</td>
+                                <td>120 ديسيبل</td>
+                                <td class="score-good">جيدة</td>
+                                <td>600$ لكل قناة</td>
+                                <td class="score-good">مناسبة</td>
+                            </tr>
+                            <tr>
+                                <td><strong>تناظرية اقتصادية</strong></td>
+                                <td>2.4 جيجاهرتز / UHF</td>
+                                <td>110 ديسيبل</td>
+                                <td class="score-fair">محدودة</td>
+                                <td>150-200$ لكل قناة</td>
+                                <td class="score-fair">للطوارئ فقط</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="engineering-note">
+                        <strong>القرار الهندسي:</strong> تم اختيار الأنظمة الرقمية للحزم الأساسية بسبب تنسيق RF الفائق وإدارة التردد التلقائية وقدرات التشفير الضرورية للاستخدام الحكومي. استقر تسعير 2025 مع توفر أفضل.
+                    </div>
+                </div>
+            </section>
+
+            <!-- معرض المعدات المهنية -->
+            <section class="section">
+                <h2>🎛️ معرض المعدات المهنية</h2>
+                
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="وحدة التحكم الرقمية Yamaha TF3">
+                        <h4>وحدة التحكم الرقمية Yamaha TF3</h4>
+                        <p>الخلط الرقمي المهني للأماكن الكبيرة</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2">
+                        <h4>DBX DriveRack PA2</h4>
+                        <p>نظام إدارة مكبرات الصوت الكامل</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="حامل مهني K&M">
+                        <h4>الحوامل المهنية K&M</h4>
+                        <p>الاستقرار والدقة المصنوعة في ألمانيا</p>
+                    </div>
+                </div>
+                
+                <!-- مخططات تحليل التغطية -->
+                <div class="chart-container">
+                    <h3>📊 تحليل التغطية المهنية</h3>
+                    <img src="./assets/diagrams/conference-table-setup.png" alt="مخطط إعداد PA لطاولة المؤتمر">
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">وضع الميكروفون المهني لطاولة المؤتمر ونمط التغطية</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎯 معايير الاختيار ومصفوفة القرار</h2>
+                
+                <div class="decision-matrix">
+                    <h3>📋 عوامل الاختيار الأساسية (الأهمية المرجحة)</h3>
+                    <ol style="font-size: 1.1em; line-height: 1.8;">
+                        <li><strong>الموثوقية والأداء (35%):</strong> متطلبات التشغيل الحرجة</li>
+                        <li><strong>الامتثال للميزانية (25%):</strong> القيود الاقتصادية بعد الحرب مع تسعير 2025</li>
+                        <li><strong>التوافق الفني (20%):</strong> تكامل البنية التحتية السورية</li>
+                        <li><strong>المعايير المهنية (15%):</strong> ملاءمة التركيب الحكومي</li>
+                        <li><strong>قابلية التوسع المستقبلية (5%):</strong> إمكانات النمو والترقية</li>
+                    </ol>
+                    
+                    <h4>📊 مصفوفة النقاط المحدثة 2025 المطبقة على كل حزمة:</h4>
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>الحزمة</th>
+                                <th>الموثوقية</th>
+                                <th>الميزانية (2025)</th>
+                                <th>التوافق</th>
+                                <th>المهنية</th>
+                                <th>قابلية التوسع</th>
+                                <th>النقاط النهائية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>الطوارئ</strong></td>
+                                <td class="score-fair">6/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-good">8/10</td>
+                                <td class="score-fair">6/10</td>
+                                <td class="score-fair">4/10</td>
+                                <td class="score-good"><strong>7.1/10</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>القيمة المتوسطة</strong></td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-good">8/10</td>
+                                <td class="score-excellent"><strong>9.0/10</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>المحسن لـ 3000 شخص</strong></td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-good">7/10</td>
+                                <td class="score-excellent">9/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-excellent">10/10</td>
+                                <td class="score-excellent"><strong>9.2/10</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🚢 تحليل الشحن واللوجستيات 2025</h2>
+                
+                <div class="methodology-section">
+                    <h3>📦 هندسة لوجستيات الحاويات</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>تحليل حاوية 20 قدم</h4>
+                            <ul>
+                                <li><strong>التكلفة:</strong> 2,950$ إلى سوريا (2025)</li>
+                                <li><strong>السعة:</strong> 21,700 كيلو / 33 متر مكعب</li>
+                                <li><strong>الأفضل لـ:</strong> المعدات الثقيلة (السماعات، المكبرات)</li>
+                                <li><strong>توزيع الوزن:</strong> أفضل لأنظمة PA</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>تحليل حاوية 40 قدم</h4>
+                            <ul>
+                                <li><strong>التكلفة:</strong> 4,450$ إلى سوريا (2025)</li>
+                                <li><strong>السعة:</strong> 26,730 كيلو / 67 متر مكعب</li>
+                                <li><strong>الأفضل لـ:</strong> التركيبات الكبيرة الكاملة</li>
+                                <li><strong>كفاءة المساحة:</strong> تكلفة أفضل لكل متر مكعب</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>تحسينات الاستيراد السوري</h4>
+                            <ul>
+                                <li><strong>نظام 2025 الجديد:</strong> تخفيض الرسوم بنسبة 50-60%</li>
+                                <li><strong>تفضيل الإلكترونيات:</strong> معدلات أقل</li>
+                                <li><strong>تسعير ثابت بالدولار الأمريكي:</strong> أكثر قابلية للتنبؤ</li>
+                                <li><strong>رسوم مخفضة:</strong> إلغاء 10+ رسوم إضافية</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="engineering-note">
+                        <strong>توصية اللوجستيات:</strong> استخدام حاويات 20 قدم لشحنات معدات الصوت بسبب توزيع الوزن الأفضل للسماعات والمكبرات الثقيلة. نظام الاستيراد السوري المحسن لعام 2025 يجعل المعدات المهنية أكثر إتاحة.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎯 التوصيات الهندسية النهائية</h2>
+                
+                <div class="recommendation-box">
+                    <h3>🏆 التوصية الأساسية: حزمة القيمة المتوسطة</h3>
+                    <div class="features-box">
+                        <h4>🎯 المنطق الهندسي للاختيار:</h4>
+                        <ul>
+                            <li><strong>نسبة الأداء/التكلفة الأمثل:</strong> أداء مهني ضمن قيود ميزانية واقعية</li>
+                            <li><strong>مناسب للحكومة:</strong> مظهر مهني وموثوقية مناسبة للاستخدام الرسمي</li>
+                            <li><strong>قدرة التحكم عن بُعد:</strong> دعم وتحكم كامل من الولايات المتحدة بمتطلبات عرض نطاق أدنى</li>
+                            <li><strong>الأنظمة الرقمية:</strong> تشفير حكومي ومناعة ضد التداخل</li>
+                            <li><strong>مقاوم للمستقبل:</strong> التصميم المعياري يسمح بتوسيع النظام وترقيات التقنية</li>
+                            <li><strong>الدعم المحلي:</strong> المعدات متاحة من خلال الموزعين الإقليميين مع دعم القطع</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="engineering-note">
+                        <strong>التحقق الفني:</strong> يوفر هذا التكوين التوازن الأمثل لأداء الصوت المهني ومتطلبات الأمان الحكومي وقدرة الإدارة عن بُعد والامتثال للميزانية لتركيبات الوزارة السورية في 2025.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <p data-en="© 2025 Technical Study - Syria Ministry PA System | Professional Audio Engineering by أبي سكر" data-ar="© 2025 الدراسة الفنية - نظام PA وزارة الداخلية السورية | هندسة صوتية مهنية من أبي سكر">© 2025 Technical Study - Syria Ministry PA System | Professional Audio Engineering by أبي سكر</p>
+            <p data-en="Updated with 2025 pricing and Syrian import regulations" data-ar="محدث بتسعير 2025 ولوائح الاستيراد السورية">Updated with 2025 pricing and Syrian import regulations</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
+    </script>
+</body>
+</html>

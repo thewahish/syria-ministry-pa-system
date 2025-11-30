@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Budget Comparison Chart - Syria Ministry PA System | Cost Analysis 2025" data-ar="مخطط مقارنة الميزانية - نظام PA وزارة الداخلية السورية | تحليل التكلفة 2025">Budget Comparison Chart - Syria Ministry PA System | Cost Analysis 2025</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Comparison Grid - Clean Design */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .cost-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .cost-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .cost-card.emergency {
+            border-color: #e53e3e;
+        }
+        
+        .cost-card.recommended {
+            border-color: #38a169;
+        }
+        
+        .cost-card.enhanced {
+            border-color: #4299e1;
+        }
+        
+        .cost-card.premium {
+            border-color: #805ad5;
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .card-badge.emergency {
+            background: #e53e3e;
+        }
+        
+        .card-badge.recommended {
+            background: #38a169;
+        }
+        
+        .card-badge.enhanced {
+            background: #4299e1;
+        }
+        
+        .card-badge.premium {
+            background: #805ad5;
+        }
+        
+        .package-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 1rem 0;
+        }
+        
+        .main-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .main-price.emergency {
+            color: #e53e3e;
+        }
+        
+        .main-price.recommended {
+            color: #38a169;
+        }
+        
+        .main-price.enhanced {
+            color: #4299e1;
+        }
+        
+        .main-price.premium {
+            color: #805ad5;
+        }
+        
+        .price-details {
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        /* Chart Container */
+        .chart-container {
+            text-align: center;
+            margin: 2rem 0;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .chart-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Cost Breakdown */
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .breakdown-table th {
+            background: #1a202c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .breakdown-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .breakdown-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        /* Savings Highlight */
+        .savings-highlight {
+            background: #f0fff4;
+            border: 2px solid #38a169;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .savings-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38a169;
+            margin: 0.5rem 0;
+        }
+        
+        /* ROI Analysis */
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .roi-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .roi-percentage {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38a169;
+            margin: 0.5rem 0;
+        }
+        
+        /* Equipment Comparison */
+        .equipment-comparison {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .feature-list {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .feature-list li {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .feature-list li::before {
+            right: 0;
+            left: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .main-price {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="📊 Budget Comparison Chart: Syria Ministry PA System" data-ar="📊 مخطط مقارنة الميزانية: نظام PA وزارة الداخلية السورية">📊 Budget Comparison Chart: Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Complete Cost Analysis and Investment Comparison for 2025" data-ar="تحليل شامل للتكلفة ومقارنة الاستثمار لعام 2025">Complete Cost Analysis and Investment Comparison for 2025</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Analysis Date:</strong> January 2025<br>
+                    <strong>Currency:</strong> USD (includes equipment + shipping)<br>
+                    <strong>Scope:</strong> Complete PA system with professional installation options<br>
+                    <strong>Client:</strong> Syria Ministry of Interior<br>
+                    <strong>Prepared by:</strong> أبي سكر - Professional Audio Consultant
+                </div>
+                <div data-lang="ar">
+                    <strong>تاريخ التحليل:</strong> يناير 2025<br>
+                    <strong>العملة:</strong> دولار أمريكي (يشمل المعدات + الشحن)<br>
+                    <strong>النطاق:</strong> نظام PA كامل مع خيارات التركيب المهني<br>
+                    <strong>العميل:</strong> وزارة الداخلية السورية<br>
+                    <strong>أعده:</strong> أبي سكر - استشاري صوتي مهني
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Package Comparison -->
+            <section class="section">
+                <h2>💰 2025 Package Comparison</h2>
+                <div class="comparison-grid">
+                    <div class="cost-card emergency">
+                        <div class="card-badge emergency">Emergency</div>
+                        <h3 class="package-title">Emergency Package</h3>
+                        <div class="main-price emergency">$21,500</div>
+                        <div class="price-details">Equipment only - professional services available separately</div>
+                        <ul class="feature-list">
+                            <li>4 analog wireless microphones + 2 wired</li>
+                            <li>Basic in-ear monitoring systems</li>
+                            <li>PA speakers + subwoofers (no line array)</li>
+                            <li>800-1000 people capacity</li>
+                            <li>Limited remote control</li>
+                            <li>Basic setup assistance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cost-card recommended">
+                        <div class="card-badge recommended">RECOMMENDED</div>
+                        <h3 class="package-title">Mid-Range VALUE</h3>
+                        <div class="main-price recommended">$41,420</div>
+                        <div class="price-details">Professional graduation ceremony package</div>
+                        <ul class="feature-list">
+                            <li>4 Sennheiser EW-D digital wireless + 2 wired</li>
+                            <li>Professional in-ear monitoring</li>
+                            <li>QSC KLA12 line array system</li>
+                            <li>2000 people capacity</li>
+                            <li>Full remote control from USA</li>
+                            <li>Government-grade security</li>
+                            <li>Complete installation guidance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cost-card enhanced">
+                        <div class="card-badge enhanced">PREMIUM</div>
+                        <h3 class="package-title">Premium Package</h3>
+                        <div class="main-price enhanced">$60,010</div>
+                        <div class="price-details">Complete premium solution</div>
+                        <ul class="feature-list">
+                            <li>6 Sennheiser EW-D digital wireless + 2 wired</li>
+                            <li>Extended-range in-ear monitoring</li>
+                            <li>12x QSC KLA12 line array + 8x delay towers</li>
+                            <li>3000+ people capacity</li>
+                            <li>Distributed sound system</li>
+                            <li>Complete venue coverage</li>
+                            <li>Professional calibration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Visual Chart -->
+            <section class="section">
+                <h2>📊 Visual Cost Analysis</h2>
+                <div class="chart-container">
+                    <img src="./assets/charts/3-tier-comparison-2025.png" alt="3-Tier System Cost Comparison" class="chart-image">
+                    <h4 style="margin: 1rem 0;">2025 Updated Pricing Comparison</h4>
+                    <p>Visual breakdown of equipment costs, shipping, and total investment per package</p>
+                </div>
+            </section>
+            
+            <!-- Detailed Breakdown -->
+            <section class="section">
+                <h2>🔍 Detailed Cost Breakdown</h2>
+                <div class="equipment-comparison">
+                    <table class="breakdown-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Emergency</th>
+                                <th>Mid-Range VALUE</th>
+                                <th>Enhanced 3000</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wireless Systems</strong></td>
+                                <td>$800</td>
+                                <td>$8,800</td>
+                                <td>$13,200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Speaker Arrays</strong></td>
+                                <td>$8,500</td>
+                                <td>$24,720</td>
+                                <td>$28,800</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mixing Console</strong></td>
+                                <td>$1,200</td>
+                                <td>$3,400</td>
+                                <td>$3,400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Processing Equipment</strong></td>
+                                <td>$800</td>
+                                <td>$2,400</td>
+                                <td>$2,400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accessories & Stands</strong></td>
+                                <td>$1,200</td>
+                                <td>$2,600</td>
+                                <td>$3,620</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shipping to Syria</strong></td>
+                                <td>$3,000</td>
+                                <td>$4,000</td>
+                                <td>$5,000</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Installation Support</strong></td>
+                                <td>$500</td>
+                                <td>$1,000</td>
+                                <td>$1,500</td>
+                            </tr>
+                            <tr style="background: #f8fafc; font-weight: bold;">
+                                <td><strong>TOTAL PACKAGE</strong></td>
+                                <td><strong>$24,500</strong></td>
+                                <td><strong>$45,920</strong></td>
+                                <td><strong>$51,420</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Savings Analysis -->
+            <section class="section">
+                <h2>💡 Value Analysis & Savings</h2>
+                <div class="savings-highlight">
+                    <h3>Recommended Package Savings</h3>
+                    <div class="savings-amount">Save $22,090</div>
+                    <p>Compared to premium alternatives while maintaining 95% of professional features</p>
+                </div>
+                
+                <div class="roi-grid">
+                    <div class="roi-card">
+                        <h4>Cost per Person</h4>
+                        <div class="roi-percentage">$23</div>
+                        <p>Mid-Range VALUE package cost per attendee (2000 people)</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>Professional Grade</h4>
+                        <div class="roi-percentage">95%</div>
+                        <p>Of premium features at 60% of the cost</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>Installation Time</h4>
+                        <div class="roi-percentage">2-3</div>
+                        <p>Days for complete setup and calibration</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>Warranty Period</h4>
+                        <div class="roi-percentage">3-5</div>
+                        <p>Years manufacturer warranty included</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Investment Recommendation -->
+            <section class="section">
+                <h2>🎯 Investment Recommendation</h2>
+                <div style="background: #f0fff4; padding: 2rem; border-radius: 12px; border: 2px solid #38a169;">
+                    <h3 style="color: #38a169; margin-bottom: 1rem;">🏆 Optimal Choice: Mid-Range VALUE Package</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #2d3748; margin-bottom: 0.5rem;">Financial Benefits</h4>
+                            <ul style="margin-left: 1rem;">
+                                <li>Best performance-to-cost ratio</li>
+                                <li>Professional government standards</li>
+                                <li>Future expansion capability</li>
+                                <li>5-year cost effectiveness</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #2d3748; margin-bottom: 0.5rem;">Technical Advantages</h4>
+                            <ul style="margin-left: 1rem;">
+                                <li>Digital security and reliability</li>
+                                <li>Remote US-based support</li>
+                                <li>Line array professional coverage</li>
+                                <li>Government-appropriate quality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- Package Comparison -->
+            <section class="section">
+                <h2>💰 مقارنة الحزم 2025</h2>
+                <div class="comparison-grid">
+                    <div class="cost-card emergency">
+                        <div class="card-badge emergency">طوارئ</div>
+                        <h3 class="package-title">الحزمة الطارئة</h3>
+                        <div class="main-price emergency">24,500$</div>
+                        <div class="price-details">نظام كامل + الشحن</div>
+                        <ul class="feature-list">
+                            <li>4 ميكروفونات لاسلكية تناظرية + 2 سلكية</li>
+                            <li>أنظمة مراقبة داخلية أساسية</li>
+                            <li>سماعات PA + مضخمات (بدون مصفوفة خطية)</li>
+                            <li>سعة 800-1000 شخص</li>
+                            <li>تحكم عن بُعد محدود</li>
+                            <li>مساعدة إعداد أساسية</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cost-card recommended">
+                        <div class="card-badge recommended">موصى به</div>
+                        <h3 class="package-title">القيمة المتوسطة</h3>
+                        <div class="main-price recommended">45,920$</div>
+                        <div class="price-details">حزمة حكومية مهنية</div>
+                        <ul class="feature-list">
+                            <li>4 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
+                            <li>مراقبة داخلية مهنية</li>
+                            <li>نظام مصفوفة خطية QSC KLA12</li>
+                            <li>سعة 2000 شخص</li>
+                            <li>تحكم كامل عن بُعد من الولايات المتحدة</li>
+                            <li>أمان حكومي</li>
+                            <li>إرشادات التركيب الكاملة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cost-card enhanced">
+                        <div class="card-badge enhanced">محسن</div>
+                        <h3 class="package-title">المحسن لـ 3000 شخص</h3>
+                        <div class="main-price enhanced">51,420$</div>
+                        <div class="price-details">تغطية الأماكن الكبيرة</div>
+                        <ul class="feature-list">
+                            <li>6 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
+                            <li>مراقبة داخلية ممتدة المدى</li>
+                            <li>12x مصفوفة خطية QSC KLA12 + 8x أبراج تأخير</li>
+                            <li>سعة 3000+ شخص</li>
+                            <li>نظام صوتي موزع</li>
+                            <li>تغطية كاملة للمكان</li>
+                            <li>معايرة مهنية</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Visual Chart -->
+            <section class="section">
+                <h2>📊 تحليل التكلفة المرئي</h2>
+                <div class="chart-container">
+                    <img src="./assets/charts/3-tier-comparison-2025.png" alt="مقارنة تكلفة النظام ثلاثي المستويات" class="chart-image">
+                    <h4 style="margin: 1rem 0;">مقارنة التسعير المحدث 2025</h4>
+                    <p>تفصيل مرئي لتكاليف المعدات والشحن والاستثمار الإجمالي لكل حزمة</p>
+                </div>
+            </section>
+            
+            <!-- Detailed Breakdown -->
+            <section class="section">
+                <h2>🔍 تفصيل التكلفة التفصيلي</h2>
+                <div class="equipment-comparison">
+                    <table class="breakdown-table">
+                        <thead>
+                            <tr>
+                                <th>المكون</th>
+                                <th>الطوارئ</th>
+                                <th>القيمة المتوسطة</th>
+                                <th>المحسن 3000</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>الأنظمة اللاسلكية</strong></td>
+                                <td>800$</td>
+                                <td>8,800$</td>
+                                <td>13,200$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>مصفوفات السماعات</strong></td>
+                                <td>8,500$</td>
+                                <td>24,720$</td>
+                                <td>28,800$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>وحدة التحكم في الخلط</strong></td>
+                                <td>1,200$</td>
+                                <td>3,400$</td>
+                                <td>3,400$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>معدات المعالجة</strong></td>
+                                <td>800$</td>
+                                <td>2,400$</td>
+                                <td>2,400$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>الإكسسوارات والحوامل</strong></td>
+                                <td>1,200$</td>
+                                <td>2,600$</td>
+                                <td>3,620$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>الشحن إلى سوريا</strong></td>
+                                <td>3,000$</td>
+                                <td>4,000$</td>
+                                <td>5,000$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>دعم التركيب</strong></td>
+                                <td>500$</td>
+                                <td>1,000$</td>
+                                <td>1,500$</td>
+                            </tr>
+                            <tr style="background: #f8fafc; font-weight: bold;">
+                                <td><strong>إجمالي الحزمة</strong></td>
+                                <td><strong>24,500$</strong></td>
+                                <td><strong>45,920$</strong></td>
+                                <td><strong>51,420$</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Savings Analysis -->
+            <section class="section">
+                <h2>💡 تحليل القيمة والوفورات</h2>
+                <div class="savings-highlight">
+                    <h3>وفورات الحزمة الموصى بها</h3>
+                    <div class="savings-amount">وفر 22,090$</div>
+                    <p>مقارنة بالبدائل المتميزة مع الحفاظ على 95% من الميزات المهنية</p>
+                </div>
+                
+                <div class="roi-grid">
+                    <div class="roi-card">
+                        <h4>التكلفة لكل شخص</h4>
+                        <div class="roi-percentage">23$</div>
+                        <p>تكلفة حزمة القيمة المتوسطة لكل حاضر (2000 شخص)</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>درجة مهنية</h4>
+                        <div class="roi-percentage">%95</div>
+                        <p>من الميزات المتميزة بنسبة 60% من التكلفة</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>وقت التركيب</h4>
+                        <div class="roi-percentage">2-3</div>
+                        <p>أيام للإعداد الكامل والمعايرة</p>
+                    </div>
+                    <div class="roi-card">
+                        <h4>فترة الضمان</h4>
+                        <div class="roi-percentage">3-5</div>
+                        <p>سنوات ضمان الشركة المصنعة مدرجة</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Investment Recommendation -->
+            <section class="section">
+                <h2>🎯 توصية الاستثمار</h2>
+                <div style="background: #f0fff4; padding: 2rem; border-radius: 12px; border: 2px solid #38a169;">
+                    <h3 style="color: #38a169; margin-bottom: 1rem;">🏆 الخيار الأمثل: حزمة القيمة المتوسطة</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #2d3748; margin-bottom: 0.5rem;">الفوائد المالية</h4>
+                            <ul style="margin-right: 1rem;">
+                                <li>أفضل نسبة أداء إلى تكلفة</li>
+                                <li>معايير حكومية مهنية</li>
+                                <li>قدرة توسع مستقبلية</li>
+                                <li>فعالية تكلفة لمدة 5 سنوات</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #2d3748; margin-bottom: 0.5rem;">المزايا الفنية</h4>
+                            <ul style="margin-right: 1rem;">
+                                <li>الأمان الرقمي والموثوقية</li>
+                                <li>دعم عن بُعد من الولايات المتحدة</li>
+                                <li>تغطية مهنية للمصفوفة الخطية</li>
+                                <li>جودة مناسبة للحكومة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <p data-en="© 2025 Budget Analysis - Syria Ministry PA System | Professional Cost Analysis by أبي سكر" data-ar="© 2025 تحليل الميزانية - نظام PA وزارة الداخلية السورية | تحليل تكلفة مهني من أبي سكر">© 2025 Budget Analysis - Syria Ministry PA System | Professional Cost Analysis by أبي سكر</p>
+            <p data-en="Updated with 2025 pricing and comprehensive cost breakdown" data-ar="محدث بتسعير 2025 وتفصيل تكلفة شامل">Updated with 2025 pricing and comprehensive cost breakdown</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
+    </script>
+</body>
+</html>

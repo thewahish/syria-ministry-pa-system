@@ -3,338 +3,617 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام الصوتيات لوزارة الداخلية السورية - حلول الصوت المهنية</title>
-    <link rel="stylesheet" href="./css/separate-pages.css">
+    <title>نظام الصوتيات لوزارة الداخلية السورية - حلول الصوت المهنية | تسعير محدث 2025</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
-    
-    <!-- Meta tags -->
-    <meta name="description" content="حلول نظام الصوتيات المهني لوزارة الداخلية السورية - حزم المعدات الصوتية الكاملة مع تسعير 2025 والشحن">
-    <meta name="keywords" content="نظام صوتيات، سوريا، وزارة، معدات صوتية، ميكروفونات لاسلكية، نظام خطي، تسعير 2025">
-    <meta name="author" content="عبي سكر - استشاري الصوت المهني">
-    
-    <!-- Open Graph Meta -->
-    <meta property="og:title" content="نظام الصوتيات لوزارة الداخلية السورية">
-    <meta property="og:description" content="حلول الصوت المهنية للتركيبات الحكومية السورية">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pa.obaisukar.com">
+    <link rel="stylesheet" href="./css/equipment-images.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .language-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        .language-toggle a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+            border-color: #3498db;
+        }
+        
+        .pricing-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .features li:before {
+            content: "✅ ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .shipping-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: 5px solid #5a67d8;
+        }
+        
+        .shipping-info h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        
+        .shipping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .shipping-option {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .export-compliance {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .export-compliance h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        
+        .compliance-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .compliance-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timeline {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            color: white;
+            border-left: 5px solid #ff6b6b;
+        }
+        
+        .timeline h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        
+        .timeline-steps {
+            margin: 2rem 0;
+        }
+        
+        .timeline-step {
+            background: rgba(255,255,255,0.1);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid rgba(255,255,255,0.5);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
+            color: white;
+            text-align: center;
+            border-left: 5px solid #34495e;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .update-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto;
+                display: block;
+                width: fit-content;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="language-selector">
-        <a href="./index-ar.html" class="lang-link active">🇸🇾 العربية</a>
-        <a href="./index-en.html" class="lang-link">🇺🇸 English</a>
-    </div>
-
-    <div class="container">
-        <header>
-            <h1>🎤 مشروع نظام الصوتيات لوزارة الداخلية السورية</h1>
-            <p class="subtitle">نظام صوتي مهني مع ميكروفونات لاسلكية وسماعات مراقبة داخلية ونظام سماعات خطية</p>
-            
-            <div class="info-box">
-                <strong>العميل:</strong> وزارة الداخلية السورية<br>
-                <strong>التاريخ:</strong> يناير 2025<br>
-                <strong>الحالة:</strong> مرحلة التسعير/التخطيط<br>
-                <strong>الموقع:</strong> <a href="https://pa.obaisukar.com" target="_blank">pa.obaisukar.com</a><br>
-                <strong>التسعير:</strong> محدث بأسعار 2025 والشحن إلى سوريا
-            </div>
-        </header>
-
-        <section class="requirements">
-            <h2>🎯 متطلبات النظام</h2>
-            <div class="req-grid">
-                <div class="req-item">
-                    <h3>🎤 الميكروفونات اللاسلكية</h3>
-                    <p>4-6 قنوات مع قدرة مزدوجة (ميكروفون طوق أو يدوي)، مدى ممتد، جودة مهنية</p>
-                </div>
-                <div class="req-item">
-                    <h3>🔌 الميكروفونات السلكية</h3>
-                    <p>2 ميكروفون سلكي اختياري للمواقع الثابتة التي تحتاج لميكروفونات مستقرة</p>
-                </div>
-                <div class="req-item">
-                    <h3>🎧 سماعات المراقبة الداخلية</h3>
-                    <p>نظامان بمدى 100م+، تغطية كاملة للمنطقة، جودة مهنية</p>
-                </div>
-                <div class="req-item">
-                    <h3>🔊 نظام السماعات الخطية</h3>
-                    <p>تصميم خفيف الوزن، قابل للتركيب على الجسور، تعزيز صوتي مهني</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="packages">
-            <h2>📦 حزم المعدات 2025 مع الشحن</h2>
-
-            <div class="package emergency">
-                <div class="package-header">
-                    <h3>🚨 حزمة البقاء للميزانية المحدودة جداً</h3>
-                    <div class="badge emergency">⚠️ طوارئ فقط</div>
-                </div>
-                <div class="price-container">
-                    <div class="price emergency">24,500$</div>
-                    <div class="price-breakdown">المعدات: 21,500$ + الشحن: 3,000$</div>
-                </div>
-                <div class="equipment-list">
-                    <ul>
-                        <li>4 ميكروفونات لاسلكية <span class="english-brand">Audio-Technica/Samson</span> (تناظرية) + 2 ميكروفون سلكي</li>
-                        <li>2 نظام سماعات مراقبة داخلية أساسي (نطاق محدود)</li>
-                        <li>4 سماعات <span class="english-brand">PA</span> مدعومة + 2 امبلي للصوت المنخفض (بدون نظام خطي)</li>
-                        <li>ميسكر رقمي أساسي</li>
-                        <li>شحن حاوية 20 قدم إلى سوريا</li>
-                    </ul>
-                </div>
-                <div class="package-info">
-                    <p><strong>الأفضل لـ:</strong> واقع الميزانية بعد الحرب، 800-1000 شخص كحد أقصى</p>
-                    <p><strong>المعدات فقط</strong> - الخدمات المهنية متوفرة بشكل منفصل (1,500$-8,500$)</p>
-                </div>
-                <div class="warning-box">
-                    <strong>⚠️ تنازلات كبيرة:</strong> مدى محدود، جودة أساسية، إعداد معقد، لا توجد قدرة تحكم عن بُعد
-                </div>
-            </div>
-
-            <div class="package">
-                <div class="package-header">
-                    <h3>الحزمة المهنية الاقتصادية</h3>
-                </div>
-                <div class="price-container">
-                    <div class="price">39,950$</div>
-                    <div class="price-breakdown">المعدات: 35,950$ + الشحن: 4,000$</div>
-                </div>
-                <div class="equipment-list">
-                    <ul>
-                        <li>6 ميكروفونات لاسلكية <span class="english-brand">Shure BLX</span> (تناظرية)</li>
-                        <li>سماعات مراقبة داخلية <span class="english-brand">Shure PSM 300</span></li>
-                        <li>نظام سماعات خطية <span class="english-brand">QSC KLA12</span> (12 عنصر، بدون امبليات)</li>
-                        <li>ميسكر رقمي</li>
-                        <li>شحن حاوية 40 قدم إلى سوريا</li>
-                    </ul>
-                </div>
-                <div class="package-info">
-                    <p><strong>الأفضل لـ:</strong> الحاجة لـ 6 لاسلكية، ميزانية محدودة، 1000 شخص</p>
-                </div>
-            </div>
-
-            <div class="package value">
-                <div class="package-header">
-                    <h3>الحزمة المتوسطة المميزة</h3>
-                    <div class="badge value">💰 أفضل قيمة</div>
-                </div>
-                <div class="price-container">
-                    <div class="price">45,920$</div>
-                    <div class="price-breakdown">المعدات: 41,920$ + الشحن: 4,000$</div>
-                </div>
-                <div class="equipment-list">
-                    <ul>
-                        <li>4 ميكروفونات لاسلكية <span class="english-brand">Sennheiser EW-D</span> (رقمية) + 2 ميكروفون سلكي</li>
-                        <li>سماعات مراقبة داخلية <span class="english-brand">Sennheiser EW IEM G4</span></li>
-                        <li>مصفوفة خطية <span class="english-brand">QSC KLA12</span> (12 عنصر) + امبليات الصوت المنخفض <span class="english-brand">KW181</span></li>
-                        <li>ميسكر رقمي مزود بالشبكة مع قدرة التحكم عن بُعد</li>
-                        <li>شحن حاوية 40 قدم إلى سوريا</li>
-                    </ul>
-                </div>
-                <div class="package-info">
-                    <p><strong>الأفضل لـ:</strong> التركيبات الحكومية، المظهر المهني، حتى 2000 شخص</p>
-                    <p class="highlight">ذكي: 4 لاسلكية + 2 سلكية = 6 مواضع إجمالية، توفير المال مع الحفاظ على الجودة المهنية!</p>
-                </div>
-                <div class="features-box">
-                    <h4>✅ يشمل التحكم عن بُعد من الولايات المتحدة:</h4>
-                    <ul>
-                        <li>تحكم كامل بالنظام عبر اتصال الإنترنت</li>
-                        <li>قدرة التسجيل متعدد المسارات 32 قناة</li>
-                        <li>يتطلب فقط 1-3 Mbps إنترنت (متوفر في سوريا)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="package recommended">
-                <div class="package-header">
-                    <h3>حزمة 3000 شخص المحسنة</h3>
-                    <div class="badge">🏛️ للمناسبات الكبيرة</div>
-                </div>
-                <div class="price-container">
-                    <div class="price">51,420$</div>
-                    <div class="price-breakdown">المعدات: 47,420$ + الشحن: 4,000$</div>
-                </div>
-                <div class="equipment-list">
-                    <ul>
-                        <li>4 ميكروفونات لاسلكية <span class="english-brand">Sennheiser EW-D</span> (رقمية) + 2 ميكروفون سلكي</li>
-                        <li>سماعات مراقبة داخلية <span class="english-brand">Sennheiser EW IEM G4</span></li>
-                        <li>مصفوفة خطية رئيسية <span class="english-brand">QSC KLA12</span> (12 عنصر) + امبليات الصوت المنخفض</li>
-                        <li>نظام توزيع إضافي: 4 سماعات <span class="english-brand">QSC K12.2</span> على أبراج التأخير</li>
-                        <li>معالج التأخير الرقمي للتوقيت المناسب</li>
-                        <li>ميسكر رقمي متقدم مع شبكات لاسلكية</li>
-                    </ul>
-                </div>
-                <div class="package-info">
-                    <p><strong>الأفضل لـ:</strong> المناسبات الحكومية الكبيرة، المؤتمرات، الفعاليات الرسمية</p>
-                    <p><strong>السعة:</strong> 3000 شخص مع تغطية صوتية موحدة ومهنية</p>
-                    <p class="highlight">تقنية ذكية: نظام توزيع هجين يجمع بين المصفوفة الخطية والسماعات الإضافية لتغطية مثالية!</p>
-                </div>
-                <div class="features-box">
-                    <h4>✅ مميزات خاصة للفعاليات الكبيرة:</h4>
-                    <ul>
-                        <li>تغطية متوازنة لـ 3000 شخص دون فقدان جودة الصوت</li>
-                        <li>نظام تأخير متطور يضمن وضوح الكلام في جميع المناطق</li>
-                        <li>تحكم عن بُعد كامل من الولايات المتحدة</li>
-                        <li>تسجيل متعدد المسارات 32 قناة</li>
-                        <li>تصميم نمطي قابل للتوسع حسب الحاجة</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="package recommended">
-                <div class="package-header">
-                    <h3>الحزمة المتميزة</h3>
-                    <div class="badge">⭐ أعلى جودة</div>
-                </div>
-                <div class="price-container">
-                    <div class="price">68,010$</div>
-                    <div class="price-breakdown">المعدات: 63,010$ + الشحن: 5,000$</div>
-                </div>
-                <div class="equipment-list">
-                    <ul>
-                        <li>ميكروفونات لاسلكية <span class="english-brand">Shure ULXD</span> (رقمية، 24-bit)</li>
-                        <li>سماعات مراقبة داخلية <span class="english-brand">Shure PSM 1000</span></li>
-                        <li>نظام سماعات خطية <span class="english-brand">JBL VTX A8</span> أو <span class="english-brand">d&b Y-Series</span></li>
-                        <li>ميسكر رقمي متميز مع شبكات متقدمة</li>
-                        <li>شحن حاوية كاملة مع معالجة متميزة</li>
-                    </ul>
-                </div>
-                <div class="package-info">
-                    <p><strong>الأفضل لـ:</strong> الأماكن الكبيرة، جودة بلا تنازلات، 2000+ شخص</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="shipping-info">
-            <h2>🚢 معلومات الشحن 2025 إلى سوريا</h2>
-            <div class="shipping-grid">
-                <div class="shipping-item">
-                    <h3>📦 خيارات الحاويات</h3>
-                    <ul>
-                        <li><strong>حاوية 20 قدم:</strong> 2,950$ - أفضل للمعدات الثقيلة</li>
-                        <li><strong>حاوية 40 قدم:</strong> 4,450$ - أكثر كفاءة في المساحة</li>
-                        <li><strong>LCL (مشتركة):</strong> 120$/م³ - الشحنات الصغيرة فقط</li>
-                    </ul>
-                </div>
-                <div class="shipping-item">
-                    <h3>⏱️ الجدول الزمني</h3>
-                    <ul>
-                        <li><strong>الولايات المتحدة إلى سوريا:</strong> 29 يوم في المتوسط</li>
-                        <li><strong>الموانئ:</strong> اللاذقية (رئيسي)، طرطوس (ثانوي)</li>
-                        <li><strong>البديل:</strong> عبر لبنان/تركيا (+3-5 أيام)</li>
-                    </ul>
-                </div>
-                <div class="shipping-item">
-                    <h3>💰 رسوم الاستيراد</h3>
-                    <ul>
-                        <li><strong>نظام 2025 الجديد:</strong> انخفاض الرسوم 50-60%</li>
-                        <li><strong>الإلكترونيات:</strong> معاملة تفضيلية</li>
-                        <li><strong>المعدات المهنية:</strong> معدلات أقل</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="professional-services">
-            <h2>💰 الخدمات المهنية (خيارات مرنة)</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>📞 الاستشارة عن بُعد</h3>
-                    <div class="service-price">1,500$</div>
-                    <p>لا سفر - دعم عن بُعد فقط</p>
-                </div>
-                <div class="service-item">
-                    <h3>🔧 الإعداد الأساسي</h3>
-                    <div class="service-price">2,500$</div>
-                    <p>إعداد المعدات والتدريب الأساسي</p>
-                </div>
-                <div class="service-item">
-                    <h3>⚙️ التركيب المهني</h3>
-                    <div class="service-price">5,500$</div>
-                    <p>التركيب الكامل مع التدريب</p>
-                </div>
-                <div class="service-item">
-                    <h3>🎓 الحزمة الكاملة</h3>
-                    <div class="service-price">8,500$</div>
-                    <p>تركيب كامل، تدريب ممتد، توثيق بالعربية</p>
-                </div>
-            </div>
-            <div class="travel-note">
-                <p><strong>تكاليف السفر:</strong> 2,500$-4,000$ إضافية للخدمات في الموقع</p>
-            </div>
-        </section>
-
-        <section class="recommendations">
-            <h2>🎯 التوصيات المهنية</h2>
-            
-            <div class="recommendation-box recommended">
-                <h3>✅ للاستخدام الحكومي المهني</h3>
-                <div class="recommendation-price">52,420$ إجمالي تكلفة المشروع</div>
-                <p><strong>الحزمة المتوسطة المميزة:</strong> 45,920$ (شامل الشحن) + 5,500$ تركيب مهني + 1,000$ سفر</p>
-                <div class="benefits">
-                    <ul>
-                        <li>✅ مظهر مهني مناسب للحكومة</li>
-                        <li>✅ قدرة التحكم الكاملة عن بُعد من الولايات المتحدة</li>
-                        <li>✅ تسجيل متعدد المسارات 32 قناة</li>
-                        <li>✅ يغطي 2000 شخص بجودة صوت ممتازة</li>
-                        <li>✅ موثوقية 5 سنوات مع ضمان مهني</li>
-                        <li>✅ أنظمة رقمية مع تشفير درجة حكومية</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="recommendation-box emergency">
-                <h3>💰 لقيود الميزانية الطارئة</h3>
-                <div class="recommendation-price">26,000$ إجمالي تكلفة المشروع</div>
-                <p><strong>حزمة الميزانية المحدودة جداً:</strong> 24,500$ (شامل الشحن) + 1,500$ دعم عن بُعد فقط</p>
-                <div class="limitations">
-                    <ul>
-                        <li>⚠️ يغطي 800-1000 شخص كحد أقصى</li>
-                        <li>⚠️ قدرة تحكم عن بُعد محدودة</li>
-                        <li>⚠️ جودة أساسية لكن وظيفية</li>
-                        <li>✅ يناسب قيود الميزانية القصوى</li>
-                        <li>✅ يمكن ترقيته لاحقاً عندما تسمح الميزانية</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="documents">
-            <h2>📋 وثائق المشروع</h2>
-            <div class="doc-grid">
-                <a href="./technical-study-ar.html" class="doc-link">
-                    <h3>🎓 الدراسة الفنية</h3>
-                    <p>التحليل الهندسي الكامل والمنهجية</p>
-                </a>
-                <a href="./equipment-specs-ar.html" class="doc-link">
-                    <h3>📊 مواصفات المعدات</h3>
-                    <p>المواصفات الفنية التفصيلية والتوافق</p>
-                </a>
-                <a href="./vendor-rfq-ar.html" class="doc-link">
-                    <h3>📢 طلب عروض الأسعار للموردين</h3>
-                    <p>مواصفات محايدة العلامة التجارية</p>
-                </a>
-                <a href="./shipping-guide-ar.html" class="doc-link">
-                    <h3>🚢 دليل الشحن</h3>
-                    <p>اللوجستيات الكاملة ومعلومات الاستيراد</p>
-                </a>
-                <a href="./remote-control-ar.html" class="doc-link">
-                    <h3>🌐 تحليل التحكم عن بُعد</h3>
-                    <p>أنظمة الإدارة والتحكم من الولايات المتحدة</p>
-                </a>
-                <a href="./installation-guide-ar.html" class="doc-link">
-                    <h3>🔧 دليل التركيب</h3>
-                    <p>إجراءات الإعداد ومواد التدريب</p>
-                </a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <p><strong>مشروع نظام الصوتيات لوزارة الداخلية السورية</strong> - حلول الصوت المهنية</p>
-            <p>الاستشاري: عبي سكر | الموقع: <a href="https://pa.obaisukar.com">pa.obaisukar.com</a></p>
-            <p>محدث: يناير 2025 مع التسعير الحالي وتكاليف الشحن إلى سوريا</p>
+    <div class="header">
+        <div class="language-toggle">
+            <a href="index-ar.html" style="opacity: 0.7;">🇸🇾 العربية</a> | 
+            <a href="index-en.html">🇺🇸 English</a>
         </div>
-    </footer>
+        <div class="container">
+            <h1>🎤 نظام الصوتيات لوزارة الداخلية السورية</h1>
+            <p class="subtitle">حلول الصوت المهنية للمرافق الحكومية</p>
+            <span class="update-badge">تسعير محدث 2025</span>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="container">
+            
+            <!-- Hero Section -->
+            <div style="text-align: center; margin: 2rem 0; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+                <img src="./assets/heroes/graduation-ceremony-hero.png" alt="نظام PA مهني لاحتفالات الحكومة" style="max-width: 100%; height: auto; border-radius: 10px;">
+                <h3 style="margin: 1.5rem 0; color: #2c3e50;">حلول الصوت المهنية للمرافق الحكومية السورية</h3>
+                <p style="color: #7f8c8d; font-size: 1.1rem;">مُصمم للتميز، مُبني للاعتمادية، مُخطط لمستقبل سوريا</p>
+            </div>
+            
+            <!-- Equipment Showcase Section -->
+            <div class="section">
+                <h2>🎵 معدات الصوت المهنية - تسعير 2025</h2>
+                <p>بناءً على أبحاث السوق الحالية وتسعير الموردين المُتحقق منه (نوفمبر 2025)</p>
+                
+                <!-- Equipment Count Analysis -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <img src="./assets/charts/equipment-count-comparison.png" alt="تحليل عدد المعدات حسب مستوى النظام" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">تحليل عدد المعدات عبر خيارات نظامنا ثلاثي المستويات</p>
+                </div>
+                
+                <!-- Professional Analytics Section -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <img src="./assets/charts/3-tier-comparison-2025.png" alt="مقارنة نظام PA ثلاثي المستويات 2025" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 1rem; font-style: italic; color: #666;">التحليل المهني لعروض نظام PA ثلاثي المستويات</p>
+                </div>
+                
+                <div class="equipment-showcase">
+                    <div class="equipment-card qsc-brand">
+                        <div style="text-align: center; padding: 1rem;">
+                            <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="QSC K10.2 سماعة نشطة" style="max-width: 200px; height: auto;">
+                        </div>
+                        <h3 class="equipment-title">QSC K12.2 سماعة نشطة</h3>
+                        <div class="equipment-specs">
+                            <h4>المواصفات الرئيسية:</h4>
+                            <ul>
+                                <li>قوة 2000 واط من الفئة D (ذروة 1800 واط LF + 225 واط HF)</li>
+                                <li>مشغل LF 12" + محرك ضغط HF تيتانيوم 1.4"</li>
+                                <li>استجابة ترددية: 50 Hz - 20 kHz</li>
+                                <li>أقصى SPL: 132 dB ذروة @ 1M</li>
+                                <li>الوزن: 17.7 كيلو / 39 رطل</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card qsc-brand">
+                        <div style="text-align: center; padding: 1rem;">
+                            <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="إعداد سماعة مهنية" style="max-width: 200px; height: auto;">
+                        </div>
+                        <h3 class="equipment-title">QSC KLA12 مصفوفة خطية</h3>
+                        <div class="equipment-specs">
+                            <h4>المواصفات الرئيسية:</h4>
+                            <ul>
+                                <li>قوة إجمالية 1000 واط (500 واط LF + 500 واط HF)</li>
+                                <li>مشغل LF 12" + محرك ضغط HF 1.75"</li>
+                                <li>استجابة ترددية: 49 Hz - 18 kHz</li>
+                                <li>التغطية: 90° أفقي × 18° عمودي</li>
+                                <li>الوزن: 25 كيلو / 55 رطل</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card sennheiser-brand">
+                        <div style="text-align: center; padding: 1rem;">
+                            <img src="./assets/equipment/microphones/shure-mx418.png" alt="نظام ميكروفون مهني" style="max-width: 200px; height: auto;">
+                        </div>
+                        <h3 class="equipment-title">Sennheiser EW-D رقمي</h3>
+                        <div class="equipment-specs">
+                            <h4>المواصفات الرئيسية:</h4>
+                            <ul>
+                                <li>دقة 24 بت، نطاق ديناميكي 134 dB</li>
+                                <li>زمن استجابة فائق منخفض: 1.9 مللي ثانية</li>
+                                <li>عرض نطاق ضبط 56 MHz</li>
+                                <li>متاح حتى 90 قناة</li>
+                                <li>اتصال Bluetooth للإعداد</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>QSC K12.2 سماعة نشطة</h3>
+                        <div class="price">$1,750</div>
+                        <div class="price-note">لكل وحدة (دولار أمريكي)</div>
+                        <ul class="features">
+                            <li>وحدة طاقة 2000 واط من الفئة D</li>
+                            <li>مكبر صوت عالي الأداء 12 بوصة</li>
+                            <li>محرك ضغط مهني</li>
+                            <li>خزانة مركبة خفيفة الوزن</li>
+                            <li>ميسكر ومعالج رقمي متكامل</li>
+                            <li>ضمان دولي لمدة سنتين</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Sennheiser لاسلكي رقمي</h3>
+                        <div class="price">$849</div>
+                        <div class="price-note">لكل نظام (دولار أمريكي)</div>
+                        <ul class="features">
+                            <li>نظام XS اللاسلكي الرقمي</li>
+                            <li>جهاز إرسال محمول</li>
+                            <li>مستقبل مهني</li>
+                            <li>النطاق A (548-572MHz)</li>
+                            <li>صوت رقمي واضح تماماً</li>
+                            <li>إعداد بلمسة واحدة سهل</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Audio-Technica حزمة مهنية</h3>
+                        <div class="price">$1,250</div>
+                        <div class="price-note">نظام ميكروفون كامل</div>
+                        <ul class="features">
+                            <li>ميكروفون استوديو AT4050</li>
+                            <li>ميكروفون مشبك ATM355VF</li>
+                            <li>ميكروفون عنق الأوزة المهني</li>
+                            <li>حزمة إكسسوارات كاملة</li>
+                            <li>حقيبة نقل مهنية</li>
+                            <li>ضمان ممتد 5 سنوات</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card" style="margin: 2rem auto; max-width: 600px;">
+                    <h3>🎯 الحزمة المحسنة لـ 3000 شخص</h3>
+                    <div class="price">$51,420</div>
+                    <div class="price-note">إجمالي تكلفة النظام (باستثناء الشحن والتركيب)</div>
+                    <ul class="features">
+                        <li>12× عنصر مصفوفة خطية QSC KLA12</li>
+                        <li>8× سماعات أبراج التأخير QSC K12.2</li>
+                        <li>6× أنظمة Sennheiser EW-D اللاسلكية</li>
+                        <li>حزمة Audio-Technica الكاملة</li>
+                        <li>كابلات وإكسسوارات مهنية</li>
+                        <li>دعم فني عن بُعد (سنة واحدة)</li>
+                        <li>وثائق التركيب</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Shipping Information -->
+            <div class="section shipping-info">
+                <h2>🚢 الشحن واللوجستيات إلى سوريا (أسعار 2025)</h2>
+                <p>خدمات الشحن البحري المهنية مع التتبع الكامل والتأمين</p>
+                
+                <div class="shipping-grid">
+                    <div class="shipping-option">
+                        <h3>🚛 حاوية 20 قدم</h3>
+                        <p><strong>التكلفة:</strong> 4,200$ - 5,500$ دولار أمريكي</p>
+                        <p><strong>وقت العبور:</strong> 35-45 يوم</p>
+                        <p><strong>السعة:</strong> حتى 28,000 كيلو</p>
+                        <p><strong>المسار:</strong> ميناء رئيسي ← بورسعيد ← اللاذقية</p>
+                    </div>
+                    
+                    <div class="shipping-option">
+                        <h3>📦 حاوية 40 قدم</h3>
+                        <p><strong>التكلفة:</strong> 7,200$ - 8,800$ دولار أمريكي</p>
+                        <p><strong>وقت العبور:</strong> 35-45 يوم</p>
+                        <p><strong>السعة:</strong> حتى 26,500 كيلو</p>
+                        <p><strong>المسار:</strong> مباشر أو عبر الشحن المصري</p>
+                    </div>
+                    
+                    <div class="shipping-option">
+                        <h3>🎯 الموصى به لمعدات PA</h3>
+                        <p><strong>الحل:</strong> حاوية 20 قدم (كافية)</p>
+                        <p><strong>الحماية:</strong> تغليف مهني مُضمن</p>
+                        <p><strong>التأمين:</strong> تغطية كاملة بقيمة الاستبدال</p>
+                        <p><strong>إجمالي الشحن:</strong> ~5,000$ دولار أمريكي</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Export Compliance -->
+            <div class="section export-compliance">
+                <h2>✅ تحديث الامتثال للتصدير 2025</h2>
+                <p>تحسينات كبيرة في لوائح التصدير الأمريكية لسوريا (ساري المفعول من 2 سبتمبر 2025)</p>
+                
+                <div class="compliance-points">
+                    <div class="compliance-card">
+                        <h3>🟢 لوائح جديدة</h3>
+                        <p>تؤهل المعدات الصوتية المهنية الآن لاستثناء الترخيص للسلام والازدهار السوري (SPP)</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✅ عناصر EAR99 مُعتمدة</li>
+                            <li>✅ افتراض الموافقة</li>
+                            <li>✅ وثائق مُبسطة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="compliance-card">
+                        <h3>📋 الوثائق المطلوبة</h3>
+                        <p>وثائق التصدير التجاري القياسية المطلوبة</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✅ فاتورة تجارية</li>
+                            <li>✅ بوليصة الشحن</li>
+                            <li>✅ قائمة التعبئة</li>
+                            <li>✅ شهادة المستخدم النهائي</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="compliance-card">
+                        <h3>⚡ وقت المعالجة</h3>
+                        <p>انخفض بشكل كبير مقارنة بالقيود السابقة</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✅ 5-10 أيام عمل</li>
+                            <li>✅ لا للاستخدام العسكري/الشرطة</li>
+                            <li>✅ الحكومة المدنية مُعتمدة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professional Analytics & Coverage Analysis -->
+            <div class="section">
+                <h2>📊 التحليل المهني للنظام</h2>
+                <p>رسوم التغطية الشاملة والتحليل المقارن لاتخاذ قرارات مدروسة</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="text-align: center;">
+                        <img src="./assets/charts/portable-vs-installed.png" alt="تحليل مقارنة الأنظمة المحمولة مقابل المثبتة" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <h4 style="margin: 1rem 0; color: #2c3e50;">مقارنة المحمول مقابل المثبت</h4>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="./assets/charts/setup-time-comparison.png" alt="تحليل وقت الإعداد" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <h4 style="margin: 1rem 0; color: #2c3e50;">تحليل وقت الإعداد</h4>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="text-align: center;">
+                        <img src="./assets/diagrams/coverage-tier1-portable.png" alt="تغطية المستوى الأول المحمول" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p style="margin-top: 0.5rem; font-weight: bold; color: #3498db;">المستوى الأول: محمول (50-150 شخص)</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="./assets/diagrams/coverage-tier2-standard.png" alt="تغطية المستوى الثاني القياسي" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p style="margin-top: 0.5rem; font-weight: bold; color: #27ae60;">المستوى الثاني: قياسي (150-800 شخص)</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="./assets/diagrams/coverage-tier3-large.png" alt="تغطية المستوى الثالث الكبير" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p style="margin-top: 0.5rem; font-weight: bold; color: #e74c3c;">المستوى الثالث: كبير (800+ شخص)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Timeline -->
+            <div class="section timeline">
+                <h2>📅 الجدولة الزمنية لتنفيذ المشروع</h2>
+                <p>الجدولة الزمنية المُقدرة من موافقة الطلب إلى التركيب الكامل</p>
+                
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <h3>الأسبوع 1-2: معالجة الطلبات ووثائق التصدير</h3>
+                        <p>أوامر الشراء، طلب ترخيص التصدير، وتنسيق الموردين</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <h3>الأسبوع 3-4: إعداد المعدات والتغليف</h3>
+                        <p>التغليف المهني، اختبار مراقبة الجودة، وإعداد الشحن</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <h3>الأسبوع 5-10: عبور الشحن البحري</h3>
+                        <p>شحن الحاويات عبر طريق المتوسط مع التتبع الكامل والتأمين</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <h3>الأسبوع 11-12: التخليص الجمركي والتسليم</h3>
+                        <p>معالجة الجمارك السورية والتسليم النهائي لمرافق الوزارة</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <h3>الأسبوع 13-14: التركيب والاختبار</h3>
+                        <p>التركيب المهني، اختبار النظام، وتدريب الموظفين (دعم عن بُعد)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="section contact-section">
+                <h2>📞 مستعد للمتابعة؟</h2>
+                <p>استشارة فنية مهنية وإدارة مشاريع متاحة</p>
+                
+                <div style="margin: 2rem 0;">
+                    <a href="mailto:obai@obaisukar.com" class="contact-button">
+                        📧 البريد الإلكتروني: obai@obaisukar.com
+                    </a>
+                    <a href="technical-study-ar.html" class="contact-button">
+                        📋 عرض الدراسة الفنية
+                    </a>
+                    <a href="shipping-guide-ar.html" class="contact-button">
+                        🚢 تفاصيل الشحن
+                    </a>
+                </div>
+                
+                <p><strong>الدعم الفني عن بُعد:</strong> إرشادات التركيب الكاملة عبر استشارة الفيديو</p>
+                <p><strong>إدارة المشاريع:</strong> التنسيق من الولايات المتحدة مع الفرق الفنية السورية</p>
+                <p><strong>مرونة الميزانية:</strong> خدمات مهنية قابلة للتكيف مع متطلبات الوزارة</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 مشروع نظام الصوتيات لوزارة الداخلية السورية | خدمات الهندسة الصوتية المهنية</p>
+            <p>منشور في: pa.obaisukar.com | الدعم الفني: obai@obaisukar.com</p>
+        </div>
+    </div>
 </body>
 </html>

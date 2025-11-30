@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Equipment Specifications - Syria Ministry PA System Project" data-ar="مواصفات المعدات - مشروع نظام PA وزارة الداخلية السورية">Equipment Specifications - Syria Ministry PA System Project</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎛️</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Equipment Grid */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .equipment-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #4299e1;
+        }
+        
+        .equipment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .equipment-image-container {
+            width: 100px;
+            height: 80px;
+            background: white;
+            border-radius: 8px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .equipment-image {
+            max-width: 90px;
+            max-height: 70px;
+            object-fit: contain;
+        }
+        
+        .equipment-title {
+            flex: 1;
+        }
+        
+        .equipment-title h4 {
+            margin: 0 0 0.25rem 0;
+            color: #1a202c;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .equipment-title .brand {
+            color: #718096;
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+        
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .spec-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #2d3748;
+            min-width: 120px;
+        }
+        
+        .spec-value {
+            color: #4a5568;
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        /* Specification Tables */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .spec-table th {
+            background: #1a202c;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .spec-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .spec-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        /* Package Highlight */
+        .package-highlight {
+            background: #f0fff4;
+            border: 2px solid #38a169;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .package-highlight h5 {
+            color: #38a169;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Compatibility Matrix */
+        .compatibility-matrix {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .compatibility-matrix h4 {
+            color: #d97706;
+            margin-bottom: 1rem;
+        }
+        
+        /* Category Sections */
+        .category-section {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .category-section h3 {
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* Technical Badge */
+        .tech-badge {
+            display: inline-block;
+            background: #4299e1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.25rem;
+        }
+        
+        .tech-badge.digital {
+            background: #38a169;
+        }
+        
+        .tech-badge.wireless {
+            background: #805ad5;
+        }
+        
+        .tech-badge.professional {
+            background: #e53e3e;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .equipment-header {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .equipment-image-container {
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+        
+        [dir="rtl"] .spec-list li {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .spec-value {
+            text-align: left;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .equipment-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .equipment-image-container {
+                margin: 0 0 1rem 0;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="🎛️ Equipment Specifications: Syria Ministry PA System" data-ar="🎛️ مواصفات المعدات: نظام PA وزارة الداخلية السورية">🎛️ Equipment Specifications: Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Professional Audio Equipment Catalog with Technical Specifications" data-ar="كتالوج معدات الصوت المهنية مع المواصفات الفنية">Professional Audio Equipment Catalog with Technical Specifications</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Equipment Catalog:</strong> Professional Audio Components for Government Installation<br>
+                    <strong>Standards:</strong> International Audio Engineering Society (AES) Compliance<br>
+                    <strong>Prepared by:</strong> أبي سكر - Professional Audio Consultant<br>
+                    <strong>Date:</strong> January 2025<br>
+                    <strong>Pricing:</strong> 2025 Updated US Pricing + Shipping to Syria
+                </div>
+                <div data-lang="ar">
+                    <strong>كتالوج المعدات:</strong> مكونات صوتية مهنية للتركيب الحكومي<br>
+                    <strong>المعايير:</strong> امتثال جمعية الهندسة الصوتية الدولية (AES)<br>
+                    <strong>أعده:</strong> أبي سكر - استشاري صوتي مهني<br>
+                    <strong>التاريخ:</strong> يناير 2025<br>
+                    <strong>التسعير:</strong> تسعير أمريكي محدث 2025 + الشحن إلى سوريا
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Wireless Microphone Systems -->
+            <section class="section">
+                <h2>🎤 Wireless Microphone Systems</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/microphones/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Sennheiser EW-D SK</h4>
+                                <div class="brand">Digital Wireless System</div>
+                                <div>
+                                    <span class="tech-badge digital">DIGITAL</span>
+                                    <span class="tech-badge wireless">ENCRYPTED</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Frequency Range:</span><span class="spec-value">470-694 MHz</span></li>
+                            <li><span class="spec-label">Dynamic Range:</span><span class="spec-value">134 dB</span></li>
+                            <li><span class="spec-label">Channels:</span><span class="spec-value">3328 frequencies</span></li>
+                            <li><span class="spec-label">Battery Life:</span><span class="spec-value">12+ hours</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,200 each</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>Recommended Package</h5>
+                            <p>4 units for Mid-Range VALUE, 6 units for Enhanced 3000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/microphones/shure-mx418.png" alt="Shure MX418" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Shure MX418 Gooseneck</h4>
+                                <div class="brand">Professional Wired Microphone</div>
+                                <div>
+                                    <span class="tech-badge">CONDENSER</span>
+                                    <span class="tech-badge professional">PHANTOM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Type:</span><span class="spec-value">Condenser</span></li>
+                            <li><span class="spec-label">Length:</span><span class="spec-value">18 inch flexible</span></li>
+                            <li><span class="spec-label">Frequency:</span><span class="spec-value">50-17,000 Hz</span></li>
+                            <li><span class="spec-label">Phantom Power:</span><span class="spec-value">11-52V</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$320 each</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>Backup Systems</h5>
+                            <p>2 units included in all packages for reliability</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Speaker Systems -->
+            <section class="section">
+                <h2>🔊 Speaker Systems & Line Arrays</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="QSC KLA12" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>QSC KLA12 Active Line Array</h4>
+                                <div class="brand">Professional Line Array Element</div>
+                                <div>
+                                    <span class="tech-badge professional">2000W</span>
+                                    <span class="tech-badge">DSP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Power:</span><span class="spec-value">2000W Class-D</span></li>
+                            <li><span class="spec-label">Coverage:</span><span class="spec-value">90° x 15°</span></li>
+                            <li><span class="spec-label">Max SPL:</span><span class="spec-value">131 dB</span></li>
+                            <li><span class="spec-label">Weight:</span><span class="spec-value">39.5 lbs</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,400 each</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>System Configuration</h5>
+                            <p>8 units for Mid-Range, 12 units for Enhanced 3000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="Professional Setup" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>KLA12 Subwoofer</h4>
+                                <div class="brand">Powered Subwoofer System</div>
+                                <div>
+                                    <span class="tech-badge professional">3200W</span>
+                                    <span class="tech-badge">LOW-FREQ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Power:</span><span class="spec-value">3200W Class-D</span></li>
+                            <li><span class="spec-label">Frequency:</span><span class="spec-value">37-100 Hz</span></li>
+                            <li><span class="spec-label">Max SPL:</span><span class="spec-value">134 dB</span></li>
+                            <li><span class="spec-label">Driver:</span><span class="spec-value">Dual 12" woofers</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$3,200 each</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>Low Frequency Extension</h5>
+                            <p>2-4 units depending on venue size and package</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Mixing & Processing -->
+            <section class="section">
+                <h2>🎛️ Mixing Consoles & Processing</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Yamaha TF3 Digital Console</h4>
+                                <div class="brand">32-Channel Digital Mixer</div>
+                                <div>
+                                    <span class="tech-badge digital">DIGITAL</span>
+                                    <span class="tech-badge">TOUCHFLOW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Channels:</span><span class="spec-value">32 mixing channels</span></li>
+                            <li><span class="spec-label">Faders:</span><span class="spec-value">25 x 100mm motorized</span></li>
+                            <li><span class="spec-label">Effects:</span><span class="spec-value">8 send/return effects</span></li>
+                            <li><span class="spec-label">Remote Control:</span><span class="spec-value">iPad/Android app</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$3,400</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>DBX DriveRack PA2</h4>
+                                <div class="brand">Complete Loudspeaker Management</div>
+                                <div>
+                                    <span class="tech-badge professional">DSP</span>
+                                    <span class="tech-badge">AUTO-EQ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Inputs:</span><span class="spec-value">2 XLR + 1/4"</span></li>
+                            <li><span class="spec-label">Outputs:</span><span class="spec-value">6 XLR</span></li>
+                            <li><span class="spec-label">Processing:</span><span class="spec-value">AutoEQ + feedback suppression</span></li>
+                            <li><span class="spec-label">Control:</span><span class="spec-value">Ethernet + USB</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$800</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Professional Accessories -->
+            <section class="section">
+                <h2>🔧 Professional Accessories & Stands</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/stands/km-210-9-boom.png" alt="K&M Professional Stand" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>K&M 210/9 Boom Stand</h4>
+                                <div class="brand">German Professional Microphone Stand</div>
+                                <div>
+                                    <span class="tech-badge">GERMAN</span>
+                                    <span class="tech-badge professional">HEAVY-DUTY</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Height:</span><span class="spec-value">35.4" - 63"</span></li>
+                            <li><span class="spec-label">Boom Length:</span><span class="spec-value">32.3"</span></li>
+                            <li><span class="spec-label">Base:</span><span class="spec-value">Cast iron with rubber feet</span></li>
+                            <li><span class="spec-label">Weight:</span><span class="spec-value">11.9 lbs</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$180 each</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #4299e1;">🎧</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Sennheiser IEM System</h4>
+                                <div class="brand">Professional In-Ear Monitoring</div>
+                                <div>
+                                    <span class="tech-badge digital">WIRELESS</span>
+                                    <span class="tech-badge">STEREO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Frequency:</span><span class="spec-value">518-865 MHz</span></li>
+                            <li><span class="spec-label">Range:</span><span class="spec-value">300+ feet</span></li>
+                            <li><span class="spec-label">Battery:</span><span class="spec-value">6+ hours operation</span></li>
+                            <li><span class="spec-label">Channels:</span><span class="spec-value">Up to 20 simultaneous</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$1,200/set</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Package Comparison Table -->
+            <section class="section">
+                <h2>📊 Package Equipment Comparison</h2>
+                <div class="category-section">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Equipment Category</th>
+                                <th>Emergency Package</th>
+                                <th>Mid-Range VALUE</th>
+                                <th>Enhanced 3000</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wireless Microphones</strong></td>
+                                <td>4x Analog Basic + 2x Wired</td>
+                                <td>4x Sennheiser EW-D + 2x Shure MX418</td>
+                                <td>6x Sennheiser EW-D + 2x Shure MX418</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Main Speakers</strong></td>
+                                <td>6x Basic PA Speakers</td>
+                                <td>8x QSC KLA12 Line Array</td>
+                                <td>12x QSC KLA12 + 8x Delay Towers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subwoofers</strong></td>
+                                <td>2x Basic Powered Subs</td>
+                                <td>2x QSC KLA12 Subwoofers</td>
+                                <td>4x QSC KLA12 Subwoofers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mixing Console</strong></td>
+                                <td>16-channel analog mixer</td>
+                                <td>Yamaha TF3 32-channel digital</td>
+                                <td>Yamaha TF3 32-channel digital</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Processing</strong></td>
+                                <td>Basic EQ/Compressor</td>
+                                <td>DBX DriveRack PA2 + wireless control</td>
+                                <td>DBX DriveRack PA2 + wireless control</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monitoring</strong></td>
+                                <td>Basic wired monitors</td>
+                                <td>Sennheiser wireless IEM (4 sets)</td>
+                                <td>Sennheiser wireless IEM (6 sets)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Capacity</strong></td>
+                                <td>800-1000 people</td>
+                                <td>2000 people</td>
+                                <td>3000+ people</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td><strong>Total Investment</strong></td>
+                                <td><strong>$24,500</strong></td>
+                                <td><strong>$45,920</strong></td>
+                                <td><strong>$51,420</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Technical Compatibility -->
+            <section class="section">
+                <h2>⚙️ System Compatibility & Integration</h2>
+                <div class="compatibility-matrix">
+                    <h4>🔗 Professional Integration Requirements</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0;">
+                        <div>
+                            <h5>Power Requirements</h5>
+                            <ul style="margin-left: 1rem;">
+                                <li>240V Syrian standard compatible</li>
+                                <li>UPS backup system included</li>
+                                <li>Total power: 8-15 kW depending on package</li>
+                                <li>Power distribution included</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Connectivity Standards</h5>
+                            <ul style="margin-left: 1rem;">
+                                <li>XLR professional balanced audio</li>
+                                <li>Ethernet TCP/IP for remote control</li>
+                                <li>SMPTE timecode compatibility</li>
+                                <li>AES/EBU digital audio standards</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic;"><strong>Remote Control:</strong> All systems include full internet-based remote control capability for US-based technical support and operation.</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- Wireless Microphone Systems -->
+            <section class="section">
+                <h2>🎤 أنظمة الميكروفونات اللاسلكية</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/microphones/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Sennheiser EW-D SK</h4>
+                                <div class="brand">نظام لاسلكي رقمي</div>
+                                <div>
+                                    <span class="tech-badge digital">رقمي</span>
+                                    <span class="tech-badge wireless">مُشفر</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">نطاق التردد:</span><span class="spec-value">470-694 ميجاهرتز</span></li>
+                            <li><span class="spec-label">النطاق الديناميكي:</span><span class="spec-value">134 ديسيبل</span></li>
+                            <li><span class="spec-label">القنوات:</span><span class="spec-value">3328 تردد</span></li>
+                            <li><span class="spec-label">عمر البطارية:</span><span class="spec-value">12+ ساعة</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,200$ للقطعة</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>الحزمة الموصى بها</h5>
+                            <p>4 وحدات للقيمة المتوسطة، 6 وحدات للمحسن 3000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/microphones/shure-mx418.png" alt="Shure MX418" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Shure MX418 Gooseneck</h4>
+                                <div class="brand">ميكروفون سلكي مهني</div>
+                                <div>
+                                    <span class="tech-badge">مكثف</span>
+                                    <span class="tech-badge professional">طاقة وهمية</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">النوع:</span><span class="spec-value">مكثف</span></li>
+                            <li><span class="spec-label">الطول:</span><span class="spec-value">18 بوصة مرنة</span></li>
+                            <li><span class="spec-label">التردد:</span><span class="spec-value">50-17,000 هرتز</span></li>
+                            <li><span class="spec-label">الطاقة الوهمية:</span><span class="spec-value">11-52 فولت</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">320$ للقطعة</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>أنظمة احتياطية</h5>
+                            <p>وحدتان مدرجتان في جميع الحزم للموثوقية</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Speaker Systems -->
+            <section class="section">
+                <h2>🔊 أنظمة السماعات والمصفوفات الخطية</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="QSC KLA12" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>QSC KLA12 مصفوفة خطية نشطة</h4>
+                                <div class="brand">عنصر مصفوفة خطية مهنية</div>
+                                <div>
+                                    <span class="tech-badge professional">2000 واط</span>
+                                    <span class="tech-badge">DSP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">القوة:</span><span class="spec-value">2000 واط الفئة D</span></li>
+                            <li><span class="spec-label">التغطية:</span><span class="spec-value">90° × 15°</span></li>
+                            <li><span class="spec-label">أقصى SPL:</span><span class="spec-value">131 ديسيبل</span></li>
+                            <li><span class="spec-label">الوزن:</span><span class="spec-value">39.5 رطل</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,400$ للقطعة</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>تكوين النظام</h5>
+                            <p>8 وحدات للمتوسطة، 12 وحدة للمحسن 3000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="إعداد مهني" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>KLA12 مضخم صوت</h4>
+                                <div class="brand">نظام مضخم صوت مزود بالطاقة</div>
+                                <div>
+                                    <span class="tech-badge professional">3200 واط</span>
+                                    <span class="tech-badge">تردد منخفض</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">القوة:</span><span class="spec-value">3200 واط الفئة D</span></li>
+                            <li><span class="spec-label">التردد:</span><span class="spec-value">37-100 هرتز</span></li>
+                            <li><span class="spec-label">أقصى SPL:</span><span class="spec-value">134 ديسيبل</span></li>
+                            <li><span class="spec-label">السائق:</span><span class="spec-value">مضخمات مزدوجة 12 بوصة</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">3,200$ للقطعة</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>امتداد التردد المنخفض</h5>
+                            <p>2-4 وحدات حسب حجم المكان والحزمة</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Mixing & Processing -->
+            <section class="section">
+                <h2>🎛️ وحدات التحكم في الخلط والمعالجة</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Yamaha TF3 وحدة تحكم رقمية</h4>
+                                <div class="brand">خلاط رقمي 32 قناة</div>
+                                <div>
+                                    <span class="tech-badge digital">رقمي</span>
+                                    <span class="tech-badge">TOUCHFLOW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">القنوات:</span><span class="spec-value">32 قناة خلط</span></li>
+                            <li><span class="spec-label">المنزلقات:</span><span class="spec-value">25 × 100مم آلي</span></li>
+                            <li><span class="spec-label">التأثيرات:</span><span class="spec-value">8 تأثيرات إرسال/إرجاع</span></li>
+                            <li><span class="spec-label">التحكم عن بُعد:</span><span class="spec-value">تطبيق iPad/Android</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">3,400$</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>DBX DriveRack PA2</h4>
+                                <div class="brand">إدارة مكبرات الصوت الكاملة</div>
+                                <div>
+                                    <span class="tech-badge professional">DSP</span>
+                                    <span class="tech-badge">AUTO-EQ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">المدخلات:</span><span class="spec-value">2 XLR + 1/4"</span></li>
+                            <li><span class="spec-label">المخرجات:</span><span class="spec-value">6 XLR</span></li>
+                            <li><span class="spec-label">المعالجة:</span><span class="spec-value">AutoEQ + قمع التغذية الراجعة</span></li>
+                            <li><span class="spec-label">التحكم:</span><span class="spec-value">Ethernet + USB</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">800$</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Professional Accessories -->
+            <section class="section">
+                <h2>🔧 الإكسسوارات المهنية والحوامل</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <img src="./assets/equipment/stands/km-210-9-boom.png" alt="حامل مهني K&M" class="equipment-image">
+                            </div>
+                            <div class="equipment-title">
+                                <h4>K&M 210/9 حامل ذراع</h4>
+                                <div class="brand">حامل ميكروفون مهني ألماني</div>
+                                <div>
+                                    <span class="tech-badge">ألماني</span>
+                                    <span class="tech-badge professional">للخدمة الشاقة</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">الارتفاع:</span><span class="spec-value">35.4" - 63"</span></li>
+                            <li><span class="spec-label">طول الذراع:</span><span class="spec-value">32.3"</span></li>
+                            <li><span class="spec-label">القاعدة:</span><span class="spec-value">حديد مصبوب مع أقدام مطاطية</span></li>
+                            <li><span class="spec-label">الوزن:</span><span class="spec-value">11.9 رطل</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">180$ للقطعة</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #4299e1;">🎧</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Sennheiser نظام IEM</h4>
+                                <div class="brand">مراقبة داخلية مهنية</div>
+                                <div>
+                                    <span class="tech-badge digital">لاسلكي</span>
+                                    <span class="tech-badge">ستيريو</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">التردد:</span><span class="spec-value">518-865 ميجاهرتز</span></li>
+                            <li><span class="spec-label">المدى:</span><span class="spec-value">300+ قدم</span></li>
+                            <li><span class="spec-label">البطارية:</span><span class="spec-value">6+ ساعات تشغيل</span></li>
+                            <li><span class="spec-label">القنوات:</span><span class="spec-value">حتى 20 متزامنة</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">1,200$/مجموعة</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Package Comparison Table -->
+            <section class="section">
+                <h2>📊 مقارنة معدات الحزم</h2>
+                <div class="category-section">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>فئة المعدات</th>
+                                <th>حزمة الطوارئ</th>
+                                <th>القيمة المتوسطة</th>
+                                <th>المحسن 3000</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>الميكروفونات اللاسلكية</strong></td>
+                                <td>4x تناظرية أساسية + 2x سلكية</td>
+                                <td>4x Sennheiser EW-D + 2x Shure MX418</td>
+                                <td>6x Sennheiser EW-D + 2x Shure MX418</td>
+                            </tr>
+                            <tr>
+                                <td><strong>السماعات الرئيسية</strong></td>
+                                <td>6x سماعات PA أساسية</td>
+                                <td>8x QSC KLA12 مصفوفة خطية</td>
+                                <td>12x QSC KLA12 + 8x أبراج تأخير</td>
+                            </tr>
+                            <tr>
+                                <td><strong>مضخمات الصوت</strong></td>
+                                <td>2x مضخمات أساسية</td>
+                                <td>2x QSC KLA12 مضخمات</td>
+                                <td>4x QSC KLA12 مضخمات</td>
+                            </tr>
+                            <tr>
+                                <td><strong>وحدة التحكم في الخلط</strong></td>
+                                <td>خلاط تناظري 16 قناة</td>
+                                <td>Yamaha TF3 رقمي 32 قناة</td>
+                                <td>Yamaha TF3 رقمي 32 قناة</td>
+                            </tr>
+                            <tr>
+                                <td><strong>المعالجة</strong></td>
+                                <td>EQ/ضاغط أساسي</td>
+                                <td>DBX DriveRack PA2 + تحكم لاسلكي</td>
+                                <td>DBX DriveRack PA2 + تحكم لاسلكي</td>
+                            </tr>
+                            <tr>
+                                <td><strong>المراقبة</strong></td>
+                                <td>شاشات سلكية أساسية</td>
+                                <td>Sennheiser لاسلكي IEM (4 مجموعات)</td>
+                                <td>Sennheiser لاسلكي IEM (6 مجموعات)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>السعة</strong></td>
+                                <td>800-1000 شخص</td>
+                                <td>2000 شخص</td>
+                                <td>3000+ شخص</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td><strong>إجمالي الاستثمار</strong></td>
+                                <td><strong>24,500$</strong></td>
+                                <td><strong>45,920$</strong></td>
+                                <td><strong>51,420$</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Technical Compatibility -->
+            <section class="section">
+                <h2>⚙️ توافق النظام والتكامل</h2>
+                <div class="compatibility-matrix">
+                    <h4>🔗 متطلبات التكامل المهني</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1rem 0;">
+                        <div>
+                            <h5>متطلبات الطاقة</h5>
+                            <ul style="margin-right: 1rem;">
+                                <li>متوافق مع المعيار السوري 240 فولت</li>
+                                <li>نظام UPS احتياطي مدرج</li>
+                                <li>إجمالي الطاقة: 8-15 كيلو واط حسب الحزمة</li>
+                                <li>توزيع الطاقة مدرج</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>معايير الاتصال</h5>
+                            <ul style="margin-right: 1rem;">
+                                <li>صوت متوازن مهني XLR</li>
+                                <li>Ethernet TCP/IP للتحكم عن بُعد</li>
+                                <li>توافق SMPTE timecode</li>
+                                <li>معايير الصوت الرقمي AES/EBU</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic;"><strong>التحكم عن بُعد:</strong> تشمل جميع الأنظمة قدرة تحكم عن بُعد كاملة عبر الإنترنت للدعم الفني والتشغيل من الولايات المتحدة.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <p data-en="© 2025 Equipment Specifications - Syria Ministry PA System | Professional Audio Catalog by أبي سكر" data-ar="© 2025 مواصفات المعدات - نظام PA وزارة الداخلية السورية | كتالوج صوتي مهني من أبي سكر">© 2025 Equipment Specifications - Syria Ministry PA System | Professional Audio Catalog by أبي سكر</p>
+            <p data-en="Comprehensive technical specifications with 2025 pricing" data-ar="مواصفات فنية شاملة مع تسعير 2025">Comprehensive technical specifications with 2025 pricing</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
+    </script>
+</body>
+</html>
