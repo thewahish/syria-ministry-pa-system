@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syria Ministry PA System - Project Completion Form | User Input Collection</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+        
+        .completion-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #38a169, #48bb78);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .form-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .form-section h2 {
+            color: #1a202c;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .required {
+            color: #e53e3e;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-item:hover {
+            border-color: #cbd5e0;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.75rem;
+            transform: scale(1.2);
+        }
+        
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .radio-item:hover {
+            border-color: #cbd5e0;
+        }
+        
+        .radio-item input[type="radio"] {
+            width: auto;
+            margin-right: 0.75rem;
+            transform: scale(1.2);
+        }
+        
+        .radio-item.selected {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+        
+        .form-help {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .package-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .package-card {
+            background: white;
+            border: 3px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .package-card.selected {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+        
+        .package-card.recommended {
+            border-color: #38a169;
+        }
+        
+        .package-card.recommended::before {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #38a169;
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .package-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 1rem 0;
+        }
+        
+        .package-features {
+            text-align: left;
+            margin-top: 1rem;
+        }
+        
+        .package-features li {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .submit-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .submit-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1.25rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .submit-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-step {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem;
+        }
+        
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #38a169;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        .progress-text {
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .form-container {
+                padding: 2rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .checkbox-group,
+            .radio-group,
+            .package-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> PA System Project Completed!</h1>
+            <p class="subtitle">Syria Ministry of Interior Professional Audio System</p>
+            <div class="completion-badge"> PROJECT READY FOR IMPLEMENTATION</div>
+            
+            <div class="progress-indicator">
+                <div class="progress-step">
+                    <div class="progress-circle">DONE</div>
+                    <div class="progress-text">Technical Design</div>
+                </div>
+                <div class="progress-step">
+                    <div class="progress-circle">DONE</div>
+                    <div class="progress-text">Equipment Selection</div>
+                </div>
+                <div class="progress-step">
+                    <div class="progress-circle">DONE</div>
+                    <div class="progress-text">Pricing & Procurement</div>
+                </div>
+                <div class="progress-step">
+                    <div class="progress-circle"></div>
+                    <div class="progress-text">Final Input</div>
+                </div>
+            </div>
+        </div>
+        
+        <form id="projectCompletionForm" class="form-container">
+            <!-- Project Overview -->
+            <div class="form-section">
+                <h2> Project Overview</h2>
+                <div class="form-group">
+                    <label for="projectName">Project Name <span class="required">*</span></label>
+                    <input type="text" id="projectName" name="projectName" value="Syria Ministry PA System for Graduation Ceremonies" required>
+                    <div class="form-help">Official project name for documentation and contracts</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientOrganization">Client Organization <span class="required">*</span></label>
+                    <input type="text" id="clientOrganization" name="clientOrganization" placeholder="e.g., Ministry of Interior - Syria" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectScope">Project Scope Description</label>
+                    <textarea id="projectScope" name="projectScope" placeholder="Describe the specific scope and requirements for your PA system installation...">Professional PA system for graduation ceremonies with capacity for 2000+ attendees. Includes digital wireless microphones, line array speakers, professional mixing console, and remote technical support from USA.</textarea>
+                </div>
+            </div>
+            
+            <!-- Package Selection -->
+            <div class="form-section">
+                <h2> Package Selection</h2>
+                <div class="form-group">
+                    <label>Select Your Preferred Package <span class="required">*</span></label>
+                    <div class="package-selector">
+                        <div class="package-card" onclick="selectPackage('emergency')">
+                            <h3>Emergency Package</h3>
+                            <div class="package-price">$24,500</div>
+                            <ul class="package-features">
+                                <li>4 analog wireless + 2 wired mics</li>
+                                <li>Basic PA speakers + subwoofers</li>
+                                <li>800-1000 people capacity</li>
+                                <li>Limited remote control</li>
+                                <li>Container shipping included</li>
+                            </ul>
+                            <input type="radio" name="selectedPackage" value="emergency" style="display: none;">
+                        </div>
+                        
+                        <div class="package-card recommended" onclick="selectPackage('midrange')">
+                            <h3>Mid-Range VALUE</h3>
+                            <div class="package-price">$52,420</div>
+                            <ul class="package-features">
+                                <li>4 Sennheiser EW-D digital wireless</li>
+                                <li>QSC K12.2 active speakers</li>
+                                <li>2000 people capacity</li>
+                                <li>Full remote control from USA</li>
+                                <li>Professional installation</li>
+                            </ul>
+                            <input type="radio" name="selectedPackage" value="midrange" style="display: none;">
+                        </div>
+                        
+                        <div class="package-card" onclick="selectPackage('enhanced')">
+                            <h3>Enhanced 3000</h3>
+                            <div class="package-price">$68,010</div>
+                            <ul class="package-features">
+                                <li>6 Sennheiser EW-D digital wireless</li>
+                                <li>12x QSC line array + delay towers</li>
+                                <li>3000+ people capacity</li>
+                                <li>Distributed sound system</li>
+                                <li>Premium installation & training</li>
+                            </ul>
+                            <input type="radio" name="selectedPackage" value="enhanced" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h2> Primary Contact Information</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="contactName">Contact Name <span class="required">*</span></label>
+                        <input type="text" id="contactName" name="contactName" required placeholder="Full name of primary contact">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactTitle">Title/Position</label>
+                        <input type="text" id="contactTitle" name="contactTitle" placeholder="e.g., Technical Director, Project Manager">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address <span class="required">*</span></label>
+                        <input type="email" id="contactEmail" name="contactEmail" required placeholder="professional.email@organization.gov">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required placeholder="+963 XX XXX XXXX">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Implementation Preferences -->
+            <div class="form-section">
+                <h2>Implementation Preferences</h2>
+                
+                <div class="form-group">
+                    <label>Installation Service Preference <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item" onclick="selectRadio('installType', 'remote')">
+                            <input type="radio" name="installType" value="remote" id="remote">
+                            <div>
+                                <strong>Remote Consultation ($1,500)</strong><br>
+                                Video-guided installation support
+                            </div>
+                        </div>
+                        <div class="radio-item" onclick="selectRadio('installType', 'professional')">
+                            <input type="radio" name="installType" value="professional" id="professional">
+                            <div>
+                                <strong>Professional Installation ($5,500)</strong><br>
+                                On-site setup with training
+                            </div>
+                        </div>
+                        <div class="radio-item" onclick="selectRadio('installType', 'complete')">
+                            <input type="radio" name="installType" value="complete" id="complete">
+                            <div>
+                                <strong>Complete Training Package ($8,500)</strong><br>
+                                Full installation, training & certification
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferredTimeline">Preferred Implementation Timeline</label>
+                    <select id="preferredTimeline" name="preferredTimeline">
+                        <option value="">Select timeline preference</option>
+                        <option value="immediate">Immediate (2-4 weeks)</option>
+                        <option value="standard">Standard (1-2 months)</option>
+                        <option value="flexible">Flexible (2-3 months)</option>
+                        <option value="planning">Planning phase only</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="venue">Venue Information</label>
+                    <textarea id="venue" name="venue" placeholder="Describe the venue where the PA system will be installed (indoor/outdoor, capacity, dimensions, etc.)"></textarea>
+                </div>
+            </div>
+            
+            <!-- Additional Requirements -->
+            <div class="form-section">
+                <h2> Additional Requirements</h2>
+                
+                <div class="form-group">
+                    <label>Additional Services (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="recording" id="recording">
+                            <label for="recording">Audio recording capabilities for ceremonies</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="streaming" id="streaming">
+                            <label for="streaming">Live streaming integration</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="backup" id="backup">
+                            <label for="backup">Backup equipment rental for important events</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="maintenance" id="maintenance">
+                            <label for="maintenance">Annual maintenance contract</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="training" id="training">
+                            <label for="training">Extended operator training program</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="additionalServices" value="documentation" id="documentation">
+                            <label for="documentation">Arabic technical documentation translation</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequirements">Special Requirements or Notes</label>
+                    <textarea id="specialRequirements" name="specialRequirements" placeholder="Any specific requirements, constraints, or special considerations for this project..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Budget and Approval -->
+            <div class="form-section">
+                <h2> Budget and Approval Information</h2>
+                
+                <div class="form-group">
+                    <label for="budgetRange">Approved Budget Range</label>
+                    <select id="budgetRange" name="budgetRange">
+                        <option value="">Select budget range</option>
+                        <option value="under-30k">Under $30,000</option>
+                        <option value="30k-50k">$30,000 - $50,000</option>
+                        <option value="50k-70k">$50,000 - $70,000</option>
+                        <option value="over-70k">Over $70,000</option>
+                        <option value="flexible">Budget flexible based on recommendation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="approvalAuthority">Budget Approval Authority</label>
+                    <input type="text" id="approvalAuthority" name="approvalAuthority" placeholder="Name and title of person with budget approval authority">
+                </div>
+                
+                <div class="form-group">
+                    <label for="procurementProcess">Procurement Process Requirements</label>
+                    <textarea id="procurementProcess" name="procurementProcess" placeholder="Describe any specific procurement procedures, vendor requirements, or approval processes..."></textarea>
+                </div>
+            </div>
+        </form>
+        
+        <div class="submit-section">
+            <h2 style="margin-bottom: 1rem;"> Ready to Submit Project Details</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;">Your comprehensive PA system project is complete. Submit this form to finalize your project requirements and begin the procurement process.</p>
+            <button type="submit" form="projectCompletionForm" class="submit-btn">
+                 Submit Project to Engineer
+            </button>
+            <div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+                This will send your requirements directly to أبي سكر for final project coordination
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPackage(packageType) {
+            // Remove selected class from all packages
+            document.querySelectorAll('.package-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked package
+            event.currentTarget.classList.add('selected');
+            
+            // Set radio button value
+            document.querySelector(`input[name="selectedPackage"][value="${packageType}"]`).checked = true;
+        }
+        
+        function selectRadio(name, value) {
+            // Remove selected class from all radio items in this group
+            document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.closest('.radio-item').classList.remove('selected');
+            });
+            
+            // Add selected class to clicked item
+            event.currentTarget.classList.add('selected');
+            
+            // Set radio button value
+            document.querySelector(`input[name="${name}"][value="${value}"]`).checked = true;
+        }
+        
+        // Handle form submission
+        document.getElementById('projectCompletionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Create email content
+            const emailSubject = encodeURIComponent('Syria Ministry PA System - Project Completion Details');
+            const emailBody = encodeURIComponent(
+                `PA System Project Completion Form\n\n` +
+                `Project: ${data.projectName || 'Not specified'}\n` +
+                `Client: ${data.clientOrganization || 'Not specified'}\n` +
+                `Contact: ${data.contactName || 'Not specified'}\n` +
+                `Email: ${data.contactEmail || 'Not specified'}\n` +
+                `Phone: ${data.contactPhone || 'Not specified'}\n\n` +
+                `Selected Package: ${data.selectedPackage || 'Not selected'}\n` +
+                `Installation Type: ${data.installType || 'Not selected'}\n` +
+                `Timeline: ${data.preferredTimeline || 'Not specified'}\n` +
+                `Budget Range: ${data.budgetRange || 'Not specified'}\n\n` +
+                `Project Scope:\n${data.projectScope || 'Not provided'}\n\n` +
+                `Venue Information:\n${data.venue || 'Not provided'}\n\n` +
+                `Special Requirements:\n${data.specialRequirements || 'Not provided'}\n\n` +
+                `Additional Services:\n${data.additionalServices ? (Array.isArray(data.additionalServices) ? data.additionalServices.join(', ') : data.additionalServices) : 'None selected'}\n\n` +
+                `Procurement Process:\n${data.procurementProcess || 'Not specified'}\n\n` +
+                `This form was submitted from the Syria Ministry PA System project completion page.`
+            );
+            
+            // Open email client
+            window.location.href = `mailto:obai@obaisukar.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you! Your project details have been prepared for submission to the engineer. Your email client should open with the pre-filled project information.');
+            }, 500);
+        });
+        
+        // Auto-select recommended package on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-select the recommended mid-range package
+            selectPackage('midrange');
+            
+            // Auto-select professional installation
+            selectRadio('installType', 'professional');
+        });
+    </script>
+</body>
+</html>
