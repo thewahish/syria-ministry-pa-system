@@ -370,6 +370,60 @@
             text-align: left;
         }
         
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #4299e1;
+        }
+
+        /* Make images clickable */
+        img[src*="assets/"] {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        img[src*="assets/"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -460,7 +514,7 @@
                     <div class="equipment-card">
                         <div class="equipment-header">
                             <div class="equipment-image-container">
-                                <img src="./assets/equipment/microphones/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
+                                <img src="./assets/equipment/wireless/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
                             </div>
                             <div class="equipment-title">
                                 <h4>Sennheiser EW-D SK</h4>
@@ -583,8 +637,8 @@
                                 <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3" class="equipment-image">
                             </div>
                             <div class="equipment-title">
-                                <h4>Yamaha TF3 Digital Console</h4>
-                                <div class="brand">32-Channel Digital Mixer</div>
+                                <h4>Yamaha TF1/TF3 Digital Console</h4>
+                                <div class="brand">16/24-Channel Digital Mixer</div>
                                 <div>
                                     <span class="tech-badge digital">DIGITAL</span>
                                     <span class="tech-badge">TOUCHFLOW</span>
@@ -592,14 +646,15 @@
                             </div>
                         </div>
                         <ul class="spec-list">
-                            <li><span class="spec-label">Channels:</span><span class="spec-value">32 mixing channels</span></li>
-                            <li><span class="spec-label">Faders:</span><span class="spec-value">25 x 100mm motorized</span></li>
+                            <li><span class="spec-label">TF1 Channels:</span><span class="spec-value">16 inputs (sufficient for ceremonies)</span></li>
+                            <li><span class="spec-label">TF3 Channels:</span><span class="spec-value">24 inputs (Premium tier)</span></li>
+                            <li><span class="spec-label">Faders:</span><span class="spec-value">17/25 x 100mm motorized</span></li>
                             <li><span class="spec-label">Effects:</span><span class="spec-value">8 send/return effects</span></li>
-                            <li><span class="spec-label">Remote Control:</span><span class="spec-value">iPad/Android app</span></li>
-                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$3,400</span></li>
+                            <li><span class="spec-label">Remote Control:</span><span class="spec-value">iPad/Android app + TeamViewer</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">TF1: $2,499 / TF3: $2,799</span></li>
                         </ul>
                     </div>
-                    
+
                     <div class="equipment-card">
                         <div class="equipment-header">
                             <div class="equipment-image-container">
@@ -622,9 +677,166 @@
                             <li><span class="spec-label">2025 Price:</span><span class="spec-value">$800</span></li>
                         </ul>
                     </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #e53e3e;">🔇</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>DBX AFS2 Feedback Suppressor</h4>
+                                <div class="brand">Automatic Feedback Eliminator</div>
+                                <div>
+                                    <span class="tech-badge professional">AUTO</span>
+                                    <span class="tech-badge">DUAL-CHANNEL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Channels:</span><span class="spec-value">Dual channel (stereo)</span></li>
+                            <li><span class="spec-label">Filters:</span><span class="spec-value">12 fixed + 12 live per channel</span></li>
+                            <li><span class="spec-label">Response:</span><span class="spec-value">&lt;0.3 sec auto-detect</span></li>
+                            <li><span class="spec-label">Setup:</span><span class="spec-value">1 for mains, 1 for monitors</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$400 each (need 2)</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>Recommended Configuration</h5>
+                            <p>2 units: One for main PA, one for stage monitors</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             
+            <!-- Rigging & Truss Equipment (Tier 3 Only) -->
+            <section class="section">
+                <h2>🏗️ Rigging & Truss Equipment (Tier 3 Premium)</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;"><strong>Note:</strong> Only Tier 3 Premium benefits from flown line arrays. Tiers 1, 2, and 4 use ground-stack or tripod configurations.</p>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #805ad5;">🗼</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Global Truss ST-180</h4>
+                                <div class="brand">Heavy-Duty Crank Tower</div>
+                                <div>
+                                    <span class="tech-badge premium">800 LB</span>
+                                    <span class="tech-badge">18 FT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Max Height:</span><span class="spec-value">18 ft (5.5m)</span></li>
+                            <li><span class="spec-label">Load Capacity:</span><span class="spec-value">800 lbs (360 kg)</span></li>
+                            <li><span class="spec-label">Lift Type:</span><span class="spec-value">Hand crank winch</span></li>
+                            <li><span class="spec-label">Base:</span><span class="spec-value">Heavy-duty outriggers</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$1,800 each (need 4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #4299e1;">⛓️</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>CM Lodestar 1-Ton Chain Hoist</h4>
+                                <div class="brand">Electric Chain Motor</div>
+                                <div>
+                                    <span class="tech-badge professional">ELECTRIC</span>
+                                    <span class="tech-badge">1 TON</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Capacity:</span><span class="spec-value">2,000 lbs (1 ton)</span></li>
+                            <li><span class="spec-label">Lift Speed:</span><span class="spec-value">16 fpm</span></li>
+                            <li><span class="spec-label">Chain Length:</span><span class="spec-value">60 ft standard</span></li>
+                            <li><span class="spec-label">Control:</span><span class="spec-value">Pendant controller</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$2,500 each (need 4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #38a169;">🔩</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>QSC LA112 Flying Frame</h4>
+                                <div class="brand">Official Array Rigging Hardware</div>
+                                <div>
+                                    <span class="tech-badge">QSC OEM</span>
+                                    <span class="tech-badge professional">CERTIFIED</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Compatibility:</span><span class="spec-value">QSC LA112 arrays</span></li>
+                            <li><span class="spec-label">Max Load:</span><span class="spec-value">6 elements per frame</span></li>
+                            <li><span class="spec-label">Splay Angle:</span><span class="spec-value">0°-10° adjustable</span></li>
+                            <li><span class="spec-label">Safety:</span><span class="spec-value">Primary + backup pins</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$800 each (need 4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #e53e3e;">🔗</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Rigging Hardware Kit</h4>
+                                <div class="brand">Safety Cables & Shackles</div>
+                                <div>
+                                    <span class="tech-badge professional">SAFETY</span>
+                                    <span class="tech-badge">WLL RATED</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">Steel Cables:</span><span class="spec-value">12x safety cables (1/4")</span></li>
+                            <li><span class="spec-label">Shackles:</span><span class="spec-value">8x 1-ton bow shackles</span></li>
+                            <li><span class="spec-label">Spansets:</span><span class="spec-value">4x 1-ton round slings</span></li>
+                            <li><span class="spec-label">Hardware:</span><span class="spec-value">Quick links, carabiners</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$1,500 complete kit</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="compatibility-matrix" style="background: #faf5ff; border-color: #805ad5;">
+                    <h4 style="color: #805ad5;">🏗️ Tier 3 Rigging Package Total: ~$30,000</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                        <div>
+                            <strong>Crank Towers (4x)</strong><br>
+                            $7,200
+                        </div>
+                        <div>
+                            <strong>Chain Hoists (4x)</strong><br>
+                            $10,000
+                        </div>
+                        <div>
+                            <strong>Flying Frames (4x)</strong><br>
+                            $3,200
+                        </div>
+                        <div>
+                            <strong>Safety Hardware</strong><br>
+                            $1,500
+                        </div>
+                        <div>
+                            <strong>Rigging Cases</strong><br>
+                            $2,000
+                        </div>
+                        <div>
+                            <strong>Labor/Training</strong><br>
+                            $6,100
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic;"><strong>Note:</strong> Rigging equipment requires certified rigger for setup. This equipment enables arrays to be flown at optimal height (15-18 ft) for maximum coverage in 5,000+ venues.</p>
+                </div>
+            </section>
+
             <!-- Professional Accessories -->
             <section class="section">
                 <h2>🔧 Professional Accessories & Stands</h2>
@@ -651,14 +863,14 @@
                             <li><span class="spec-label">2025 Price:</span><span class="spec-value">$180 each</span></li>
                         </ul>
                     </div>
-                    
+
                     <div class="equipment-card">
                         <div class="equipment-header">
                             <div class="equipment-image-container">
                                 <div style="font-size: 2rem; color: #4299e1;">🎧</div>
                             </div>
                             <div class="equipment-title">
-                                <h4>Sennheiser IEM System</h4>
+                                <h4>Shure PSM300 IEM System</h4>
                                 <div class="brand">Professional In-Ear Monitoring</div>
                                 <div>
                                     <span class="tech-badge digital">WIRELESS</span>
@@ -671,7 +883,7 @@
                             <li><span class="spec-label">Range:</span><span class="spec-value">300+ feet</span></li>
                             <li><span class="spec-label">Battery:</span><span class="spec-value">6+ hours operation</span></li>
                             <li><span class="spec-label">Channels:</span><span class="spec-value">Up to 20 simultaneous</span></li>
-                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$1,200/set</span></li>
+                            <li><span class="spec-label">2025 Price:</span><span class="spec-value">$800/set</span></li>
                         </ul>
                     </div>
                 </div>
@@ -679,65 +891,95 @@
             
             <!-- Package Comparison Table -->
             <section class="section">
-                <h2>📊 Package Equipment Comparison</h2>
+                <h2>📊 Package Equipment Comparison (4-Tier System)</h2>
                 <div class="category-section">
                     <table class="spec-table">
                         <thead>
                             <tr>
                                 <th>Equipment Category</th>
-                                <th>Emergency Package</th>
-                                <th>Mid-Range VALUE</th>
-                                <th>Enhanced 3000</th>
+                                <th>Tier 1: Budget</th>
+                                <th>Tier 2: VALUE</th>
+                                <th>Tier 3: Premium</th>
+                                <th>Tier 4: Portable</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Wireless Microphones</strong></td>
-                                <td>4x Analog Basic + 2x Wired</td>
-                                <td>4x Sennheiser EW-D + 2x Shure MX418</td>
-                                <td>6x Sennheiser EW-D + 2x Shure MX418</td>
-                            </tr>
-                            <tr>
                                 <td><strong>Main Speakers</strong></td>
-                                <td>6x Basic PA Speakers</td>
-                                <td>8x QSC KLA12 Line Array</td>
-                                <td>12x QSC KLA12 + 8x Delay Towers</td>
+                                <td>8x QSC K12.2 (point-source)</td>
+                                <td>8x QSC LA112 Line Array</td>
+                                <td>12x QSC LA112 (flown)</td>
+                                <td>2x JBL EON ONE MK2</td>
                             </tr>
                             <tr>
                                 <td><strong>Subwoofers</strong></td>
-                                <td>2x Basic Powered Subs</td>
-                                <td>2x QSC KLA12 Subwoofers</td>
-                                <td>4x QSC KLA12 Subwoofers</td>
+                                <td>Not included</td>
+                                <td>2x QSC KS118</td>
+                                <td>4x QSC KS212C (cardioid)</td>
+                                <td>Built-in</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wireless Mics</strong></td>
+                                <td>2x Shure BLX14/CVL + 1x BLX288</td>
+                                <td>2x Shure BLX14/CVL + 1x BLX288/SM58</td>
+                                <td>2x Shure ULXD + 1x ULXD handheld</td>
+                                <td>1x Shure BLX14/CVL + 1x BLX</td>
                             </tr>
                             <tr>
                                 <td><strong>Mixing Console</strong></td>
-                                <td>16-channel analog mixer</td>
-                                <td>Yamaha TF3 32-channel digital</td>
-                                <td>Yamaha TF3 32-channel digital</td>
+                                <td>Yamaha TF1 (16ch digital)</td>
+                                <td>Yamaha TF1 (16ch digital)</td>
+                                <td>Yamaha TF3 (24ch digital)</td>
+                                <td>Built-in 5ch mixer</td>
                             </tr>
                             <tr>
-                                <td><strong>Processing</strong></td>
-                                <td>Basic EQ/Compressor</td>
-                                <td>DBX DriveRack PA2 + wireless control</td>
-                                <td>DBX DriveRack PA2 + wireless control</td>
+                                <td><strong>Feedback Eliminators</strong></td>
+                                <td>1x DBX AFS2 (mains only)</td>
+                                <td>2x DBX AFS2 (mains + monitors)</td>
+                                <td>2x DBX AFS2 (mains + monitors)</td>
+                                <td>Not included</td>
                             </tr>
                             <tr>
-                                <td><strong>Monitoring</strong></td>
-                                <td>Basic wired monitors</td>
-                                <td>Sennheiser wireless IEM (4 sets)</td>
-                                <td>Sennheiser wireless IEM (6 sets)</td>
+                                <td><strong>Stage Monitors</strong></td>
+                                <td>2x QSC K10.2 floor monitors</td>
+                                <td>2x QSC K10.2 floor monitors</td>
+                                <td>2x K10.2 + 2x Shure PSM300 IEMs</td>
+                                <td>Not included</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rigging/Support</strong></td>
+                                <td>Speaker poles only</td>
+                                <td>QSC rigging frames + crank stands</td>
+                                <td>Full truss: towers, hoists, frames</td>
+                                <td>None (portable)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Talkback</strong></td>
+                                <td>Hollyland SE 4S</td>
+                                <td>Hollyland SE 5S</td>
+                                <td>Clear-Com DX410</td>
+                                <td>Not included</td>
                             </tr>
                             <tr>
                                 <td><strong>Capacity</strong></td>
-                                <td>800-1000 people</td>
-                                <td>2000 people</td>
-                                <td>3000+ people</td>
+                                <td>2,000-2,500 people</td>
+                                <td>3,000+ people</td>
+                                <td>5,000+ people</td>
+                                <td>100-200 people</td>
                             </tr>
-                            <tr style="background: #f8fafc;">
-                                <td><strong>Total Investment</strong></td>
-                                <td><strong>$24,500</strong></td>
-                                <td><strong>$45,920</strong></td>
-                                <td><strong>$51,420</strong></td>
+                            <tr style="background: #e6f7ff;">
+                                <td><strong>Equipment Cost</strong></td>
+                                <td><strong>$15,995</strong></td>
+                                <td><strong>$42,183</strong></td>
+                                <td><strong>$68,831</strong></td>
+                                <td><strong>$2,958</strong></td>
+                            </tr>
+                            <tr style="background: #f0fff4; font-weight: bold;">
+                                <td><strong>Total Landed in Syria</strong></td>
+                                <td><strong>$24,274</strong></td>
+                                <td><strong>$61,103</strong></td>
+                                <td><strong>$98,545</strong></td>
+                                <td><strong>$4,434</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -783,7 +1025,7 @@
                     <div class="equipment-card">
                         <div class="equipment-header">
                             <div class="equipment-image-container">
-                                <img src="./assets/equipment/microphones/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
+                                <img src="./assets/equipment/wireless/sennheiser-ew-d.png" alt="Sennheiser EW-D" class="equipment-image">
                             </div>
                             <div class="equipment-title">
                                 <h4>Sennheiser EW-D SK</h4>
@@ -906,8 +1148,8 @@
                                 <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3" class="equipment-image">
                             </div>
                             <div class="equipment-title">
-                                <h4>Yamaha TF3 وحدة تحكم رقمية</h4>
-                                <div class="brand">خلاط رقمي 32 قناة</div>
+                                <h4>Yamaha TF1/TF3 وحدة تحكم رقمية</h4>
+                                <div class="brand">خلاط رقمي 16/24 قناة</div>
                                 <div>
                                     <span class="tech-badge digital">رقمي</span>
                                     <span class="tech-badge">TOUCHFLOW</span>
@@ -915,14 +1157,15 @@
                             </div>
                         </div>
                         <ul class="spec-list">
-                            <li><span class="spec-label">القنوات:</span><span class="spec-value">32 قناة خلط</span></li>
-                            <li><span class="spec-label">المنزلقات:</span><span class="spec-value">25 × 100مم آلي</span></li>
+                            <li><span class="spec-label">قنوات TF1:</span><span class="spec-value">16 مدخل (كافٍ للحفلات)</span></li>
+                            <li><span class="spec-label">قنوات TF3:</span><span class="spec-value">24 مدخل (المستوى المتميز)</span></li>
+                            <li><span class="spec-label">المنزلقات:</span><span class="spec-value">17/25 × 100مم آلي</span></li>
                             <li><span class="spec-label">التأثيرات:</span><span class="spec-value">8 تأثيرات إرسال/إرجاع</span></li>
-                            <li><span class="spec-label">التحكم عن بُعد:</span><span class="spec-value">تطبيق iPad/Android</span></li>
-                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">3,400$</span></li>
+                            <li><span class="spec-label">التحكم عن بُعد:</span><span class="spec-value">تطبيق iPad/Android + TeamViewer</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">TF1: 2,499$ / TF3: 2,799$</span></li>
                         </ul>
                     </div>
-                    
+
                     <div class="equipment-card">
                         <div class="equipment-header">
                             <div class="equipment-image-container">
@@ -945,9 +1188,114 @@
                             <li><span class="spec-label">سعر 2025:</span><span class="spec-value">800$</span></li>
                         </ul>
                     </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #e53e3e;">🔇</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>DBX AFS2 مانع التغذية الراجعة</h4>
+                                <div class="brand">مانع تغذية راجعة أوتوماتيكي</div>
+                                <div>
+                                    <span class="tech-badge professional">أوتو</span>
+                                    <span class="tech-badge">قناة مزدوجة</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">القنوات:</span><span class="spec-value">قناة مزدوجة (ستيريو)</span></li>
+                            <li><span class="spec-label">الفلاتر:</span><span class="spec-value">12 ثابتة + 12 حية لكل قناة</span></li>
+                            <li><span class="spec-label">الاستجابة:</span><span class="spec-value">&lt;0.3 ثانية كشف أوتو</span></li>
+                            <li><span class="spec-label">الإعداد:</span><span class="spec-value">1 للرئيسي، 1 للشاشات</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">400$ للوحدة (تحتاج 2)</span></li>
+                        </ul>
+                        <div class="package-highlight">
+                            <h5>التكوين الموصى به</h5>
+                            <p>وحدتان: واحدة للـ PA الرئيسي، واحدة لشاشات المسرح</p>
+                        </div>
+                    </div>
                 </div>
             </section>
-            
+
+            <!-- Rigging & Truss Equipment Arabic -->
+            <section class="section">
+                <h2>🏗️ معدات التعليق والجمالون (المستوى 3 المتميز)</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;"><strong>ملاحظة:</strong> المستوى 3 المتميز فقط يستفيد من المصفوفات المعلقة. المستويات 1 و 2 و 4 تستخدم التكوين الأرضي أو الحامل الثلاثي.</p>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #805ad5;">🗼</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>Global Truss ST-180</h4>
+                                <div class="brand">برج رافعة للخدمة الشاقة</div>
+                                <div>
+                                    <span class="tech-badge premium">800 رطل</span>
+                                    <span class="tech-badge">18 قدم</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">أقصى ارتفاع:</span><span class="spec-value">18 قدم (5.5م)</span></li>
+                            <li><span class="spec-label">سعة الحمل:</span><span class="spec-value">800 رطل (360 كجم)</span></li>
+                            <li><span class="spec-label">نوع الرفع:</span><span class="spec-value">ونش يدوي</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">1,800$ للوحدة (تحتاج 4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #4299e1;">⛓️</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>CM Lodestar رافعة سلسلة 1 طن</h4>
+                                <div class="brand">محرك سلسلة كهربائي</div>
+                                <div>
+                                    <span class="tech-badge professional">كهربائي</span>
+                                    <span class="tech-badge">1 طن</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">السعة:</span><span class="spec-value">2,000 رطل (1 طن)</span></li>
+                            <li><span class="spec-label">سرعة الرفع:</span><span class="spec-value">16 قدم/دقيقة</span></li>
+                            <li><span class="spec-label">طول السلسلة:</span><span class="spec-value">60 قدم قياسي</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">2,500$ للوحدة (تحتاج 4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-card">
+                        <div class="equipment-header">
+                            <div class="equipment-image-container">
+                                <div style="font-size: 2rem; color: #38a169;">🔩</div>
+                            </div>
+                            <div class="equipment-title">
+                                <h4>إطار تعليق QSC LA112</h4>
+                                <div class="brand">أجهزة تعليق المصفوفة الرسمية</div>
+                                <div>
+                                    <span class="tech-badge">QSC OEM</span>
+                                    <span class="tech-badge professional">معتمد</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li><span class="spec-label">التوافق:</span><span class="spec-value">مصفوفات QSC LA112</span></li>
+                            <li><span class="spec-label">أقصى حمل:</span><span class="spec-value">6 عناصر لكل إطار</span></li>
+                            <li><span class="spec-label">زاوية الانتشار:</span><span class="spec-value">0°-10° قابلة للتعديل</span></li>
+                            <li><span class="spec-label">سعر 2025:</span><span class="spec-value">800$ للوحدة (تحتاج 4)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="compatibility-matrix" style="background: #faf5ff; border-color: #805ad5;">
+                    <h4 style="color: #805ad5;">🏗️ إجمالي حزمة التعليق المستوى 3: ~30,000$</h4>
+                    <p style="margin-top: 1rem; font-style: italic;"><strong>ملاحظة:</strong> معدات التعليق تتطلب فني تعليق معتمد للإعداد. هذه المعدات تمكن من تعليق المصفوفات على الارتفاع الأمثل (15-18 قدم) للتغطية القصوى في الأماكن لـ 5,000+ شخص.</p>
+                </div>
+            </section>
+
             <!-- Professional Accessories -->
             <section class="section">
                 <h2>🔧 الإكسسوارات المهنية والحوامل</h2>
@@ -1002,65 +1350,95 @@
             
             <!-- Package Comparison Table -->
             <section class="section">
-                <h2>📊 مقارنة معدات الحزم</h2>
+                <h2>📊 مقارنة معدات الحزم (نظام 4 مستويات)</h2>
                 <div class="category-section">
                     <table class="spec-table">
                         <thead>
                             <tr>
                                 <th>فئة المعدات</th>
-                                <th>حزمة الطوارئ</th>
-                                <th>القيمة المتوسطة</th>
-                                <th>المحسن 3000</th>
+                                <th>المستوى 1: اقتصادي</th>
+                                <th>المستوى 2: القيمة</th>
+                                <th>المستوى 3: متميز</th>
+                                <th>المستوى 4: محمول</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>الميكروفونات اللاسلكية</strong></td>
-                                <td>4x تناظرية أساسية + 2x سلكية</td>
-                                <td>4x Sennheiser EW-D + 2x Shure MX418</td>
-                                <td>6x Sennheiser EW-D + 2x Shure MX418</td>
-                            </tr>
-                            <tr>
                                 <td><strong>السماعات الرئيسية</strong></td>
-                                <td>6x سماعات PA أساسية</td>
-                                <td>8x QSC KLA12 مصفوفة خطية</td>
-                                <td>12x QSC KLA12 + 8x أبراج تأخير</td>
+                                <td>8x QSC K12.2 (نقطية)</td>
+                                <td>8x QSC LA112 مصفوفة</td>
+                                <td>12x QSC LA112 (معلقة)</td>
+                                <td>2x JBL EON ONE MK2</td>
                             </tr>
                             <tr>
                                 <td><strong>مضخمات الصوت</strong></td>
-                                <td>2x مضخمات أساسية</td>
-                                <td>2x QSC KLA12 مضخمات</td>
-                                <td>4x QSC KLA12 مضخمات</td>
+                                <td>غير مشمول</td>
+                                <td>2x QSC KS118</td>
+                                <td>4x QSC KS212C</td>
+                                <td>مدمج</td>
                             </tr>
                             <tr>
-                                <td><strong>وحدة التحكم في الخلط</strong></td>
-                                <td>خلاط تناظري 16 قناة</td>
-                                <td>Yamaha TF3 رقمي 32 قناة</td>
-                                <td>Yamaha TF3 رقمي 32 قناة</td>
+                                <td><strong>الميكروفونات اللاسلكية</strong></td>
+                                <td>2x Shure BLX14/CVL + 1x BLX288</td>
+                                <td>2x Shure BLX14/CVL + 1x BLX288/SM58</td>
+                                <td>2x Shure ULXD + 1x ULXD يدوي</td>
+                                <td>1x BLX14/CVL + 1x BLX</td>
                             </tr>
                             <tr>
-                                <td><strong>المعالجة</strong></td>
-                                <td>EQ/ضاغط أساسي</td>
-                                <td>DBX DriveRack PA2 + تحكم لاسلكي</td>
-                                <td>DBX DriveRack PA2 + تحكم لاسلكي</td>
+                                <td><strong>وحدة التحكم</strong></td>
+                                <td>Yamaha TF1 (16 قناة رقمي)</td>
+                                <td>Yamaha TF1 (16 قناة رقمي)</td>
+                                <td>Yamaha TF3 (24 قناة رقمي)</td>
+                                <td>خلاط مدمج 5 قنوات</td>
                             </tr>
                             <tr>
-                                <td><strong>المراقبة</strong></td>
-                                <td>شاشات سلكية أساسية</td>
-                                <td>Sennheiser لاسلكي IEM (4 مجموعات)</td>
-                                <td>Sennheiser لاسلكي IEM (6 مجموعات)</td>
+                                <td><strong>مانع التغذية الراجعة</strong></td>
+                                <td>1x DBX AFS2 (الرئيسي فقط)</td>
+                                <td>2x DBX AFS2 (رئيسي + شاشات)</td>
+                                <td>2x DBX AFS2 (رئيسي + شاشات)</td>
+                                <td>غير مشمول</td>
+                            </tr>
+                            <tr>
+                                <td><strong>شاشات المسرح</strong></td>
+                                <td>2x QSC K10.2 شاشات أرضية</td>
+                                <td>2x QSC K10.2 شاشات أرضية</td>
+                                <td>2x K10.2 + 2x Shure PSM300 IEMs</td>
+                                <td>غير مشمول</td>
+                            </tr>
+                            <tr>
+                                <td><strong>التعليق/الدعم</strong></td>
+                                <td>أعمدة سماعات فقط</td>
+                                <td>إطارات QSC + حوامل رافعة</td>
+                                <td>جمالون كامل: أبراج، روافع، إطارات</td>
+                                <td>لا شيء (محمول)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>نظام الاتصال</strong></td>
+                                <td>Hollyland SE 4S</td>
+                                <td>Hollyland SE 5S</td>
+                                <td>Clear-Com DX410</td>
+                                <td>غير مشمول</td>
                             </tr>
                             <tr>
                                 <td><strong>السعة</strong></td>
-                                <td>800-1000 شخص</td>
-                                <td>2000 شخص</td>
-                                <td>3000+ شخص</td>
+                                <td>2,000-2,500 شخص</td>
+                                <td>3,000+ شخص</td>
+                                <td>5,000+ شخص</td>
+                                <td>100-200 شخص</td>
                             </tr>
-                            <tr style="background: #f8fafc;">
-                                <td><strong>إجمالي الاستثمار</strong></td>
-                                <td><strong>24,500$</strong></td>
-                                <td><strong>45,920$</strong></td>
-                                <td><strong>51,420$</strong></td>
+                            <tr style="background: #e6f7ff;">
+                                <td><strong>تكلفة المعدات</strong></td>
+                                <td><strong>15,995$</strong></td>
+                                <td><strong>42,183$</strong></td>
+                                <td><strong>68,831$</strong></td>
+                                <td><strong>2,958$</strong></td>
+                            </tr>
+                            <tr style="background: #f0fff4; font-weight: bold;">
+                                <td><strong>الإجمالي في سوريا</strong></td>
+                                <td><strong>24,274$</strong></td>
+                                <td><strong>61,103$</strong></td>
+                                <td><strong>98,545$</strong></td>
+                                <td><strong>4,434$</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1097,30 +1475,45 @@
             </section>
         </div>
     </div>
-    
-    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 3px solid #4299e1;">
         <div class="container">
-            <p data-en="© 2025 Equipment Specifications - Syria Ministry PA System | Professional Audio Catalog by أبي سكر" data-ar="© 2025 مواصفات المعدات - نظام PA وزارة الداخلية السورية | كتالوج صوتي مهني من أبي سكر">© 2025 Equipment Specifications - Syria Ministry PA System | Professional Audio Catalog by أبي سكر</p>
-            <p data-en="Comprehensive technical specifications with 2025 pricing" data-ar="مواصفات فنية شاملة مع تسعير 2025">Comprehensive technical specifications with 2025 pricing</p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
         </div>
     </div>
 
     <script>
         let currentLanguage = 'en';
-        
+
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
-            
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
-            
-            // Show new content
-            if (newContent) newContent.classList.add('active');
-            
+
+            // Hide ALL current language content sections
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
             // Update direction and lang attribute
             if (lang === 'ar') {
                 html.setAttribute('dir', 'rtl');
@@ -1129,7 +1522,7 @@
                 html.setAttribute('dir', 'ltr');
                 html.setAttribute('lang', 'en');
             }
-            
+
             // Update button states
             buttons.forEach(btn => {
                 btn.classList.remove('active');
@@ -1137,27 +1530,52 @@
                     btn.classList.add('active');
                 }
             });
-            
+
             // Update attribute-based content
             elements.forEach(element => {
                 const text = element.getAttribute(`data-${lang}`);
                 if (text) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = text;
-                    } else {
-                        element.textContent = text;
-                    }
+                    element.textContent = text;
                 }
             });
-            
+
             currentLanguage = lang;
             localStorage.setItem('preferred-language', lang);
         }
-        
+
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             const userLang = localStorage.getItem('preferred-language') || 'en';
             switchLanguage(userLang);
+
+            // Add click handlers to all images
+            document.querySelectorAll('img[src*="assets/"]').forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>

@@ -326,6 +326,66 @@
             padding: 2rem 0;
             margin-top: 4rem;
         }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #4299e1;
+        }
+
+        /* Make images clickable */
+        .chart-image,
+        .equipment-image,
+        .hero-image,
+        img[src*="assets/"] {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .chart-image:hover,
+        .equipment-image:hover,
+        .hero-image:hover,
+        img[src*="assets/"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
         
         /* Contact Section */
         .contact-section {
@@ -415,22 +475,58 @@
             <div class="section" id="overview">
                 <div style="text-align: center;">
                     <img src="./assets/heroes/graduation-ceremony-hero.png" alt="Professional PA System for Government Events" class="hero-image">
-                    <h2 style="margin: 2rem 0 1rem;">Professional Audio Solutions for Syrian Graduation Ceremonies</h2>
-                    <p style="font-size: 1.1rem; color: #718096;">Engineered by أبي سكر, built for reliability, designed for memorable graduations</p>
+                    <h2 style="margin: 2rem 0 1rem;">Complete Audio Coverage Solutions for Graduation Ceremonies</h2>
+                    <p style="font-size: 1.1rem; color: #718096;">Professional PA systems engineered by أبي سكر to deliver crystal-clear speech for audiences of 100 to 5,000+</p>
                 </div>
             </div>
             
             <!-- Professional Analytics -->
             <div class="section">
                 <h2>📊 Professional System Analysis</h2>
-                <div class="chart-grid">
-                    <div class="chart-item">
-                        <img src="./assets/charts/3-tier-comparison-2025.png" alt="3-Tier System Comparison" class="chart-image">
-                        <h3 class="chart-title">3-Tier System Comparison</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 12px; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem;">📈 4-Tier Cost Comparison (2025)</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 1: Budget</span>
+                                <span style="background: #e53e3e; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$24,274</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 2: VALUE</span>
+                                <span style="background: #38a169; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$61,103</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 3: Premium</span>
+                                <span style="background: #805ad5; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$98,545</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 4: Portable</span>
+                                <span style="background: #4299e1; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$4,434</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #a0aec0;">Total landed cost in Syria including shipping, duties, and installation services</p>
                     </div>
-                    <div class="chart-item">
-                        <img src="./assets/charts/equipment-count-comparison.png" alt="Equipment Analysis" class="chart-image">
-                        <h3 class="chart-title">Equipment Count Analysis</h3>
+                    <div style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 12px; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem;">🎯 Capacity Analysis</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 1: Budget</span>
+                                <span style="color: #e53e3e; font-weight: bold;">2,000-2,500 people</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 2: VALUE</span>
+                                <span style="color: #38a169; font-weight: bold;">3,000+ people</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 3: Premium</span>
+                                <span style="color: #805ad5; font-weight: bold;">5,000+ people</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Tier 4: Portable</span>
+                                <span style="color: #4299e1; font-weight: bold;">100-200 people</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #a0aec0;">Tier 2 VALUE recommended for 3,000-person graduation ceremonies</p>
                     </div>
                 </div>
             </div>
@@ -459,48 +555,63 @@
             
             <!-- Pricing Packages -->
             <div class="section">
-                <h2>💰 System Packages - 2025 Pricing</h2>
+                <h2>💰 System Packages - December 2025 Verified Pricing</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;">Military graduation ceremony for 3,000+ personnel. All prices verified from Sweetwater, B&H Photo, Hollyland.</p>
                 <div class="pricing-grid">
                     <div class="pricing-card emergency">
-                        <h3>Emergency Package</h3>
-                        <div class="price emergency">$21,500</div>
-                        <div class="price-note">Equipment only - remote support available</div>
+                        <h3>Tier 1: Budget</h3>
+                        <div class="price emergency">$15,995</div>
+                        <div class="price-note">Equipment | $24,274 total landed in Syria</div>
                         <ul class="features">
-                            <li>4 analog wireless microphones + 2 wired</li>
-                            <li>Basic in-ear monitoring systems</li>
-                            <li>PA speakers + subwoofers (no line array)</li>
-                            <li>800-1000 people capacity</li>
-                            <li>Limited remote control</li>
+                            <li>8x QSC K12.2 powered speakers</li>
+                            <li>Yamaha TF1 mixer (multitrack USB)</li>
+                            <li>2 lavalier + 2 handheld wireless mics</li>
+                            <li>2x floor monitors + Hollyland talkback</li>
+                            <li>2,000-2,500 people capacity</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">View Details</a>
                     </div>
-                    
+
                     <div class="pricing-card recommended" data-badge="RECOMMENDED">
-                        <h3>Mid-Range VALUE</h3>
-                        <div class="price">$41,420</div>
-                        <div class="price-note">Professional graduation ceremony package</div>
+                        <h3>Tier 2: VALUE</h3>
+                        <div class="price">$42,183</div>
+                        <div class="price-note">Equipment | $61,103 total landed in Syria</div>
                         <ul class="features">
-                            <li>4 Sennheiser EW-D digital wireless + 2 wired</li>
-                            <li>Professional in-ear monitoring</li>
-                            <li>QSC KLA12 line array system</li>
-                            <li>2000 people capacity</li>
+                            <li>8x QSC LA112 line array + 2x KS118 subs</li>
+                            <li>Yamaha TF1 mixer (multitrack USB)</li>
+                            <li>2 lavalier + 2 handheld wireless mics</li>
+                            <li>2x floor monitors + Hollyland talkback</li>
                             <li>Full remote control from USA</li>
-                            <li>Government-grade security</li>
+                            <li>3,000+ people capacity</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">View Details</a>
                     </div>
-                    
+
                     <div class="pricing-card">
-                        <h3>Premium Package</h3>
-                        <div class="price">$60,010</div>
-                        <div class="price-note">Complete premium solution</div>
+                        <h3>Tier 3: Premium</h3>
+                        <div class="price">$68,831</div>
+                        <div class="price-note">Equipment | $98,545 total landed in Syria</div>
                         <ul class="features">
-                            <li>6 Sennheiser EW-D digital wireless + 2 wired</li>
-                            <li>Extended-range in-ear monitoring</li>
-                            <li>12x QSC KLA12 line array + 8x delay towers</li>
-                            <li>3000+ people capacity</li>
-                            <li>Distributed sound system</li>
-                            <li>Complete venue coverage</li>
+                            <li>12x QSC LA112 + 4x KS212C cardioid subs</li>
+                            <li>Yamaha TF3 mixer (24ch, Dante-ready)</li>
+                            <li>Shure ULXD digital wireless systems</li>
+                            <li>Floor monitors + IEMs + Clear-Com talkback</li>
+                            <li>Redundant remote control</li>
+                            <li>5,000+ people capacity</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">View Details</a>
+                    </div>
+
+                    <div class="pricing-card" style="border-color: #ed8936;">
+                        <h3>Tier 4: Portable</h3>
+                        <div class="price" style="color: #ed8936;">$2,958</div>
+                        <div class="price-note">Equipment | $4,434 total landed in Syria</div>
+                        <ul class="features">
+                            <li>2x JBL EON ONE MK2 (battery-powered)</li>
+                            <li>Built-in mixer + Bluetooth</li>
+                            <li>1 lavalier + 1 handheld wireless</li>
+                            <li>6+ hours battery life</li>
+                            <li>100-200 people (backup/small events)</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">View Details</a>
                     </div>
@@ -513,15 +624,15 @@
                 <div class="chart-grid">
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier1-portable.png" alt="Tier 1 Coverage" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #4299e1;">Tier 1: Portable (50-150 people)</h4>
+                        <h4 style="margin: 1rem 0; color: #4299e1;">Tier 1: Budget (500-1,500 people)</h4>
                     </div>
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier2-standard.png" alt="Tier 2 Coverage" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #38a169;">Tier 2: Standard (150-800 people)</h4>
+                        <h4 style="margin: 1rem 0; color: #38a169;">Tier 2: Value (1,500-3,500 people)</h4>
                     </div>
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier3-large.png" alt="Tier 3 Coverage" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #e53e3e;">Tier 3: Large (800+ people)</h4>
+                        <h4 style="margin: 1rem 0; color: #805ad5;">Tier 3: Premium (3,500-5,000+ people)</h4>
                     </div>
                 </div>
             </div>
@@ -549,22 +660,58 @@
             <div class="section" id="overview-ar">
                 <div style="text-align: center;">
                     <img src="./assets/heroes/graduation-ceremony-hero.png" alt="نظام PA مهني للفعاليات الحكومية" class="hero-image">
-                    <h2 style="margin: 2rem 0 1rem;">حلول الصوت المهنية لاحتفالات التخرج السورية</h2>
-                    <p style="font-size: 1.1rem; color: #718096;">مُصمم من قبل أبي سكر، مُبني للاعتمادية، مُخطط لذكريات التخرج المميزة</p>
+                    <h2 style="margin: 2rem 0 1rem;">حلول التغطية الصوتية الكاملة لاحتفالات التخرج</h2>
+                    <p style="font-size: 1.1rem; color: #718096;">أنظمة PA مهنية صممها أبي سكر لتقديم صوت واضح تماماً لجماهير من 100 إلى 5,000+ شخص</p>
                 </div>
             </div>
             
             <!-- Professional Analytics -->
             <div class="section">
                 <h2>📊 التحليل المهني للنظام</h2>
-                <div class="chart-grid">
-                    <div class="chart-item">
-                        <img src="./assets/charts/3-tier-comparison-2025.png" alt="مقارنة النظام ثلاثي المستويات" class="chart-image">
-                        <h3 class="chart-title">مقارنة النظام ثلاثي المستويات</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 12px; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem;">📈 مقارنة التكلفة 4 مستويات (2025)</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 1: اقتصادي</span>
+                                <span style="background: #e53e3e; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$24,274</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 2: القيمة</span>
+                                <span style="background: #38a169; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$61,103</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 3: متميز</span>
+                                <span style="background: #805ad5; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$98,545</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 4: محمول</span>
+                                <span style="background: #4299e1; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: bold;">$4,434</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #a0aec0;">التكلفة الإجمالية في سوريا شاملة الشحن والجمارك وخدمات التركيب</p>
                     </div>
-                    <div class="chart-item">
-                        <img src="./assets/charts/equipment-count-comparison.png" alt="تحليل المعدات" class="chart-image">
-                        <h3 class="chart-title">تحليل عدد المعدات</h3>
+                    <div style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 12px; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem;">🎯 تحليل السعة</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 1: اقتصادي</span>
+                                <span style="color: #e53e3e; font-weight: bold;">2,000-2,500 شخص</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 2: القيمة</span>
+                                <span style="color: #38a169; font-weight: bold;">3,000+ شخص</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 3: متميز</span>
+                                <span style="color: #805ad5; font-weight: bold;">5,000+ شخص</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>المستوى 4: محمول</span>
+                                <span style="color: #4299e1; font-weight: bold;">100-200 شخص</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #a0aec0;">المستوى 2 القيمة موصى به لحفلات التخرج لـ 3,000 شخص</p>
                     </div>
                 </div>
             </div>
@@ -593,48 +740,63 @@
             
             <!-- Pricing Packages -->
             <div class="section">
-                <h2>💰 حزم النظام - تسعير 2025</h2>
+                <h2>💰 حزم النظام - أسعار ديسمبر 2025 الموثقة</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;">حفل تخرج عسكري لـ 3,000+ شخص. جميع الأسعار موثقة من Sweetwater, B&H Photo, Hollyland.</p>
                 <div class="pricing-grid">
                     <div class="pricing-card emergency">
-                        <h3>الحزمة الطارئة</h3>
-                        <div class="price emergency">21,500$</div>
-                        <div class="price-note">المعدات فقط - الدعم عن بُعد متاح</div>
+                        <h3>المستوى 1: اقتصادي</h3>
+                        <div class="price emergency">$15,995</div>
+                        <div class="price-note">المعدات | $24,274 الإجمالي في سوريا</div>
                         <ul class="features">
-                            <li>4 ميكروفونات لاسلكية تناظرية + 2 سلكية</li>
-                            <li>أنظمة مراقبة داخلية أساسية</li>
-                            <li>سماعات PA + مضخمات (بدون مصفوفة خطية)</li>
-                            <li>سعة 800-1000 شخص</li>
-                            <li>تحكم عن بُعد محدود</li>
+                            <li>8x سماعات QSC K12.2</li>
+                            <li>ميكسر Yamaha TF1 (تسجيل USB)</li>
+                            <li>2 لاسلكي كليب + 2 يدوي</li>
+                            <li>2x شاشات + نظام اتصال Hollyland</li>
+                            <li>سعة 2,000-2,500 شخص</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
                     </div>
-                    
+
                     <div class="pricing-card recommended" data-badge="موصى به">
-                        <h3>القيمة المتوسطة</h3>
-                        <div class="price">41,420$</div>
-                        <div class="price-note">حزمة احتفال التخرج المهنية</div>
+                        <h3>المستوى 2: القيمة</h3>
+                        <div class="price">$42,183</div>
+                        <div class="price-note">المعدات | $61,103 الإجمالي في سوريا</div>
                         <ul class="features">
-                            <li>4 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
-                            <li>مراقبة داخلية مهنية</li>
-                            <li>نظام مصفوفة خطية QSC KLA12</li>
-                            <li>سعة 2000 شخص</li>
-                            <li>تحكم كامل عن بُعد من الولايات المتحدة</li>
-                            <li>أمان حكومي</li>
+                            <li>8x مصفوفة QSC LA112 + 2x مضخم KS118</li>
+                            <li>ميكسر Yamaha TF1 (تسجيل USB)</li>
+                            <li>2 لاسلكي كليب + 2 يدوي</li>
+                            <li>2x شاشات + نظام اتصال Hollyland</li>
+                            <li>تحكم كامل عن بُعد من أمريكا</li>
+                            <li>سعة 3,000+ شخص</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
                     </div>
-                    
+
                     <div class="pricing-card">
-                        <h3>الحزمة المتميزة</h3>
-                        <div class="price">60,010$</div>
-                        <div class="price-note">حل متميز كامل</div>
+                        <h3>المستوى 3: متميز</h3>
+                        <div class="price">$68,831</div>
+                        <div class="price-note">المعدات | $98,545 الإجمالي في سوريا</div>
                         <ul class="features">
-                            <li>6 Sennheiser EW-D رقمية لاسلكية + 2 سلكية</li>
-                            <li>مراقبة داخلية ممتدة المدى</li>
-                            <li>12x مصفوفة خطية QSC KLA12 + 8x أبراج تأخير</li>
-                            <li>سعة 3000+ شخص</li>
-                            <li>نظام صوتي موزع</li>
-                            <li>تغطية كاملة للمكان</li>
+                            <li>12x QSC LA112 + 4x مضخم KS212C</li>
+                            <li>ميكسر Yamaha TF3 (24 قناة، Dante)</li>
+                            <li>أنظمة Shure ULXD رقمية</li>
+                            <li>شاشات + IEMs + نظام Clear-Com</li>
+                            <li>تحكم عن بُعد احتياطي</li>
+                            <li>سعة 5,000+ شخص</li>
+                        </ul>
+                        <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
+                    </div>
+
+                    <div class="pricing-card" style="border-color: #ed8936;">
+                        <h3>المستوى 4: محمول</h3>
+                        <div class="price" style="color: #ed8936;">$2,958</div>
+                        <div class="price-note">المعدات | $4,434 الإجمالي في سوريا</div>
+                        <ul class="features">
+                            <li>2x JBL EON ONE MK2 (بطارية)</li>
+                            <li>ميكسر مدمج + بلوتوث</li>
+                            <li>1 لاسلكي كليب + 1 يدوي</li>
+                            <li>6+ ساعات عمر البطارية</li>
+                            <li>100-200 شخص (احتياط/أحداث صغيرة)</li>
                         </ul>
                         <a href="budget-comparison.html" class="btn">عرض التفاصيل</a>
                     </div>
@@ -647,15 +809,15 @@
                 <div class="chart-grid">
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier1-portable.png" alt="تغطية المستوى الأول" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #4299e1;">المستوى الأول: محمول (50-150 شخص)</h4>
+                        <h4 style="margin: 1rem 0; color: #4299e1;">المستوى الأول: الميزانية (500-1,500 شخص)</h4>
                     </div>
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier2-standard.png" alt="تغطية المستوى الثاني" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #38a169;">المستوى الثاني: قياسي (150-800 شخص)</h4>
+                        <h4 style="margin: 1rem 0; color: #38a169;">المستوى الثاني: القيمة (1,500-3,500 شخص)</h4>
                     </div>
                     <div class="chart-item">
                         <img src="./assets/diagrams/coverage-tier3-large.png" alt="تغطية المستوى الثالث" class="chart-image">
-                        <h4 style="margin: 1rem 0; color: #e53e3e;">المستوى الثالث: كبير (800+ شخص)</h4>
+                        <h4 style="margin: 1rem 0; color: #805ad5;">المستوى الثالث: المتميز (3,500-5,000+ شخص)</h4>
                     </div>
                 </div>
             </div>
@@ -678,29 +840,44 @@
         </div>
     </div>
     
-    <div class="footer">
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <div class="footer" style="border-top: 3px solid #4299e1;">
         <div class="container">
-            <p data-en="© 2025 Syria Ministry PA System Project | Professional Audio Engineering by Obai Sukar" data-ar="© 2025 مشروع نظام الصوتيات لوزارة الداخلية السورية | هندسة صوتية مهنية من أبي سكر">© 2025 Syria Ministry PA System Project | Professional Audio Engineering by Obai Sukar</p>
-            <p data-en="Technical Support: obai@obaisukar.com" data-ar="الدعم الفني: obai@obaisukar.com">Technical Support: obai@obaisukar.com</p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="technical-study.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
         </div>
     </div>
 
     <script>
         let currentLanguage = 'en';
-        
+
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
-            
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
-            
-            // Show new content
-            if (newContent) newContent.classList.add('active');
-            
+
+            // Hide ALL current language content sections
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
             // Update direction and lang attribute
             if (lang === 'ar') {
                 html.setAttribute('dir', 'rtl');
@@ -709,7 +886,7 @@
                 html.setAttribute('dir', 'ltr');
                 html.setAttribute('lang', 'en');
             }
-            
+
             // Update button states
             buttons.forEach(btn => {
                 btn.classList.remove('active');
@@ -717,26 +894,22 @@
                     btn.classList.add('active');
                 }
             });
-            
+
             // Update attribute-based content
             elements.forEach(element => {
                 const text = element.getAttribute(`data-${lang}`);
                 if (text) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = text;
-                    } else {
-                        element.textContent = text;
-                    }
+                    element.textContent = text;
                 }
             });
-            
+
             // Update recommended badges
             const recommendedCards = document.querySelectorAll('.pricing-card.recommended');
             recommendedCards.forEach(card => {
                 const badge = lang === 'ar' ? 'موصى به' : 'RECOMMENDED';
                 card.setAttribute('data-badge', badge);
             });
-            
+
             currentLanguage = lang;
             localStorage.setItem('preferred-language', lang);
         }
@@ -745,6 +918,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             const userLang = localStorage.getItem('preferred-language') || 'en';
             switchLanguage(userLang);
+
+            // Add click handlers to all images
+            document.querySelectorAll('.chart-image, .equipment-image, .hero-image, img[src*="assets/"]').forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>

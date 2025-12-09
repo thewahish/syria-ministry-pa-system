@@ -323,6 +323,60 @@
             text-align: right;
         }
         
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #4299e1;
+        }
+
+        /* Make images clickable */
+        img[src*="assets/"] {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        img[src*="assets/"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -506,12 +560,71 @@
             <!-- Professional Equipment Visualization -->
             <section class="section">
                 <h2>🎛️ Professional Equipment Gallery</h2>
-                
+
+                <h3 style="margin: 1.5rem 0 1rem; color: #2c3e50;">🔊 Speaker Systems & Line Arrays</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/speakers/qsc-k12-2.png" alt="QSC K12.2 Active Speaker">
+                        <h4>QSC K12.2 Active Speaker</h4>
+                        <p>2000W powered speaker for Tier 1 systems</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/speakers/qsc-kw181.png" alt="QSC KW181 Subwoofer">
+                        <h4>QSC KW181 Subwoofer</h4>
+                        <p>18" powered subwoofer for extended bass</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="QSC K10.2 Stage Monitor">
+                        <h4>QSC K10.2 Stage Monitor</h4>
+                        <p>Versatile floor wedge for stage monitoring</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="Speaker on Tripod Setup">
+                        <h4>Professional Tripod Setup</h4>
+                        <p>Ground-stack deployment for graduation ceremonies</p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🎤 Wireless Microphone Systems</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/sennheiser-ew-d.png" alt="Sennheiser EW-D Digital Wireless">
+                        <h4>Sennheiser EW-D Digital</h4>
+                        <p>Professional digital wireless with 134dB dynamic range</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/shure-ulxd.png" alt="Shure ULXD Premium Wireless">
+                        <h4>Shure ULXD Digital</h4>
+                        <p>Premium wireless for Tier 3 installations</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/shure-blx-system.png" alt="Shure BLX Wireless System">
+                        <h4>Shure BLX Wireless</h4>
+                        <p>Reliable analog wireless for budget tiers</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/microphones/shure-mx418.png" alt="Shure MX418 Gooseneck">
+                        <h4>Shure MX418 Gooseneck</h4>
+                        <p>Professional wired backup microphones</p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🎛️ Mixing & Processing</h3>
                 <div class="equipment-gallery">
                     <div class="equipment-item">
                         <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="Yamaha TF3 Digital Mixer">
                         <h4>Yamaha TF3 Digital Console</h4>
-                        <p>Professional digital mixing for large venues</p>
+                        <p>24-channel digital mixing for premium tier</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-tf1.png" alt="Yamaha TF1 Digital Mixer">
+                        <h4>Yamaha TF1 Digital Console</h4>
+                        <p>16-channel digital mixing for Tier 1 & 2</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-mg16xu.png" alt="Yamaha MG16XU Analog Mixer">
+                        <h4>Yamaha MG16XU Analog</h4>
+                        <p>Budget-friendly analog backup console</p>
                     </div>
                     <div class="equipment-item">
                         <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2">
@@ -519,17 +632,100 @@
                         <p>Complete loudspeaker management system</p>
                     </div>
                     <div class="equipment-item">
-                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="K&M Professional Stand">
-                        <h4>K&M Professional Stands</h4>
-                        <p>German-engineered stability and precision</p>
+                        <img src="./assets/equipment/processing/dbx-afs2.png" alt="DBX AFS2 Feedback Suppressor">
+                        <h4>DBX AFS2 Feedback Suppressor</h4>
+                        <p>Automatic feedback elimination</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/interfaces/focusrite-scarlett-2i2.png" alt="Focusrite Scarlett 2i2">
+                        <h4>Focusrite Scarlett 2i2</h4>
+                        <p>USB audio interface for recording/streaming</p>
                     </div>
                 </div>
-                
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🔧 Professional Accessories</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="K&M 210/9 Boom Stand">
+                        <h4>K&M 210/9 Boom Stand</h4>
+                        <p>German-engineered stability and precision</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-23325-tabletop.png" alt="K&M Tabletop Stand">
+                        <h4>K&M 23325 Tabletop Stand</h4>
+                        <p>Professional podium microphone stand</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/accessories/radial-prodi.png" alt="Radial ProDI Direct Box">
+                        <h4>Radial ProDI Direct Box</h4>
+                        <p>Professional passive direct injection</p>
+                    </div>
+                </div>
+
                 <!-- Coverage Analysis Charts -->
                 <div class="chart-container">
                     <h3>📊 Professional Coverage Analysis</h3>
-                    <img src="./assets/diagrams/conference-table-setup.png" alt="Conference Table PA Setup Diagram">
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">Professional conference table microphone placement and coverage pattern</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier1-portable.png" alt="Tier 1 Coverage Diagram" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Tier 1: Budget (2,000-2,500 people)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier2-standard.png" alt="Tier 2 Coverage Diagram" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Tier 2: VALUE (3,000+ people)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier3-large.png" alt="Tier 3 Coverage Diagram" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Tier 3: Premium (5,000+ people)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rigging & Deployment Methods -->
+            <section class="section">
+                <h2>🏗️ Speaker Deployment Methods</h2>
+
+                <div class="methodology-section">
+                    <h3>📐 Ground-Stack vs Flown Arrays Comparison</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>🎯 Ground-Stack (Tiers 1, 2, 4)</h4>
+                            <ul>
+                                <li><strong>Setup Time:</strong> 30-60 minutes</li>
+                                <li><strong>Equipment:</strong> Tripods, crank stands, rigging frames</li>
+                                <li><strong>Height:</strong> 6-10 ft (2-3m)</li>
+                                <li><strong>Skill Level:</strong> Basic audio technician</li>
+                                <li><strong>Best for:</strong> Up to 3,000 people</li>
+                                <li><strong>Cost:</strong> $500-$2,000 in stands/frames</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🏗️ Flown Arrays (Tier 3 Only)</h4>
+                            <ul>
+                                <li><strong>Setup Time:</strong> 4-8 hours</li>
+                                <li><strong>Equipment:</strong> Truss, chain hoists, flying frames</li>
+                                <li><strong>Height:</strong> 15-25 ft (5-8m)</li>
+                                <li><strong>Skill Level:</strong> Certified rigger required</li>
+                                <li><strong>Best for:</strong> 3,000-5,000+ people</li>
+                                <li><strong>Cost:</strong> $25,000-$35,000 in rigging gear</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🎪 When to Fly Arrays</h4>
+                            <ul>
+                                <li><strong>Audience Size:</strong> 3,000+ people</li>
+                                <li><strong>Throw Distance:</strong> 80+ meters required</li>
+                                <li><strong>Venue Type:</strong> Permanent or semi-permanent</li>
+                                <li><strong>Budget:</strong> Premium tier investment</li>
+                                <li><strong>Staff:</strong> Certified rigger on-site</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="engineering-note">
+                        <strong>Engineering Decision:</strong> For the Syria Ministry graduation ceremony requirements (3,000 people, 75m x 90m area), Tier 2 with ground-stacked line arrays on crank stands is sufficient and recommended. Tier 3 with flown arrays is only needed for 5,000+ events or permanent stadium installations.
+                    </div>
                 </div>
             </section>
 
@@ -768,12 +964,71 @@
             <!-- معرض المعدات المهنية -->
             <section class="section">
                 <h2>🎛️ معرض المعدات المهنية</h2>
-                
+
+                <h3 style="margin: 1.5rem 0 1rem; color: #2c3e50;">🔊 أنظمة السماعات والمصفوفات الخطية</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/speakers/qsc-k12-2.png" alt="سماعة QSC K12.2 النشطة">
+                        <h4>سماعة QSC K12.2 النشطة</h4>
+                        <p>سماعة بقوة 2000 واط للمستوى 1</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/speakers/qsc-kw181.png" alt="مضخم الصوت QSC KW181">
+                        <h4>مضخم الصوت QSC KW181</h4>
+                        <p>مضخم صوت 18 بوصة للبيس الممتد</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/monitors/qsc-k10-2.png" alt="شاشة المسرح QSC K10.2">
+                        <h4>شاشة المسرح QSC K10.2</h4>
+                        <p>شاشة أرضية متعددة الاستخدامات</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/setup/speaker-on-tripod.png" alt="إعداد السماعة على الحامل">
+                        <h4>إعداد الحامل المهني</h4>
+                        <p>نشر التكديس الأرضي لحفلات التخرج</p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🎤 أنظمة الميكروفونات اللاسلكية</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/sennheiser-ew-d.png" alt="Sennheiser EW-D الرقمي اللاسلكي">
+                        <h4>Sennheiser EW-D الرقمي</h4>
+                        <p>لاسلكي رقمي مهني بنطاق ديناميكي 134 ديسيبل</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/shure-ulxd.png" alt="Shure ULXD اللاسلكي المتميز">
+                        <h4>Shure ULXD الرقمي</h4>
+                        <p>لاسلكي متميز للمستوى 3</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/wireless/shure-blx-system.png" alt="نظام Shure BLX اللاسلكي">
+                        <h4>Shure BLX اللاسلكي</h4>
+                        <p>لاسلكي تناظري موثوق للمستويات الاقتصادية</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/microphones/shure-mx418.png" alt="Shure MX418 رقبة الإوزة">
+                        <h4>Shure MX418 رقبة الإوزة</h4>
+                        <p>ميكروفونات سلكية احتياطية مهنية</p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🎛️ الخلط والمعالجة</h3>
                 <div class="equipment-gallery">
                     <div class="equipment-item">
                         <img src="./assets/equipment/mixers/yamaha-tf3.png" alt="وحدة التحكم الرقمية Yamaha TF3">
                         <h4>وحدة التحكم الرقمية Yamaha TF3</h4>
-                        <p>الخلط الرقمي المهني للأماكن الكبيرة</p>
+                        <p>خلط رقمي 24 قناة للمستوى المتميز</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-tf1.png" alt="وحدة التحكم الرقمية Yamaha TF1">
+                        <h4>وحدة التحكم الرقمية Yamaha TF1</h4>
+                        <p>خلط رقمي 16 قناة للمستوى 1 و 2</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/mixers/yamaha-mg16xu.png" alt="خلاط Yamaha MG16XU التناظري">
+                        <h4>Yamaha MG16XU التناظري</h4>
+                        <p>وحدة تحكم تناظرية احتياطية اقتصادية</p>
                     </div>
                     <div class="equipment-item">
                         <img src="./assets/equipment/processing/dbx-driverack-pa2.png" alt="DBX DriveRack PA2">
@@ -781,17 +1036,100 @@
                         <p>نظام إدارة مكبرات الصوت الكامل</p>
                     </div>
                     <div class="equipment-item">
-                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="حامل مهني K&M">
-                        <h4>الحوامل المهنية K&M</h4>
-                        <p>الاستقرار والدقة المصنوعة في ألمانيا</p>
+                        <img src="./assets/equipment/processing/dbx-afs2.png" alt="DBX AFS2 مانع التغذية الراجعة">
+                        <h4>DBX AFS2 مانع التغذية الراجعة</h4>
+                        <p>إزالة التغذية الراجعة الأوتوماتيكية</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/interfaces/focusrite-scarlett-2i2.png" alt="Focusrite Scarlett 2i2">
+                        <h4>Focusrite Scarlett 2i2</h4>
+                        <p>واجهة صوت USB للتسجيل/البث</p>
                     </div>
                 </div>
-                
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">🔧 الإكسسوارات المهنية</h3>
+                <div class="equipment-gallery">
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-210-9-boom.png" alt="حامل الذراع K&M 210/9">
+                        <h4>حامل الذراع K&M 210/9</h4>
+                        <p>الاستقرار والدقة المصنوعة في ألمانيا</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/stands/km-23325-tabletop.png" alt="حامل الطاولة K&M">
+                        <h4>حامل الطاولة K&M 23325</h4>
+                        <p>حامل ميكروفون مهني للمنصة</p>
+                    </div>
+                    <div class="equipment-item">
+                        <img src="./assets/equipment/accessories/radial-prodi.png" alt="صندوق الحقن المباشر Radial ProDI">
+                        <h4>صندوق الحقن المباشر Radial ProDI</h4>
+                        <p>حقن مباشر سلبي مهني</p>
+                    </div>
+                </div>
+
                 <!-- مخططات تحليل التغطية -->
                 <div class="chart-container">
                     <h3>📊 تحليل التغطية المهنية</h3>
-                    <img src="./assets/diagrams/conference-table-setup.png" alt="مخطط إعداد PA لطاولة المؤتمر">
-                    <p style="margin-top: 1rem; font-style: italic; color: #666;">وضع الميكروفون المهني لطاولة المؤتمر ونمط التغطية</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier1-portable.png" alt="مخطط تغطية المستوى 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">المستوى 1: اقتصادي (2,000-2,500 شخص)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier2-standard.png" alt="مخطط تغطية المستوى 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">المستوى 2: القيمة (3,000+ شخص)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./assets/diagrams/coverage-tier3-large.png" alt="مخطط تغطية المستوى 3" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">المستوى 3: متميز (5,000+ شخص)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- طرق نشر السماعات والتعليق -->
+            <section class="section">
+                <h2>🏗️ طرق نشر السماعات</h2>
+
+                <div class="methodology-section">
+                    <h3>📐 مقارنة التكديس الأرضي مقابل المصفوفات المعلقة</h3>
+                    <div class="technical-specs">
+                        <div class="spec-card">
+                            <h4>🎯 التكديس الأرضي (المستويات 1، 2، 4)</h4>
+                            <ul>
+                                <li><strong>وقت الإعداد:</strong> 30-60 دقيقة</li>
+                                <li><strong>المعدات:</strong> حوامل ثلاثية، حوامل رافعة، إطارات تعليق</li>
+                                <li><strong>الارتفاع:</strong> 6-10 قدم (2-3م)</li>
+                                <li><strong>مستوى المهارة:</strong> فني صوت أساسي</li>
+                                <li><strong>الأفضل لـ:</strong> حتى 3,000 شخص</li>
+                                <li><strong>التكلفة:</strong> 500$-2,000$ في الحوامل/الإطارات</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🏗️ المصفوفات المعلقة (المستوى 3 فقط)</h4>
+                            <ul>
+                                <li><strong>وقت الإعداد:</strong> 4-8 ساعات</li>
+                                <li><strong>المعدات:</strong> جمالون، روافع سلسلة، إطارات تعليق</li>
+                                <li><strong>الارتفاع:</strong> 15-25 قدم (5-8م)</li>
+                                <li><strong>مستوى المهارة:</strong> فني تعليق معتمد مطلوب</li>
+                                <li><strong>الأفضل لـ:</strong> 3,000-5,000+ شخص</li>
+                                <li><strong>التكلفة:</strong> 25,000$-35,000$ في معدات التعليق</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h4>🎪 متى يجب تعليق المصفوفات</h4>
+                            <ul>
+                                <li><strong>حجم الجمهور:</strong> 3,000+ شخص</li>
+                                <li><strong>مسافة الرمي:</strong> 80+ متر مطلوب</li>
+                                <li><strong>نوع المكان:</strong> دائم أو شبه دائم</li>
+                                <li><strong>الميزانية:</strong> استثمار المستوى المتميز</li>
+                                <li><strong>الموظفين:</strong> فني تعليق معتمد في الموقع</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="engineering-note">
+                        <strong>القرار الهندسي:</strong> لمتطلبات حفل تخرج الوزارة السورية (3,000 شخص، منطقة 75م × 90م)، المستوى 2 مع المصفوفات الخطية المكدسة أرضياً على حوامل الرافعة كافٍ وموصى به. المستوى 3 مع المصفوفات المعلقة مطلوب فقط للأحداث لـ 5,000+ أو تركيبات الاستادات الدائمة.
+                    </div>
                 </div>
             </section>
 
@@ -919,30 +1257,45 @@
             </section>
         </div>
     </div>
-    
-    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 3px solid #4299e1;">
         <div class="container">
-            <p data-en="© 2025 Technical Study - Syria Ministry PA System | Professional Audio Engineering by أبي سكر" data-ar="© 2025 الدراسة الفنية - نظام PA وزارة الداخلية السورية | هندسة صوتية مهنية من أبي سكر">© 2025 Technical Study - Syria Ministry PA System | Professional Audio Engineering by أبي سكر</p>
-            <p data-en="Updated with 2025 pricing and Syrian import regulations" data-ar="محدث بتسعير 2025 ولوائح الاستيراد السورية">Updated with 2025 pricing and Syrian import regulations</p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
         </div>
     </div>
 
     <script>
         let currentLanguage = 'en';
-        
+
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
-            
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
-            
-            // Show new content
-            if (newContent) newContent.classList.add('active');
-            
+
+            // Hide ALL current language content sections
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
             // Update direction and lang attribute
             if (lang === 'ar') {
                 html.setAttribute('dir', 'rtl');
@@ -951,7 +1304,7 @@
                 html.setAttribute('dir', 'ltr');
                 html.setAttribute('lang', 'en');
             }
-            
+
             // Update button states
             buttons.forEach(btn => {
                 btn.classList.remove('active');
@@ -959,27 +1312,52 @@
                     btn.classList.add('active');
                 }
             });
-            
+
             // Update attribute-based content
             elements.forEach(element => {
                 const text = element.getAttribute(`data-${lang}`);
                 if (text) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = text;
-                    } else {
-                        element.textContent = text;
-                    }
+                    element.textContent = text;
                 }
             });
-            
+
             currentLanguage = lang;
             localStorage.setItem('preferred-language', lang);
         }
-        
+
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             const userLang = localStorage.getItem('preferred-language') || 'en';
             switchLanguage(userLang);
+
+            // Add click handlers to all images
+            document.querySelectorAll('img[src*="assets/"]').forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
