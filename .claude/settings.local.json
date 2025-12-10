@@ -1,12 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(touch:*)",
-      "Bash(mkdir:*)",
-      "Bash(git add:*)",
-      "Bash(git push:*)"
-    ],
-    "deny": [],
-    "ask": []
+      "Bash(git reset:*)",
+      "Bash(git checkout:*)"
+    ]
   }
 }

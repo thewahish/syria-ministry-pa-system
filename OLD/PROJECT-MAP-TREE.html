@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Map Tree - Syria Ministry PA System</title>
+    <link rel="stylesheet" href="css/separate-pages.css">
+    <style>
+        .tree-structure { background: #2d2d2d; color: #f8f8f2; padding: 25px; border-radius: 12px; font-family: 'Consolas', 'Monaco', monospace; overflow-x: auto; line-height: 1.8; }
+        .tree-structure .folder { color: #f1c40f; }
+        .tree-structure .file { color: #3498db; }
+        .tree-structure .complete { color: #2ecc71; }
+        .section-card { background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #3498db; }
+        .rule-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; }
+        .rule-card h3 { color: white; margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .status-badge { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin: 4px; }
+        .status-complete { background: #28a745; color: white; }
+        .status-progress { background: #ffc107; color: #333; }
+        .status-pending { background: #6c757d; color: white; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .spec-item { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Syria Ministry PA System</h1>
+            <p class="subtitle">Project Map Tree</p>
+            <div style="margin-top: 15px;">
+                <span class="status-badge status-complete">Active Development</span>
+                <span class="status-badge" style="background: #3498db; color: white;">January 2025</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="section-card">
+                <h2>Project Information</h2>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <strong>Project Type:</strong><br>Professional Audio System Design & Implementation
+                    </div>
+                    <div class="spec-item">
+                        <strong>Client:</strong><br>Syria Ministry of Interior
+                    </div>
+                    <div class="spec-item">
+                        <strong>Status:</strong><br>Active Development
+                    </div>
+                    <div class="spec-item">
+                        <strong>Date:</strong><br>January 2025
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>📁 Project Structure</h2>
+                <div class="tree-structure"><pre><span class="folder">syria-ministry-pa-system/</span>
+├── 📄 PROJECT-MAP-TREE.md (this file)
+├── 📄 README.md
+├── 📄 PROJECT-STATUS.md
+├── 📄 CURRENT-STATUS-RESUME.md
+├── 📄 index.html (redirect page)
+├── 🌐 <span class="complete">index-en.html</span> (English homepage - LAYOUT MASTER TEMPLATE)
+├── 🌐 <span class="complete">index-ar.html</span> (Arabic homepage - EXACT MIRROR of English)
+│
+├── 📋 <span class="folder">Technical Documentation (English):</span>
+│   ├── <span class="file">technical-study-en.html</span>
+│   ├── <span class="file">equipment-specs-en.html</span>
+│   ├── <span class="file">vendor-rfq-en.html</span>
+│   ├── <span class="file">remote-control-en.html</span>
+│   ├── <span class="file">installation-guide-en.html</span>
+│   └── <span class="file">shipping-guide-en.html</span>
+│
+├── 📋 <span class="folder">Technical Documentation (Arabic):</span>
+│   ├── <span class="file">technical-study-ar.html</span>
+│   ├── <span class="file">equipment-specs-ar.html</span>
+│   ├── <span class="file">vendor-rfq-ar.html</span>
+│   ├── <span class="file">remote-control-ar.html</span>
+│   ├── <span class="file">installation-guide-ar.html</span>
+│   └── <span class="file">shipping-guide-ar.html</span>
+│
+├── 🎨 <span class="folder">Assets & Styling:</span>
+│   ├── <span class="folder">css/</span>
+│   │   ├── <span class="file">separate-pages.css</span>
+│   │   ├── <span class="file">image-styles.css</span>
+│   │   └── <span class="file">bilingual-styles.css</span>
+│   ├── <span class="folder">assets/</span>
+│   │   ├── <span class="file">asset-guidelines.html</span>
+│   │   ├── <span class="folder">images/</span>
+│   │   │   ├── <span class="folder">equipment/</span>
+│   │   │   └── <span class="folder">general/</span>
+│   │   └── <span class="folder">logos/</span>
+│   └── <span class="folder">js/</span>
+│       └── <span class="file">language-toggle.js</span>
+│
+├── 📦 <span class="folder">Deployment & Management:</span>
+│   ├── <span class="file">DEPLOY-TO-DIGITAL-OCEAN.md</span>
+│   ├── <span class="file">DEPLOYMENT-GUIDE.md</span>
+│   ├── <span class="file">convert-to-html.py</span>
+│   └── <span class="file">test-deployment.html</span>
+│
+└── 🗂️ <span class="folder">OLD/</span> (Version Control Archive)
+    ├── <span class="file">index-en-v1-2025-01-25.html</span> (inconsistent layout)
+    ├── <span class="file">index-ar-v1-2025-01-25.html</span> (inconsistent layout)
+    └── [other archived files...]</pre></div>
+            </section>
+
+            <section class="section-card">
+                <h2>🎯 Key Project Features</h2>
+
+                <h3>Technical Specifications:</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <strong>Capacity:</strong><br>3000-person professional PA system
+                    </div>
+                    <div class="spec-item">
+                        <strong>Main Equipment:</strong><br>QSC KLA12 line arrays, Sennheiser EW-D wireless
+                    </div>
+                    <div class="spec-item">
+                        <strong>Budget:</strong><br>$51,420 enhanced package
+                    </div>
+                    <div class="spec-item">
+                        <strong>Remote Control:</strong><br>USA-to-Syria management system
+                    </div>
+                </div>
+
+                <h3>Documentation Coverage:</h3>
+                <ul>
+                    <li>✅ Complete bilingual documentation (English/Arabic)</li>
+                    <li>✅ Technical engineering studies</li>
+                    <li>✅ Equipment specifications</li>
+                    <li>✅ International shipping analysis</li>
+                    <li>✅ Remote control capabilities</li>
+                    <li>✅ Installation procedures</li>
+                </ul>
+
+                <h3>Implementation Features:</h3>
+                <ul>
+                    <li>📐 <strong>LAYOUT CONSISTENCY RULE APPLIED</strong></li>
+                    <li>🌐 Professional bilingual website</li>
+                    <li>📊 2025 market pricing analysis</li>
+                    <li>🚢 International shipping coordination</li>
+                    <li>🔒 Remote system management</li>
+                </ul>
+            </section>
+
+            <div class="rule-card">
+                <h3>📋 Master Rules Applied</h3>
+
+                <h4>🎨 Layout Consistency Rule (CORE MEMORY):</h4>
+                <ul>
+                    <li>English layout = MASTER TEMPLATE for all languages</li>
+                    <li>Only text content changes, NEVER layout/colors/positioning</li>
+                    <li>RTL languages = MIRROR IMAGE with identical visual design</li>
+                    <li>Applied to: All index pages and documentation</li>
+                </ul>
+
+                <h4>📁 Version Control Rule (CORE MEMORY):</h4>
+                <ul>
+                    <li>Move unused files to OLD folder with versioned filename</li>
+                    <li>Format: <code>filename-v1-date.ext</code> or <code>filename-backup-YYYY-MM-DD.ext</code></li>
+                    <li>Never delete - always preserve with version control</li>
+                </ul>
+
+                <h4>📋 Project Documentation Rule (CORE MEMORY):</h4>
+                <ul>
+                    <li>Every project MUST have PROJECT-MAP-TREE.md</li>
+                    <li>All master rules captured and saved locally</li>
+                    <li>Complete project structure documentation</li>
+                </ul>
+            </div>
+
+            <section class="section-card">
+                <h2>🚀 Deployment Status</h2>
+                <ul>
+                    <li><span class="status-badge status-complete">Development:</span> Complete</li>
+                    <li><span class="status-badge status-progress">Testing:</span> In Progress</li>
+                    <li><span class="status-badge status-pending">Digital Ocean:</span> Ready for deployment</li>
+                    <li><strong>Domain:</strong> pa.obaisukar.com</li>
+                </ul>
+            </section>
+
+            <section class="section-card">
+                <h2>🔗 Related Projects</h2>
+                <ul>
+                    <li><strong>Generic Portfolio Version:</strong> <code>../audio-consultancy-portfolio/</code></li>
+                    <li><strong>Path of Heroes:</strong> ⏳ Layout consistency rule to be applied</li>
+                </ul>
+            </section>
+
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 30px 0; text-align: center; color: #666;">
+                <p><strong>Last Updated:</strong> January 25, 2025</p>
+                <p><em>Generated with: Claude Code</em></p>
+            </div>
+        </main>
+
+        <footer style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; color: #666;">
+            <p>Syria Ministry PA System - Project Map Tree</p>
+        </footer>
+    </div>
+</body>
+</html>
