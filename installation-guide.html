@@ -122,7 +122,12 @@
             background: #edf2f7;
             color: #2d3748;
         }
-        
+
+        .nav-links a.active {
+            background: #4299e1;
+            color: white;
+        }
+
         /* Clean Sections - NO gradients */
         .section {
             background: white;
@@ -512,6 +517,60 @@
             left: auto;
         }
         
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #4299e1;
+        }
+
+        /* Make images clickable */
+        img[src*="assets/"] {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        img[src*="assets/"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -585,11 +644,13 @@
     <div class="navigation">
         <div class="container">
             <div class="nav-links">
-                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
-                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
-                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
-                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
-                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="index.html" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+                <a href="installation-guide.html" class="active" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
             </div>
         </div>
     </div>
@@ -619,7 +680,8 @@
                     <div class="service-card recommended">
                         <div class="service-badge recommended">RECOMMENDED</div>
                         <h3>Professional Installation</h3>
-                        <div class="service-price recommended">$5,500</div>
+                        <div class="service-price recommended">$8,500</div>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #718096;">(Service $5,500 + Travel $3,000)</p>
                         <p style="margin-bottom: 1rem;">Complete on-site installation with training</p>
                         <ul style="text-align: left; margin: 1rem 0;">
                             <li>On-site professional setup</li>
@@ -627,14 +689,16 @@
                             <li>Local team training</li>
                             <li>Arabic documentation</li>
                             <li>3-month remote support</li>
+                            <li><strong>Includes:</strong> Round-trip travel USA→Syria</li>
                         </ul>
                         <p style="font-size: 0.9rem; color: #718096;"><strong>Best for:</strong> Most graduation ceremony installations</p>
                     </div>
-                    
+
                     <div class="service-card premium">
                         <div class="service-badge premium">PREMIUM</div>
                         <h3>Complete Training Package</h3>
-                        <div class="service-price premium">$8,500</div>
+                        <div class="service-price premium">$12,500</div>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #718096;">(Service $8,500 + Travel $4,000)</p>
                         <p style="margin-bottom: 1rem;">Full installation, extended training, and certification</p>
                         <ul style="text-align: left; margin: 1rem 0;">
                             <li>Complete professional installation</li>
@@ -643,15 +707,16 @@
                             <li>Comprehensive Arabic documentation</li>
                             <li>6-month remote support</li>
                             <li>Graduation ceremony dry run</li>
+                            <li><strong>Includes:</strong> Extended stay travel USA→Syria</li>
                         </ul>
                         <p style="font-size: 0.9rem; color: #718096;"><strong>Best for:</strong> Permanent installations requiring full training</p>
                     </div>
                 </div>
-                
+
                 <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center;">
                     <h3 style="color: #38a169; margin-bottom: 1rem;">💡 Professional Installation Recommendation</h3>
-                    <p>For graduation ceremonies, the <strong>Professional Installation ($5,500)</strong> provides the optimal balance of on-site expertise, local training, and ongoing support to ensure flawless ceremony audio.</p>
-                    <p style="margin-top: 1rem;"><strong>Travel costs:</strong> Additional $2,500-4,000 for USA to Syria travel expenses</p>
+                    <p>For graduation ceremonies, the <strong>Professional Installation ($8,500 all-inclusive)</strong> provides the optimal balance of on-site expertise, local training, and ongoing support to ensure flawless ceremony audio.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">All on-site service prices include travel expenses (flights, accommodation, visa fees)</p>
                 </div>
             </section>
             
@@ -897,7 +962,8 @@
                     <div class="service-card recommended">
                         <div class="service-badge recommended">موصى به</div>
                         <h3>التركيب المهني</h3>
-                        <div class="service-price recommended">5,500$</div>
+                        <div class="service-price recommended">8,500$</div>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #718096;">(الخدمة 5,500$ + السفر 3,000$)</p>
                         <p style="margin-bottom: 1rem;">التركيب الكامل في الموقع مع التدريب</p>
                         <ul style="text-align: right; margin: 1rem 0;">
                             <li>الإعداد المهني في الموقع</li>
@@ -905,14 +971,16 @@
                             <li>تدريب الفريق المحلي</li>
                             <li>التوثيق باللغة العربية</li>
                             <li>الدعم عن بُعد لمدة 3 أشهر</li>
+                            <li><strong>يشمل:</strong> رحلة ذهاب وعودة من أمريكا إلى سوريا</li>
                         </ul>
                         <p style="font-size: 0.9rem; color: #718096;"><strong>الأفضل لـ:</strong> معظم تركيبات احتفالات التخرج</p>
                     </div>
-                    
+
                     <div class="service-card premium">
                         <div class="service-badge premium">متميز</div>
                         <h3>حزمة التدريب الكاملة</h3>
-                        <div class="service-price premium">8,500$</div>
+                        <div class="service-price premium">12,500$</div>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #718096;">(الخدمة 8,500$ + السفر 4,000$)</p>
                         <p style="margin-bottom: 1rem;">التركيب الكامل والتدريب الممتد والشهادة</p>
                         <ul style="text-align: right; margin: 1rem 0;">
                             <li>التركيب المهني الكامل</li>
@@ -921,15 +989,16 @@
                             <li>التوثيق الشامل باللغة العربية</li>
                             <li>الدعم عن بُعد لمدة 6 أشهر</li>
                             <li>تجربة جافة لاحتفال التخرج</li>
+                            <li><strong>يشمل:</strong> إقامة ممتدة وسفر من أمريكا إلى سوريا</li>
                         </ul>
                         <p style="font-size: 0.9rem; color: #718096;"><strong>الأفضل لـ:</strong> التركيبات الدائمة التي تتطلب تدريباً كاملاً</p>
                     </div>
                 </div>
-                
+
                 <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center;">
                     <h3 style="color: #38a169; margin-bottom: 1rem;">💡 توصية التركيب المهني</h3>
-                    <p>لاحتفالات التخرج، يوفر <strong>التركيب المهني (5,500$)</strong> التوازن الأمثل للخبرة في الموقع والتدريب المحلي والدعم المستمر لضمان صوت مثالي للاحتفال.</p>
-                    <p style="margin-top: 1rem;"><strong>تكاليف السفر:</strong> إضافية 2,500-4,000$ لمصاريف السفر من الولايات المتحدة إلى سوريا</p>
+                    <p>لاحتفالات التخرج، يوفر <strong>التركيب المهني (8,500$ شامل كل شيء)</strong> التوازن الأمثل للخبرة في الموقع والتدريب المحلي والدعم المستمر لضمان صوت مثالي للاحتفال.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">جميع أسعار الخدمة في الموقع تشمل مصاريف السفر (الرحلات الجوية، الإقامة، رسوم التأشيرة)</p>
                 </div>
             </section>
             
@@ -1151,29 +1220,46 @@
             </section>
         </div>
     </div>
-    
-    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 3px solid #4299e1;">
         <div class="container">
-            <p data-en="© 2025 Installation Guide - Syria Ministry PA System | Professional Installation by أبي سكر" data-ar="© 2025 دليل التركيب - نظام PA وزارة الداخلية السورية | التركيب المهني من أبي سكر">© 2025 Installation Guide - Syria Ministry PA System | Professional Installation by أبي سكر</p>
-            <p data-en="Complete professional installation and training for graduation ceremony PA systems" data-ar="التركيب والتدريب المهني الكامل لأنظمة PA لاحتفال التخرج">Complete professional installation and training for graduation ceremony PA systems</p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
         </div>
     </div>
 
     <script>
         let currentLanguage = 'en';
-        
+
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
-            
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
-            
-            // Show new content
-            if (newContent) newContent.classList.add('active');
+
+            // Hide ALL current language content sections (fix for multiple data-lang elements)
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
             
             // Update direction and lang attribute
             if (lang === 'ar') {
@@ -1212,6 +1298,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             const userLang = localStorage.getItem('preferred-language') || 'en';
             switchLanguage(userLang);
+
+            // Add click handlers to all images
+            document.querySelectorAll('img[src*="assets/"]').forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>

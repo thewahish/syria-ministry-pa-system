@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Technical Specifications for Vendor Bidding - PA System | 2025" data-ar="المواصفات الفنية لعروض الموردين - نظام الصوتيات | 2025">Technical Specifications for Vendor Bidding - PA System | 2025</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <meta name="author" content="Obai Sukar - Professional Audio Consultant">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Clean Header */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #38a169;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .update-badge {
+            background: #38a169;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: #38a169;
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+
+        .nav-links a.active {
+            background: #38a169;
+            color: white;
+        }
+
+        /* Clean Sections */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #38a169;
+        }
+
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section h3 {
+            color: #2d3748;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Spec Tables */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .spec-table th {
+            background: #38a169;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .spec-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .spec-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .spec-table .item-number {
+            font-weight: 700;
+            color: #38a169;
+            width: 50px;
+        }
+
+        .spec-table .quantity {
+            font-weight: 700;
+            text-align: center;
+            width: 80px;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .spec-table th,
+        [dir="rtl"] .spec-table td {
+            text-align: right;
+        }
+
+        [dir="rtl"] .section {
+            border-left: none;
+            border-right: 4px solid #38a169;
+        }
+
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #f0fff4;
+            border: 1px solid #38a169;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box.warning {
+            background: #fffaf0;
+            border-color: #ed8936;
+        }
+
+        .info-box h4 {
+            color: #276749;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box.warning h4 {
+            color: #c05621;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: #38a169;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #2f855a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #38a169;
+            color: #38a169;
+        }
+
+        .btn-outline:hover {
+            background: #38a169;
+            color: white;
+        }
+
+        /* Print Styles */
+        @media print {
+            .navigation, .language-toggle, .btn {
+                display: none !important;
+            }
+
+            .section {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #38a169;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Language Content */
+        [data-lang] {
+            display: none;
+        }
+
+        [data-lang].active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .spec-table {
+                font-size: 0.9rem;
+            }
+
+            .spec-table th,
+            .spec-table td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+        </div>
+        <h1 data-en="Technical Specifications" data-ar="المواصفات الفنية">Technical Specifications</h1>
+        <p class="subtitle" data-en="Vendor Bidding Document - Professional PA System" data-ar="وثيقة عروض الموردين - نظام صوتيات احترافي">Vendor Bidding Document - Professional PA System</p>
+        <span class="update-badge" data-en="FOR VENDOR QUOTES" data-ar="لعروض أسعار الموردين">FOR VENDOR QUOTES</span>
+    </div>
+
+    <nav class="navigation">
+        <div class="nav-links">
+            <a href="index.html" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+            <a href="technical-study.html" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+            <a href="budget-comparison.html" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+            <a href="equipment-specs.html" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+            <a href="technical-specifications.html" class="active" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+            <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            <a href="shipping-guide.html" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+
+            <!-- Introduction -->
+            <div class="section">
+                <h2>📋 Project Overview</h2>
+                <div class="info-box">
+                    <h4>Purpose of This Document</h4>
+                    <p>This document provides technical specifications for a professional PA system suitable for outdoor graduation ceremonies. Local vendors may use these specifications to provide competitive pricing quotes. <strong>No specific brands are required</strong> - equivalent products meeting these specifications are acceptable.</p>
+                </div>
+
+                <h3>System Requirements</h3>
+                <ul style="margin: 1rem 0 1rem 2rem;">
+                    <li><strong>Venue Type:</strong> Outdoor graduation ceremony</li>
+                    <li><strong>Audience Capacity:</strong> 3,000+ people</li>
+                    <li><strong>Coverage Area:</strong> Approximately 60m x 40m (2,400 m²)</li>
+                    <li><strong>SPL Requirement:</strong> 95-100 dB at furthest audience position</li>
+                    <li><strong>Speech Intelligibility:</strong> Primary focus (ceremonies, speeches, announcements)</li>
+                    <li><strong>Music Playback:</strong> Secondary (national anthem, background music)</li>
+                </ul>
+
+                <div class="info-box warning">
+                    <h4>Important Note for Vendors</h4>
+                    <p>All equipment must be <strong>new, factory-sealed</strong> with manufacturer warranty. Refurbished or used equipment is not acceptable. Vendors should provide proof of authorized dealership where applicable.</p>
+                </div>
+            </div>
+
+            <!-- Main PA System -->
+            <div class="section">
+                <h2>🔊 1. Main PA Speakers (Line Array System)</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">1.1</td>
+                            <td><strong>Powered Line Array Elements</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Driver Configuration: 12" LF woofer + 3" HF compression driver (minimum)</li>
+                                    <li>Power: 1,000W RMS continuous (minimum)</li>
+                                    <li>Frequency Response: 55Hz - 20kHz (±3dB)</li>
+                                    <li>Maximum SPL: 132 dB peak</li>
+                                    <li>Coverage Pattern: 75° horizontal × 15° vertical (nominal)</li>
+                                    <li>Built-in DSP with presets</li>
+                                    <li>Integrated rigging hardware</li>
+                                    <li>Weather-resistant construction (outdoor rated)</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">8</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>1.2 Subwoofers</h3>
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">1.2</td>
+                            <td><strong>Powered Subwoofers</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Driver: 18" long-excursion woofer</li>
+                                    <li>Power: 1,000W RMS continuous (minimum)</li>
+                                    <li>Frequency Response: 30Hz - 150Hz</li>
+                                    <li>Maximum SPL: 132 dB peak</li>
+                                    <li>Built-in DSP with crossover</li>
+                                    <li>Cardioid mode capability (preferred)</li>
+                                    <li>Pole mount socket for satellite speakers</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mixing Console -->
+            <div class="section">
+                <h2>🎛️ 2. Digital Mixing Console</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">2.1</td>
+                            <td><strong>Digital Mixing Console</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Input Channels: 16 minimum (mic/line)</li>
+                                    <li>Output Buses: 8 minimum (aux/matrix)</li>
+                                    <li>Built-in Effects: Reverb, delay, compression, EQ</li>
+                                    <li>USB Audio Interface: Multi-track recording capability</li>
+                                    <li>Touchscreen Display: 7" minimum</li>
+                                    <li>Recall/Scene Memory: 100+ scenes</li>
+                                    <li>Remote Control: Tablet/iPad app compatible</li>
+                                    <li>GEQ on all outputs</li>
+                                    <li>Phantom Power: +48V on all channels</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Wireless Microphones -->
+            <div class="section">
+                <h2>🎤 3. Wireless Microphone Systems</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">3.1</td>
+                            <td><strong>Lavalier Wireless Systems</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Type: Bodypack transmitter with clip-on lavalier</li>
+                                    <li>Frequency Range: UHF (suitable for Syria region)</li>
+                                    <li>Frequency Response: 50Hz - 15kHz (minimum)</li>
+                                    <li>Operating Range: 100m line-of-sight (minimum)</li>
+                                    <li>Battery Life: 8+ hours</li>
+                                    <li>Diversity Reception: True diversity</li>
+                                    <li>Audio Quality: 24-bit digital or high-quality analog</li>
+                                    <li>Lavalier Pattern: Omnidirectional</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">3.2</td>
+                            <td><strong>Dual Handheld Wireless System</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Type: Dual-channel receiver with 2 handheld transmitters</li>
+                                    <li>Capsule Type: Dynamic cardioid (speech-optimized)</li>
+                                    <li>Frequency Range: UHF (suitable for Syria region)</li>
+                                    <li>Operating Range: 100m line-of-sight (minimum)</li>
+                                    <li>Battery Life: 8+ hours per transmitter</li>
+                                    <li>Diversity Reception: True diversity</li>
+                                    <li>Simultaneous Operation: Both microphones active</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>Frequency Coordination Note</h4>
+                    <p>All wireless systems must operate in legal frequency bands for Syria. Vendor should confirm frequency coordination to avoid interference between the 4 wireless channels (2 lavalier + 2 handheld).</p>
+                </div>
+            </div>
+
+            <!-- Processing Equipment -->
+            <div class="section">
+                <h2>⚙️ 4. Signal Processing Equipment</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">4.1</td>
+                            <td><strong>Automatic Feedback Eliminator</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Channels: Dual channel (stereo)</li>
+                                    <li>Filters per Channel: 12 minimum</li>
+                                    <li>Filter Type: Narrow-band notch (parametric)</li>
+                                    <li>Detection: Automatic feedback detection</li>
+                                    <li>Response Time: &lt;0.5 seconds</li>
+                                    <li>Fixed + Live Filters: Both modes available</li>
+                                    <li>Bypass: Front-panel bypass switch</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Floor Monitors -->
+            <div class="section">
+                <h2>🔈 5. Floor Monitor Speakers</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">5.1</td>
+                            <td><strong>Powered Floor Monitor</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Configuration: 10" LF + 1.4" HF (coaxial preferred)</li>
+                                    <li>Power: 1,000W peak (minimum)</li>
+                                    <li>Frequency Response: 55Hz - 20kHz</li>
+                                    <li>Maximum SPL: 130 dB peak</li>
+                                    <li>Mounting: Floor wedge design (45° angle)</li>
+                                    <li>DSP: Built-in with monitor presets</li>
+                                    <li>Pole Mount: Threaded insert for stand use</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Communication System -->
+            <div class="section">
+                <h2>📡 6. Crew Communication System</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">6.1</td>
+                            <td><strong>Wireless Intercom/Talkback System</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Type: Full-duplex wireless intercom</li>
+                                    <li>Headsets: 5 units included (single or dual ear)</li>
+                                    <li>Operating Range: 300m line-of-sight (minimum)</li>
+                                    <li>Channels: All-talk mode</li>
+                                    <li>Battery Life: 6+ hours per headset</li>
+                                    <li>Noise Cancellation: Environmental noise reduction</li>
+                                    <li>Base Station: Hub/master unit included</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">1 system</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Rigging and Stands -->
+            <div class="section">
+                <h2>🏗️ 7. Rigging and Support Equipment</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Specification</th>
+                            <th>Requirement</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">7.1</td>
+                            <td><strong>Line Array Rigging Frame</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Compatible with line array elements specified</li>
+                                    <li>Safe Working Load: Sufficient for 4x array elements</li>
+                                    <li>Angle Adjustment: Variable splay angles</li>
+                                    <li>Material: Steel or aluminum construction</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">7.2</td>
+                            <td><strong>Crank-Up Speaker Stands</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Maximum Height: 4.5m (15 feet) minimum</li>
+                                    <li>Load Capacity: 100kg per stand (minimum)</li>
+                                    <li>Lift Mechanism: Hand crank with locking</li>
+                                    <li>Base: Tripod with outriggers</li>
+                                    <li>Material: Steel construction</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">7.3</td>
+                            <td><strong>Microphone Stands</strong></td>
+                            <td>
+                                <ul style="margin-left: 1rem;">
+                                    <li>Type: Boom stands (adjustable)</li>
+                                    <li>Height Range: 1m - 2m</li>
+                                    <li>Base: Round or tripod, weighted</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cables and Accessories -->
+            <div class="section">
+                <h2>🔌 8. Cables and Accessories</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item</th>
+                            <th>Specification</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">8.1</td>
+                            <td>XLR Cables (25m)</td>
+                            <td>Balanced, professional grade, Neutrik or equivalent connectors</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.2</td>
+                            <td>XLR Cables (10m)</td>
+                            <td>Balanced, professional grade, Neutrik or equivalent connectors</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.3</td>
+                            <td>XLR Cables (5m)</td>
+                            <td>Balanced, professional grade, Neutrik or equivalent connectors</td>
+                            <td class="quantity">6</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.4</td>
+                            <td>Power Extension (30m)</td>
+                            <td>Heavy-duty, outdoor rated, 3-way minimum</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.5</td>
+                            <td>Power Distribution Box</td>
+                            <td>6+ outlets, surge protection, circuit breaker</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.6</td>
+                            <td>Cable Ramps/Covers</td>
+                            <td>Heavy-duty, 5-channel, for audience walkways</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.7</td>
+                            <td>Gaffer Tape</td>
+                            <td>Professional grade, 50m rolls</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary -->
+            <div class="section">
+                <h2>📊 Equipment Summary</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Items</th>
+                            <th>Total Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Main PA Speakers</td>
+                            <td>Line Array Elements + Subwoofers</td>
+                            <td class="quantity">10</td>
+                        </tr>
+                        <tr>
+                            <td>Mixing Console</td>
+                            <td>Digital Mixer (16+ channels)</td>
+                            <td class="quantity">1</td>
+                        </tr>
+                        <tr>
+                            <td>Wireless Microphones</td>
+                            <td>2 Lavalier Systems + 1 Dual Handheld</td>
+                            <td class="quantity">3 systems</td>
+                        </tr>
+                        <tr>
+                            <td>Processing</td>
+                            <td>Feedback Eliminators</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td>Monitors</td>
+                            <td>Floor Wedge Monitors</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td>Communication</td>
+                            <td>Wireless Intercom System (5 headsets)</td>
+                            <td class="quantity">1 system</td>
+                        </tr>
+                        <tr>
+                            <td>Rigging</td>
+                            <td>Frames + Crank Stands + Mic Stands</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td>Cables & Accessories</td>
+                            <td>XLR, Power, Distribution, Misc</td>
+                            <td class="quantity">Kit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>Bid Submission Requirements</h4>
+                    <ul style="margin: 1rem 0 0 2rem;">
+                        <li>Itemized pricing for each line item</li>
+                        <li>Manufacturer and model numbers for all equipment</li>
+                        <li>Warranty information (minimum 1 year)</li>
+                        <li>Delivery timeline</li>
+                        <li>Installation services (optional, quote separately)</li>
+                        <li>Technical support availability</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="javascript:window.print()" class="btn">🖨️ Print This Page</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+
+            <!-- Introduction -->
+            <div class="section">
+                <h2>📋 نظرة عامة على المشروع</h2>
+                <div class="info-box">
+                    <h4>الغرض من هذه الوثيقة</h4>
+                    <p>توفر هذه الوثيقة المواصفات الفنية لنظام صوتيات احترافي مناسب لحفلات التخرج الخارجية. يمكن للموردين المحليين استخدام هذه المواصفات لتقديم عروض أسعار تنافسية. <strong>لا توجد علامات تجارية محددة مطلوبة</strong> - المنتجات المعادلة التي تلبي هذه المواصفات مقبولة.</p>
+                </div>
+
+                <h3>متطلبات النظام</h3>
+                <ul style="margin: 1rem 2rem 1rem 0;">
+                    <li><strong>نوع المكان:</strong> حفل تخرج خارجي</li>
+                    <li><strong>سعة الجمهور:</strong> 3,000+ شخص</li>
+                    <li><strong>منطقة التغطية:</strong> حوالي 60م × 40م (2,400 م²)</li>
+                    <li><strong>متطلبات SPL:</strong> 95-100 ديسيبل في أبعد موقع للجمهور</li>
+                    <li><strong>وضوح الكلام:</strong> التركيز الأساسي (المراسم، الخطب، الإعلانات)</li>
+                    <li><strong>تشغيل الموسيقى:</strong> ثانوي (النشيد الوطني، موسيقى خلفية)</li>
+                </ul>
+
+                <div class="info-box warning">
+                    <h4>ملاحظة مهمة للموردين</h4>
+                    <p>يجب أن تكون جميع المعدات <strong>جديدة ومغلقة من المصنع</strong> مع ضمان الشركة المصنعة. المعدات المجددة أو المستعملة غير مقبولة. يجب على الموردين تقديم إثبات التوكيل المعتمد عند الاقتضاء.</p>
+                </div>
+            </div>
+
+            <!-- Main PA System -->
+            <div class="section">
+                <h2>🔊 1. مكبرات الصوت الرئيسية (نظام المصفوفة الخطية)</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">1.1</td>
+                            <td><strong>عناصر المصفوفة الخطية النشطة</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>تكوين السماعات: مضخم 12 بوصة + سائق ضغط HF 3 بوصة (الحد الأدنى)</li>
+                                    <li>الطاقة: 1,000 واط RMS مستمر (الحد الأدنى)</li>
+                                    <li>استجابة التردد: 55 هرتز - 20 كيلوهرتز (±3 ديسيبل)</li>
+                                    <li>أقصى SPL: 132 ديسيبل ذروة</li>
+                                    <li>نمط التغطية: 75° أفقي × 15° عمودي (اسمي)</li>
+                                    <li>DSP مدمج مع إعدادات مسبقة</li>
+                                    <li>أجهزة تعليق متكاملة</li>
+                                    <li>بناء مقاوم للطقس (مصنف للخارج)</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">8</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>1.2 مضخمات الصوت</h3>
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">1.2</td>
+                            <td><strong>مضخمات صوت نشطة</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>السائق: مضخم 18 بوصة طويل المدى</li>
+                                    <li>الطاقة: 1,000 واط RMS مستمر (الحد الأدنى)</li>
+                                    <li>استجابة التردد: 30 هرتز - 150 هرتز</li>
+                                    <li>أقصى SPL: 132 ديسيبل ذروة</li>
+                                    <li>DSP مدمج مع كروس أوفر</li>
+                                    <li>قدرة الوضع القلبي (مفضل)</li>
+                                    <li>مقبس قطب للسماعات الفرعية</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mixing Console -->
+            <div class="section">
+                <h2>🎛️ 2. وحدة الخلط الرقمية</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">2.1</td>
+                            <td><strong>وحدة خلط رقمية</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>قنوات الإدخال: 16 كحد أدنى (ميكروفون/خط)</li>
+                                    <li>ناقلات الإخراج: 8 كحد أدنى (aux/matrix)</li>
+                                    <li>مؤثرات مدمجة: ريفيرب، تأخير، ضغط، EQ</li>
+                                    <li>واجهة USB الصوتية: قدرة التسجيل متعدد المسارات</li>
+                                    <li>شاشة لمس: 7 بوصة كحد أدنى</li>
+                                    <li>ذاكرة الاستدعاء/المشهد: 100+ مشهد</li>
+                                    <li>التحكم عن بُعد: متوافق مع تطبيق الجهاز اللوحي/iPad</li>
+                                    <li>GEQ على جميع المخرجات</li>
+                                    <li>طاقة فانتوم: +48 فولت على جميع القنوات</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Wireless Microphones -->
+            <div class="section">
+                <h2>🎤 3. أنظمة الميكروفون اللاسلكية</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">3.1</td>
+                            <td><strong>أنظمة لاسلكية من نوع لافالير</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>النوع: جهاز إرسال محمول مع ميكروفون كليب</li>
+                                    <li>نطاق التردد: UHF (مناسب لمنطقة سوريا)</li>
+                                    <li>استجابة التردد: 50 هرتز - 15 كيلوهرتز (الحد الأدنى)</li>
+                                    <li>نطاق التشغيل: 100 متر خط البصر (الحد الأدنى)</li>
+                                    <li>عمر البطارية: 8+ ساعات</li>
+                                    <li>استقبال التنوع: تنوع حقيقي</li>
+                                    <li>جودة الصوت: رقمي 24 بت أو تناظري عالي الجودة</li>
+                                    <li>نمط لافالير: متعدد الاتجاهات</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">3.2</td>
+                            <td><strong>نظام لاسلكي يدوي مزدوج</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>النوع: جهاز استقبال ثنائي القناة مع 2 جهاز إرسال يدوي</li>
+                                    <li>نوع الكبسولة: ديناميكي قلبي (محسن للكلام)</li>
+                                    <li>نطاق التردد: UHF (مناسب لمنطقة سوريا)</li>
+                                    <li>نطاق التشغيل: 100 متر خط البصر (الحد الأدنى)</li>
+                                    <li>عمر البطارية: 8+ ساعات لكل جهاز إرسال</li>
+                                    <li>استقبال التنوع: تنوع حقيقي</li>
+                                    <li>التشغيل المتزامن: كلا الميكروفونين نشطان</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>ملاحظة تنسيق التردد</h4>
+                    <p>يجب أن تعمل جميع الأنظمة اللاسلكية في نطاقات التردد القانونية لسوريا. يجب على المورد تأكيد تنسيق التردد لتجنب التداخل بين القنوات اللاسلكية الأربع (2 لافالير + 2 يدوي).</p>
+                </div>
+            </div>
+
+            <!-- Processing Equipment -->
+            <div class="section">
+                <h2>⚙️ 4. معدات معالجة الإشارة</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">4.1</td>
+                            <td><strong>مزيل التغذية الراجعة التلقائي</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>القنوات: ثنائية القناة (ستيريو)</li>
+                                    <li>الفلاتر لكل قناة: 12 كحد أدنى</li>
+                                    <li>نوع الفلتر: نوتش ضيق النطاق (باراميتريك)</li>
+                                    <li>الكشف: كشف تغذية راجعة تلقائي</li>
+                                    <li>وقت الاستجابة: أقل من 0.5 ثانية</li>
+                                    <li>فلاتر ثابتة + حية: كلا الوضعين متاحان</li>
+                                    <li>تجاوز: مفتاح تجاوز في اللوحة الأمامية</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Floor Monitors -->
+            <div class="section">
+                <h2>🔈 5. سماعات المراقبة الأرضية</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">5.1</td>
+                            <td><strong>مراقب أرضي نشط</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>التكوين: 10 بوصة LF + 1.4 بوصة HF (محوري مفضل)</li>
+                                    <li>الطاقة: 1,000 واط ذروة (الحد الأدنى)</li>
+                                    <li>استجابة التردد: 55 هرتز - 20 كيلوهرتز</li>
+                                    <li>أقصى SPL: 130 ديسيبل ذروة</li>
+                                    <li>التركيب: تصميم إسفين أرضي (زاوية 45 درجة)</li>
+                                    <li>DSP: مدمج مع إعدادات المراقبة المسبقة</li>
+                                    <li>تركيب القطب: إدراج ملولب لاستخدام الحامل</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Communication System -->
+            <div class="section">
+                <h2>📡 6. نظام اتصال الطاقم</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">6.1</td>
+                            <td><strong>نظام اتصال داخلي لاسلكي</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>النوع: اتصال داخلي لاسلكي مزدوج الاتجاه</li>
+                                    <li>سماعات الرأس: 5 وحدات مضمنة (أذن واحدة أو مزدوجة)</li>
+                                    <li>نطاق التشغيل: 300 متر خط البصر (الحد الأدنى)</li>
+                                    <li>القنوات: وضع التحدث الكامل</li>
+                                    <li>عمر البطارية: 6+ ساعات لكل سماعة</li>
+                                    <li>إلغاء الضوضاء: تقليل الضوضاء البيئية</li>
+                                    <li>محطة القاعدة: وحدة المحور/الرئيسية مضمنة</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">نظام واحد</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Rigging and Stands -->
+            <div class="section">
+                <h2>🏗️ 7. معدات التعليق والدعم</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>المواصفات</th>
+                            <th>المتطلبات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">7.1</td>
+                            <td><strong>إطار تعليق المصفوفة الخطية</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>متوافق مع عناصر المصفوفة الخطية المحددة</li>
+                                    <li>حمولة العمل الآمنة: كافية لـ 4 عناصر مصفوفة</li>
+                                    <li>تعديل الزاوية: زوايا انتشار متغيرة</li>
+                                    <li>المادة: بناء من الصلب أو الألومنيوم</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">7.2</td>
+                            <td><strong>حوامل سماعات بكرنك رفع</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>أقصى ارتفاع: 4.5 متر (15 قدم) كحد أدنى</li>
+                                    <li>سعة الحمولة: 100 كجم لكل حامل (الحد الأدنى)</li>
+                                    <li>آلية الرفع: كرنك يدوي مع قفل</li>
+                                    <li>القاعدة: ثلاثي الأرجل مع دعامات خارجية</li>
+                                    <li>المادة: بناء من الصلب</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">7.3</td>
+                            <td><strong>حوامل الميكروفون</strong></td>
+                            <td>
+                                <ul style="margin-right: 1rem;">
+                                    <li>النوع: حوامل ذراع (قابلة للتعديل)</li>
+                                    <li>نطاق الارتفاع: 1 متر - 2 متر</li>
+                                    <li>القاعدة: دائرية أو ثلاثية الأرجل، موزونة</li>
+                                </ul>
+                            </td>
+                            <td class="quantity">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cables and Accessories -->
+            <div class="section">
+                <h2>🔌 8. الكابلات والملحقات</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>العنصر</th>
+                            <th>المواصفات</th>
+                            <th>الكمية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-number">8.1</td>
+                            <td>كابلات XLR (25 متر)</td>
+                            <td>متوازن، درجة احترافية، موصلات Neutrik أو ما يعادلها</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.2</td>
+                            <td>كابلات XLR (10 متر)</td>
+                            <td>متوازن، درجة احترافية، موصلات Neutrik أو ما يعادلها</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.3</td>
+                            <td>كابلات XLR (5 متر)</td>
+                            <td>متوازن، درجة احترافية، موصلات Neutrik أو ما يعادلها</td>
+                            <td class="quantity">6</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.4</td>
+                            <td>تمديد كهربائي (30 متر)</td>
+                            <td>شديد التحمل، مصنف للخارج، 3 طرق كحد أدنى</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.5</td>
+                            <td>صندوق توزيع الطاقة</td>
+                            <td>6+ مآخذ، حماية من زيادة التيار، قاطع دارة</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.6</td>
+                            <td>أغطية/منحدرات الكابلات</td>
+                            <td>شديدة التحمل، 5 قنوات، لممرات الجمهور</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                        <tr>
+                            <td class="item-number">8.7</td>
+                            <td>شريط لاصق</td>
+                            <td>درجة احترافية، لفات 50 متر</td>
+                            <td class="quantity">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary -->
+            <div class="section">
+                <h2>📊 ملخص المعدات</h2>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>الفئة</th>
+                            <th>العناصر</th>
+                            <th>إجمالي الوحدات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>سماعات PA الرئيسية</td>
+                            <td>عناصر المصفوفة الخطية + مضخمات الصوت</td>
+                            <td class="quantity">10</td>
+                        </tr>
+                        <tr>
+                            <td>وحدة الخلط</td>
+                            <td>ميكسر رقمي (16+ قناة)</td>
+                            <td class="quantity">1</td>
+                        </tr>
+                        <tr>
+                            <td>الميكروفونات اللاسلكية</td>
+                            <td>2 نظام لافالير + 1 نظام يدوي مزدوج</td>
+                            <td class="quantity">3 أنظمة</td>
+                        </tr>
+                        <tr>
+                            <td>المعالجة</td>
+                            <td>مزيلات التغذية الراجعة</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td>المراقبات</td>
+                            <td>مراقبات أرضية إسفينية</td>
+                            <td class="quantity">2</td>
+                        </tr>
+                        <tr>
+                            <td>الاتصالات</td>
+                            <td>نظام اتصال داخلي لاسلكي (5 سماعات)</td>
+                            <td class="quantity">نظام واحد</td>
+                        </tr>
+                        <tr>
+                            <td>التعليق</td>
+                            <td>إطارات + حوامل كرنك + حوامل ميكروفون</td>
+                            <td class="quantity">8</td>
+                        </tr>
+                        <tr>
+                            <td>الكابلات والملحقات</td>
+                            <td>XLR، طاقة، توزيع، متنوعة</td>
+                            <td class="quantity">طقم</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>متطلبات تقديم العرض</h4>
+                    <ul style="margin: 1rem 2rem 0 0;">
+                        <li>تسعير مفصل لكل بند</li>
+                        <li>الشركة المصنعة وأرقام الموديل لجميع المعدات</li>
+                        <li>معلومات الضمان (سنة واحدة كحد أدنى)</li>
+                        <li>الجدول الزمني للتسليم</li>
+                        <li>خدمات التركيب (اختياري، عرض سعر منفصل)</li>
+                        <li>توفر الدعم الفني</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="javascript:window.print()" class="btn">🖨️ طباعة هذه الصفحة</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer" style="border-top: 3px solid #38a169;">
+        <div class="container">
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+                <a href="installation-guide.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #38a169; margin: 0 0.75rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Technical Specifications for Vendor Bidding" data-ar="© 2025 نظام PA وزارة الداخلية السورية | المواصفات الفنية لعروض الموردين">© 2025 Syria Ministry PA System | Technical Specifications for Vendor Bidding</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+
+            // Hide ALL current language content sections
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update attribute-based content
+            elements.forEach(element => {
+                const content = element.getAttribute(`data-${lang}`);
+                if (content) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = content;
+                    } else {
+                        element.textContent = content;
+                    }
+                }
+            });
+
+            currentLanguage = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(savedLanguage);
+        });
+    </script>
+</body>
+</html>

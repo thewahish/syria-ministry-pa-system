@@ -122,7 +122,12 @@
             background: #edf2f7;
             color: #2d3748;
         }
-        
+
+        .nav-links a.active {
+            background: #4299e1;
+            color: white;
+        }
+
         /* Clean Sections - NO gradients */
         .section {
             background: white;
@@ -521,11 +526,13 @@
     <div class="navigation">
         <div class="container">
             <div class="nav-links">
-                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
-                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
-                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
-                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="index.html" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" class="active" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
                 <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
             </div>
         </div>
     </div>
@@ -996,65 +1003,130 @@
             
             <!-- Detailed Breakdown -->
             <section class="section">
-                <h2>🔍 تفصيل التكلفة التفصيلي</h2>
+                <h2>🔍 تفصيل التكلفة التفصيلي (الأسعار المعتمدة)</h2>
                 <div class="equipment-comparison">
                     <table class="breakdown-table">
                         <thead>
                             <tr>
                                 <th>المكون</th>
-                                <th>الطوارئ</th>
-                                <th>القيمة المتوسطة</th>
-                                <th>المحسن 3000</th>
+                                <th>المستوى 1: اقتصادي</th>
+                                <th>المستوى 2: القيمة</th>
+                                <th>المستوى 3: متميز</th>
+                                <th>المستوى 4: محمول</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>الأنظمة اللاسلكية</strong></td>
-                                <td>800$</td>
-                                <td>8,800$</td>
-                                <td>13,200$</td>
+                                <td><strong>سماعات PA الرئيسية</strong></td>
+                                <td>$7,992 (8x K12.2)</td>
+                                <td>$27,192 (8x LA112)</td>
+                                <td>$40,788 (12x LA112)</td>
+                                <td>$2,200 (2x EON ONE)</td>
                             </tr>
                             <tr>
-                                <td><strong>مصفوفات السماعات</strong></td>
-                                <td>8,500$</td>
-                                <td>24,720$</td>
-                                <td>28,800$</td>
+                                <td><strong>مضخمات الصوت</strong></td>
+                                <td>$0 (غير مطلوب)</td>
+                                <td>$4,998 (2x KS118)</td>
+                                <td>$9,196 (4x KS212C)</td>
+                                <td>$0</td>
                             </tr>
                             <tr>
-                                <td><strong>وحدة التحكم في الخلط</strong></td>
-                                <td>1,200$</td>
-                                <td>3,400$</td>
-                                <td>3,400$</td>
+                                <td><strong>الميكسر الرقمي</strong></td>
+                                <td>$2,499 (TF1)</td>
+                                <td>$2,499 (TF1)</td>
+                                <td>$2,799 (TF3)</td>
+                                <td>$0 (مدمج)</td>
                             </tr>
                             <tr>
-                                <td><strong>معدات المعالجة</strong></td>
-                                <td>800$</td>
-                                <td>2,400$</td>
-                                <td>2,400$</td>
+                                <td><strong>لاسلكي كليب</strong></td>
+                                <td>$718 (2x BLX14)</td>
+                                <td>$718 (2x BLX14)</td>
+                                <td>$3,000 (2x ULXD)</td>
+                                <td>$359 (1x BLX14)</td>
                             </tr>
                             <tr>
-                                <td><strong>الإكسسوارات والحوامل</strong></td>
-                                <td>1,200$</td>
-                                <td>2,600$</td>
-                                <td>3,620$</td>
+                                <td><strong>لاسلكي يدوي</strong></td>
+                                <td>$599 (BLX288)</td>
+                                <td>$699 (BLX288/SM58)</td>
+                                <td>$1,500 (ULXD)</td>
+                                <td>$299 (BLX)</td>
                             </tr>
                             <tr>
-                                <td><strong>الشحن إلى سوريا</strong></td>
-                                <td>3,000$</td>
-                                <td>4,000$</td>
-                                <td>5,000$</td>
+                                <td><strong>شاشات أرضية</strong></td>
+                                <td>$1,798 (2x K10.2)</td>
+                                <td>$1,798 (2x K10.2)</td>
+                                <td>$1,798 (2x K10.2)</td>
+                                <td>$0</td>
                             </tr>
                             <tr>
-                                <td><strong>دعم التركيب</strong></td>
-                                <td>500$</td>
-                                <td>1,000$</td>
-                                <td>1,500$</td>
+                                <td><strong>IEMs</strong></td>
+                                <td>$0</td>
+                                <td>$0</td>
+                                <td>$1,600 (2x PSM300)</td>
+                                <td>$0</td>
                             </tr>
-                            <tr style="background: #f8fafc; font-weight: bold;">
-                                <td><strong>إجمالي الحزمة</strong></td>
-                                <td><strong>24,500$</strong></td>
-                                <td><strong>45,920$</strong></td>
-                                <td><strong>51,420$</strong></td>
+                            <tr>
+                                <td><strong>نظام الاتصال</strong></td>
+                                <td>$459 (Hollyland SE 4S)</td>
+                                <td>$579 (Hollyland SE 5S)</td>
+                                <td>$1,800 (Clear-Com DX410)</td>
+                                <td>$0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>مزيل التغذية الراجعة</strong></td>
+                                <td>$400 (1x للرئيسي)</td>
+                                <td>$800 (2x رئيسي+شاشات)</td>
+                                <td>$800 (2x رئيسي+شاشات)</td>
+                                <td>$0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>التعليق والحوامل</strong></td>
+                                <td>$480</td>
+                                <td>$1,800</td>
+                                <td>$3,600</td>
+                                <td>$0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>التحكم عن بعد</strong></td>
+                                <td>$650</td>
+                                <td>$1,300</td>
+                                <td>$1,950</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td><strong>الكابلات والملحقات</strong></td>
+                                <td>$400</td>
+                                <td>$600</td>
+                                <td>$950</td>
+                                <td>$0</td>
+                            </tr>
+                            <tr style="background: #c6f6d5; font-weight: bold;">
+                                <td><strong>إجمالي المعدات</strong></td>
+                                <td><strong>$15,995</strong></td>
+                                <td><strong>$42,183</strong></td>
+                                <td><strong>$68,831</strong></td>
+                                <td><strong>$2,958</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>الشحن والجمارك</strong></td>
+                                <td>$6,779</td>
+                                <td>$17,420</td>
+                                <td>$28,214</td>
+                                <td>$1,476</td>
+                            </tr>
+                            <tr>
+                                <td><strong>خدمات التركيب</strong></td>
+                                <td>$1,500</td>
+                                <td>$1,500</td>
+                                <td>$1,500</td>
+                                <td>$0</td>
+                            </tr>
+                            <tr style="background: #38a169; color: white; font-weight: bold;">
+                                <td><strong>الإجمالي في سوريا</strong></td>
+                                <td><strong>$24,274</strong></td>
+                                <td><strong>$61,103</strong></td>
+                                <td><strong>$98,545</strong></td>
+                                <td><strong>$4,434</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1066,15 +1138,15 @@
                 <h2>💡 تحليل القيمة والوفورات</h2>
                 <div class="savings-highlight">
                     <h3>وفورات الحزمة الموصى بها</h3>
-                    <div class="savings-amount">وفر 22,090$</div>
-                    <p>مقارنة بالبدائل المتميزة مع الحفاظ على 95% من الميزات المهنية</p>
+                    <div class="savings-amount">وفر $37,442</div>
+                    <p>مقارنة بالمستوى المتميز مع الحفاظ على 95% من الميزات المهنية</p>
                 </div>
-                
+
                 <div class="roi-grid">
                     <div class="roi-card">
                         <h4>التكلفة لكل شخص</h4>
-                        <div class="roi-percentage">23$</div>
-                        <p>تكلفة حزمة القيمة المتوسطة لكل حاضر (2000 شخص)</p>
+                        <div class="roi-percentage">$20</div>
+                        <p>تكلفة حزمة القيمة لكل حاضر (3,000 شخص)</p>
                     </div>
                     <div class="roi-card">
                         <h4>درجة مهنية</h4>
@@ -1098,7 +1170,7 @@
             <section class="section">
                 <h2>🎯 توصية الاستثمار</h2>
                 <div style="background: #f0fff4; padding: 2rem; border-radius: 12px; border: 2px solid #38a169;">
-                    <h3 style="color: #38a169; margin-bottom: 1rem;">🏆 الخيار الأمثل: حزمة القيمة المتوسطة</h3>
+                    <h3 style="color: #38a169; margin-bottom: 1rem;">🏆 الخيار الأمثل: المستوى 2 - القيمة ($61,103)</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                         <div>
                             <h4 style="color: #2d3748; margin-bottom: 0.5rem;">الفوائد المالية</h4>
@@ -1133,11 +1205,13 @@
     <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 3px solid #4299e1;">
         <div class="container">
             <div style="margin-bottom: 1.5rem;">
-                <a href="index.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
-                <a href="technical-study.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
-                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
-                <a href="installation-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
-                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 1rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+                <a href="index.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
             </div>
             <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
             <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>

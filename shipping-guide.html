@@ -122,7 +122,12 @@
             background: #edf2f7;
             color: #2d3748;
         }
-        
+
+        .nav-links a.active {
+            background: #4299e1;
+            color: white;
+        }
+
         /* Clean Sections - NO gradients */
         .section {
             background: white;
@@ -416,6 +421,60 @@
             flex-direction: row-reverse;
         }
         
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #4299e1;
+        }
+
+        /* Make images clickable */
+        img[src*="assets/"] {
+            cursor: zoom-in;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        img[src*="assets/"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -486,11 +545,13 @@
     <div class="navigation">
         <div class="container">
             <div class="nav-links">
-                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
-                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
-                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
-                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="index.html" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
                 <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" class="active" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
             </div>
         </div>
     </div>
@@ -696,24 +757,35 @@
             <!-- Package Recommendations -->
             <section class="section">
                 <h2>📊 Shipping Recommendations by Package</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="background: #fef2f2; border: 2px solid #e53e3e; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #e53e3e; margin-bottom: 1rem;">Emergency Package ($21,500)</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #fef2f2; border: 2px solid #e53e3e; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #e53e3e; margin-bottom: 1rem;">Tier 1: Budget ($15,995)</h3>
                         <p><strong>Recommended:</strong> 20ft Container</p>
-                        <p><strong>Total with Shipping:</strong> $24,450</p>
-                        <p><strong>Rationale:</strong> Compact equipment fits perfectly in 20ft container with optimal cost efficiency.</p>
+                        <p><strong>Total Landed:</strong> $24,274</p>
+                        <p><strong>Capacity:</strong> 2,000-2,500 people</p>
+                        <p><strong>Rationale:</strong> Compact K12.2 speaker system fits perfectly in 20ft container.</p>
                     </div>
-                    <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #38a169; margin-bottom: 1rem;">Mid-Range VALUE ($41,420)</h3>
+                    <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 1.5rem; transform: scale(1.02); box-shadow: 0 4px 15px rgba(56, 161, 105, 0.2);">
+                        <div style="background: #38a169; color: white; padding: 0.25rem 0.75rem; border-radius: 8px; font-size: 0.75rem; display: inline-block; margin-bottom: 0.5rem;">RECOMMENDED</div>
+                        <h3 style="color: #38a169; margin-bottom: 1rem;">Tier 2: VALUE ($42,183)</h3>
                         <p><strong>Recommended:</strong> 20ft Container</p>
-                        <p><strong>Total with Shipping:</strong> $44,370</p>
-                        <p><strong>Rationale:</strong> Professional line array system fits well in 20ft with room for spare parts.</p>
+                        <p><strong>Total Landed:</strong> $61,103</p>
+                        <p><strong>Capacity:</strong> 3,000+ people</p>
+                        <p><strong>Rationale:</strong> Professional LA112 line array fits well in 20ft with room for rigging.</p>
                     </div>
-                    <div style="background: #eff6ff; border: 2px solid #4299e1; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #4299e1; margin-bottom: 1rem;">Premium Package ($60,010)</h3>
+                    <div style="background: #faf5ff; border: 2px solid #805ad5; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #805ad5; margin-bottom: 1rem;">Tier 3: Premium ($68,831)</h3>
                         <p><strong>Recommended:</strong> 40ft Container</p>
-                        <p><strong>Total with Shipping:</strong> $64,460</p>
-                        <p><strong>Rationale:</strong> Large system with delay towers requires 40ft container for optimal packing.</p>
+                        <p><strong>Total Landed:</strong> $98,545</p>
+                        <p><strong>Capacity:</strong> 5,000+ people</p>
+                        <p><strong>Rationale:</strong> Large system with 12 LA112 elements + 4 subs requires 40ft container.</p>
+                    </div>
+                    <div style="background: #eff6ff; border: 2px solid #4299e1; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #4299e1; margin-bottom: 1rem;">Tier 4: Portable ($2,958)</h3>
+                        <p><strong>Recommended:</strong> Air Freight</p>
+                        <p><strong>Total Landed:</strong> $4,434</p>
+                        <p><strong>Capacity:</strong> 100-200 people</p>
+                        <p><strong>Rationale:</strong> Compact EON ONE system can ship via air freight for faster delivery.</p>
                     </div>
                 </div>
             </section>
@@ -918,35 +990,61 @@
             
             <!-- Package Recommendations -->
             <section class="section">
-                <h2>📊 توصيات الشحن حسب الحزمة</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="background: #fef2f2; border: 2px solid #e53e3e; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #e53e3e; margin-bottom: 1rem;">حزمة الطوارئ (21,500$)</h3>
+                <h2>📊 توصيات الشحن حسب المستوى</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #fef2f2; border: 2px solid #e53e3e; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #e53e3e; margin-bottom: 1rem;">المستوى 1: اقتصادي ($15,995)</h3>
                         <p><strong>موصى به:</strong> حاوية 20 قدم</p>
-                        <p><strong>الإجمالي مع الشحن:</strong> 24,450$</p>
-                        <p><strong>المنطق:</strong> المعدات المدمجة تتناسب بشكل مثالي في حاوية 20 قدم مع كفاءة تكلفة مثلى.</p>
+                        <p><strong>الإجمالي في سوريا:</strong> $24,274</p>
+                        <p><strong>السعة:</strong> 2,000-2,500 شخص</p>
+                        <p><strong>المنطق:</strong> نظام K12.2 المدمج يتناسب بشكل مثالي في حاوية 20 قدم.</p>
                     </div>
-                    <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #38a169; margin-bottom: 1rem;">القيمة المتوسطة (41,420$)</h3>
+                    <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 12px; padding: 1.5rem; transform: scale(1.02); box-shadow: 0 4px 15px rgba(56, 161, 105, 0.2);">
+                        <div style="background: #38a169; color: white; padding: 0.25rem 0.75rem; border-radius: 8px; font-size: 0.75rem; display: inline-block; margin-bottom: 0.5rem;">موصى به</div>
+                        <h3 style="color: #38a169; margin-bottom: 1rem;">المستوى 2: القيمة ($42,183)</h3>
                         <p><strong>موصى به:</strong> حاوية 20 قدم</p>
-                        <p><strong>الإجمالي مع الشحن:</strong> 44,370$</p>
-                        <p><strong>المنطق:</strong> نظام المصفوفة الخطية المهني يتناسب جيداً في 20 قدم مع مساحة لقطع الغيار.</p>
+                        <p><strong>الإجمالي في سوريا:</strong> $61,103</p>
+                        <p><strong>السعة:</strong> 3,000+ شخص</p>
+                        <p><strong>المنطق:</strong> نظام LA112 المصفوفة الخطية يتناسب جيداً في 20 قدم مع مساحة للتعليق.</p>
                     </div>
-                    <div style="background: #eff6ff; border: 2px solid #4299e1; border-radius: 12px; padding: 2rem;">
-                        <h3 style="color: #4299e1; margin-bottom: 1rem;">الحزمة المتميزة (60,010$)</h3>
+                    <div style="background: #faf5ff; border: 2px solid #805ad5; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #805ad5; margin-bottom: 1rem;">المستوى 3: متميز ($68,831)</h3>
                         <p><strong>موصى به:</strong> حاوية 40 قدم</p>
-                        <p><strong>الإجمالي مع الشحن:</strong> 64,460$</p>
-                        <p><strong>المنطق:</strong> النظام الكبير مع أبراج التأخير يتطلب حاوية 40 قدم للتعبئة المثلى.</p>
+                        <p><strong>الإجمالي في سوريا:</strong> $98,545</p>
+                        <p><strong>السعة:</strong> 5,000+ شخص</p>
+                        <p><strong>المنطق:</strong> النظام الكبير مع 12 عنصر LA112 + 4 مضخمات يتطلب حاوية 40 قدم.</p>
+                    </div>
+                    <div style="background: #eff6ff; border: 2px solid #4299e1; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #4299e1; margin-bottom: 1rem;">المستوى 4: محمول ($2,958)</h3>
+                        <p><strong>موصى به:</strong> شحن جوي</p>
+                        <p><strong>الإجمالي في سوريا:</strong> $4,434</p>
+                        <p><strong>السعة:</strong> 100-200 شخص</p>
+                        <p><strong>المنطق:</strong> نظام EON ONE المدمج يمكن شحنه جواً للتسليم الأسرع.</p>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-    
-    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 3px solid #4299e1;">
         <div class="container">
-            <p data-en="© 2025 Shipping Guide - Syria Ministry PA System | Professional Logistics by أبي سكر" data-ar="© 2025 دليل الشحن - نظام PA وزارة الداخلية السورية | لوجستيات مهنية من أبي سكر">© 2025 Shipping Guide - Syria Ministry PA System | Professional Logistics by أبي سكر</p>
-            <p data-en="Complete door-to-door shipping solution for graduation ceremony PA equipment" data-ar="حل شحن كامل من الباب إلى الباب لمعدات PA لاحتفال التخرج">Complete door-to-door shipping solution for graduation ceremony PA equipment</p>
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🏠 Home" data-ar="🏠 الرئيسية">🏠 Home</a>
+                <a href="technical-study.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📋 Study" data-ar="📋 الدراسة">📋 Study</a>
+                <a href="budget-comparison.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="💰 Budget" data-ar="💰 الميزانية">💰 Budget</a>
+                <a href="equipment-specs.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🎛️ Equipment" data-ar="🎛️ المعدات">🎛️ Equipment</a>
+                <a href="technical-specifications.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="📝 Bid Specs" data-ar="📝 مواصفات العطاء">📝 Bid Specs</a>
+                <a href="installation-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+                <a href="shipping-guide.html" style="color: #4299e1; margin: 0 0.75rem; text-decoration: none;" data-en="🚢 Shipping" data-ar="🚢 الشحن">🚢 Shipping</a>
+            </div>
+            <p data-en="© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies" data-ar="© 2025 نظام PA وزارة الداخلية السورية | حلول التغطية الصوتية الكاملة لاحتفالات التخرج">© 2025 Syria Ministry PA System | Complete Audio Coverage Solutions for Graduation Ceremonies</p>
+            <p style="margin-top: 0.5rem;" data-en="Professional Audio Engineering by Obai Sukar | obai@obaisukar.com" data-ar="هندسة صوتية مهنية من أبي سكر | obai@obaisukar.com">Professional Audio Engineering by Obai Sukar | obai@obaisukar.com</p>
         </div>
     </div>
 
@@ -955,16 +1053,18 @@
         
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
-            
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
-            
-            // Show new content
-            if (newContent) newContent.classList.add('active');
+
+            // Hide ALL current language content sections (fix for multiple data-lang elements)
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show ALL new language content sections
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
             
             // Update direction and lang attribute
             if (lang === 'ar') {
@@ -1003,6 +1103,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             const userLang = localStorage.getItem('preferred-language') || 'en';
             switchLanguage(userLang);
+
+            // Add click handlers to all images
+            document.querySelectorAll('img[src*="assets/"]').forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
