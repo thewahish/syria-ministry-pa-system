@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(touch:*)",
+      "Bash(mkdir:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(while read img)",
+      "Bash(do if [ -f \"$img\" ])",
+      "Bash(then echo \"OK: $img\" else echo \"MISSING: $img\" fi done)",
+      "Bash(for img in assets/charts/3-tier-comparison-2025.png assets/charts/equipment-count-comparison.png assets/diagrams/coverage-tier1-portable.png assets/diagrams/coverage-tier2-standard.png assets/diagrams/coverage-tier3-large.png assets/equipment/accessories/radial-prodi.png assets/equipment/interfaces/focusrite-scarlett-2i2.png assets/equipment/microphones/shure-mx418.png assets/equipment/mixers/yamaha-mg16xu.png assets/equipment/mixers/yamaha-tf1.png assets/equipment/mixers/yamaha-tf3.png assets/equipment/monitors/qsc-k10-2.png assets/equipment/processing/dbx-afs2.png assets/equipment/processing/dbx-driverack-pa2.png assets/equipment/setup/speaker-on-tripod.png assets/equipment/speakers/qsc-k12-2.png assets/equipment/speakers/qsc-kw181.png assets/equipment/stands/km-210-9-boom.png assets/equipment/stands/km-23325-tabletop.png assets/equipment/wireless/sennheiser-ew-d.png assets/equipment/wireless/shure-blx-system.png assets/equipment/wireless/shure-ulxd.png assets/heroes/graduation-ceremony-hero.png)",
+      "Bash(do)",
+      "Bash(if [ -f \"$img\" ])",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(for:*)",
+      "Bash(then echo \"OK: $img\")",
+      "Bash(else echo \"MISSING: $img\")",
+      "Bash(git commit:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(gh api:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

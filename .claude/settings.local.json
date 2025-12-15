@@ -2,7 +2,20 @@
   "permissions": {
     "allow": [
       "Bash(git reset:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(md5:*)",
+      "Bash(sort:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(du:*)",
+      "Bash(sips:*)"
     ]
   }
 }

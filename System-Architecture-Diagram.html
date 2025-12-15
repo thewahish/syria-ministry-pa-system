@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture Diagram - Syria Ministry PA System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .diagram-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .diagram-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        .system-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .diagram-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+            padding: 10px;
+            background: #f0f3ff;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        .equipment-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .equipment-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: white;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .equipment-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .equipment-box.wireless {
+            border-color: #28a745;
+            background: #f0fff4;
+        }
+        .equipment-box.iem {
+            border-color: #ffc107;
+            background: #fffbf0;
+        }
+        .equipment-box.mixer {
+            border-color: #dc3545;
+            background: #fff5f5;
+        }
+        .equipment-box.speakers {
+            border-color: #6f42c1;
+            background: #f8f5ff;
+        }
+        .equipment-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .equipment-name {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .equipment-specs {
+            font-size: 12px;
+            color: #666;
+        }
+        .connection-arrow {
+            text-align: center;
+            font-size: 30px;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        .signal-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .signal-box {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .signal-arrow {
+            font-size: 24px;
+            color: #667eea;
+        }
+        .cable-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-line {
+            width: 40px;
+            height: 3px;
+            border-radius: 2px;
+        }
+        .wireless-signal { background: #28a745; }
+        .xlr-cable { background: #dc3545; }
+        .power-cable { background: #ffc107; }
+        .notes-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .notes-box h3 {
+            margin: 0 0 15px 0;
+            color: #856404;
+        }
+        .notes-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .notes-box li {
+            margin: 8px 0;
+        }
+        @media print {
+            body { background: white; }
+            .diagram-container { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>System Architecture Diagram</h1>
+        <p>Syria Ministry of Interior - Professional PA System</p>
+        <p style="margin: 10px 0 0 0; font-size: 14px;">Mid-Range VALUE Package (4 Wireless + 2 Wired)</p>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram-title">Complete System Connectivity & Signal Flow</div>
+
+        <!-- INPUT SOURCES -->
+        <div class="diagram-section">
+            <div class="section-title">1. INPUT SOURCES (Microphones & Monitors)</div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <!-- Wireless Mics -->
+                <div class="equipment-box wireless">
+                    <div class="equipment-icon">🎤</div>
+                    <div class="equipment-name">4× Wireless Microphones</div>
+                    <div class="equipment-specs">
+                        Sennheiser EW-D System<br>
+                        Dual Capability: Handheld OR Lavalier<br>
+                        506-558 MHz (verify for Syria)<br>
+                        Range: 100-150m
+                    </div>
+                </div>
+
+                <!-- Wired Mics -->
+                <div class="equipment-box wireless">
+                    <div class="equipment-icon">🎙️</div>
+                    <div class="equipment-name">2× Wired Microphones</div>
+                    <div class="equipment-specs">
+                        Shure SM58 Dynamic<br>
+                        For fixed podium positions<br>
+                        XLR connection<br>
+                        No frequency coordination needed
+                    </div>
+                </div>
+
+                <!-- IEM Monitors -->
+                <div class="equipment-box iem">
+                    <div class="equipment-icon">👂</div>
+                    <div class="equipment-name">2× In-Ear Monitor Systems</div>
+                    <div class="equipment-specs">
+                        Sennheiser EW IEM G4<br>
+                        Range: 100-150m<br>
+                        For performers/speakers feedback<br>
+                        Rechargeable batteries
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="connection-arrow">⬇️</div>
+
+        <!-- RECEIVERS & MIXING -->
+        <div class="diagram-section">
+            <div class="section-title">2. SIGNAL RECEPTION & MIXING</div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                <!-- Wireless Receivers -->
+                <div class="equipment-box wireless">
+                    <div class="equipment-icon">📡</div>
+                    <div class="equipment-name">2× Dual Channel Receivers</div>
+                    <div class="equipment-specs">
+                        Sennheiser EW-D EM 2<br>
+                        Each handles 2 wireless mics<br>
+                        Total: 4 wireless channels<br>
+                        Rack-mountable (12U rack)
+                    </div>
+                </div>
+
+                <!-- Mixing Console -->
+                <div class="equipment-box mixer">
+                    <div class="equipment-icon">🎛️</div>
+                    <div class="equipment-name">Mixing Console</div>
+                    <div class="equipment-specs">
+                        16+ channel digital mixer<br>
+                        Mix all 6 microphone inputs<br>
+                        Send monitor mix to IEM transmitters<br>
+                        Main output to line array<br>
+                        EQ, compression, effects
+                    </div>
+                </div>
+
+                <!-- IEM Transmitters -->
+                <div class="equipment-box iem">
+                    <div class="equipment-icon">📻</div>
+                    <div class="equipment-name">2× IEM Transmitters</div>
+                    <div class="equipment-specs">
+                        Sennheiser SR IEM G4<br>
+                        Receive monitor mix from console<br>
+                        Broadcast to performer earpieces<br>
+                        Rack-mountable
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="connection-arrow">⬇️</div>
+
+        <!-- OUTPUT SYSTEM -->
+        <div class="diagram-section">
+            <div class="section-title">3. SOUND REINFORCEMENT (Line Array System)</div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                <!-- Line Array Tops -->
+                <div class="equipment-box speakers">
+                    <div class="equipment-icon">🔊</div>
+                    <div class="equipment-name">8× QSC KLA12 Line Array Elements</div>
+                    <div class="equipment-specs">
+                        Lightweight: 14kg each<br>
+                        2× arrays of 4 elements (L/R)<br>
+                        Truss-mounted with flying frames<br>
+                        1000W per element<br>
+                        Coverage: 90° horizontal
+                    </div>
+                </div>
+
+                <!-- Subwoofers -->
+                <div class="equipment-box speakers">
+                    <div class="equipment-icon">🔉</div>
+                    <div class="equipment-name">2× QSC KW181 Active Subwoofers</div>
+                    <div class="equipment-specs">
+                        18" subwoofers for bass extension<br>
+                        1000W per sub<br>
+                        Ground-stacked or flown<br>
+                        Frequency: 41-107 Hz
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signal Flow Diagram -->
+        <div style="margin-top: 40px;">
+            <h3 style="text-align: center; color: #667eea; margin-bottom: 20px;">Complete Signal Flow Path</h3>
+
+            <div class="signal-flow">
+                <div class="signal-box" style="border-color: #28a745; color: #28a745;">Wireless Mics</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #28a745; color: #28a745;">RF Receivers</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #dc3545; color: #dc3545;">Mixer</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #6f42c1; color: #6f42c1;">Line Array</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #6f42c1; color: #6f42c1;">Audience</div>
+            </div>
+
+            <div class="signal-flow">
+                <div class="signal-box" style="border-color: #28a745; color: #28a745;">Wired Mics</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #dc3545; color: #dc3545;">Mixer</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #6f42c1; color: #6f42c1;">Line Array</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #6f42c1; color: #6f42c1;">Audience</div>
+            </div>
+
+            <div class="signal-flow">
+                <div class="signal-box" style="border-color: #dc3545; color: #dc3545;">Mixer</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #ffc107; color: #856404;">Monitor Mix</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #ffc107; color: #856404;">IEM Transmitters</div>
+                <div class="signal-arrow">→</div>
+                <div class="signal-box" style="border-color: #ffc107; color: #856404;">Performer Earpieces</div>
+            </div>
+        </div>
+
+        <!-- Cable Legend -->
+        <div class="cable-legend">
+            <div class="legend-item">
+                <div class="legend-line wireless-signal"></div>
+                <span>Wireless RF Signal</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line xlr-cable"></div>
+                <span>XLR Audio Cable</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-line power-cable"></div>
+                <span>Power Cable (220V)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rack Configuration -->
+    <div class="diagram-container">
+        <div class="diagram-title">Equipment Rack Configuration (12U)</div>
+
+        <div style="max-width: 500px; margin: 0 auto; border: 3px solid #333; border-radius: 10px; padding: 0;">
+            <div style="background: #333; color: white; padding: 10px; text-align: center; font-weight: bold;">
+                12U Rack Case (Front View)
+            </div>
+
+            <div style="padding: 20px;">
+                <!-- Rack units -->
+                <div style="border: 2px solid #28a745; padding: 15px; margin: 5px 0; background: #f0fff4; border-radius: 5px;">
+                    <strong>U1-2:</strong> Wireless Receiver #1 (Sennheiser EW-D EM 2)<br>
+                    <small>Channels: Mic 1, Mic 2</small>
+                </div>
+
+                <div style="border: 2px solid #28a745; padding: 15px; margin: 5px 0; background: #f0fff4; border-radius: 5px;">
+                    <strong>U3-4:</strong> Wireless Receiver #2 (Sennheiser EW-D EM 2)<br>
+                    <small>Channels: Mic 3, Mic 4</small>
+                </div>
+
+                <div style="border: 2px solid #ffc107; padding: 15px; margin: 5px 0; background: #fffbf0; border-radius: 5px;">
+                    <strong>U5:</strong> IEM Transmitter #1 (Sennheiser SR IEM G4)<br>
+                    <small>Monitor Mix 1</small>
+                </div>
+
+                <div style="border: 2px solid #ffc107; padding: 15px; margin: 5px 0; background: #fffbf0; border-radius: 5px;">
+                    <strong>U6:</strong> IEM Transmitter #2 (Sennheiser SR IEM G4)<br>
+                    <small>Monitor Mix 2</small>
+                </div>
+
+                <div style="border: 2px solid #666; padding: 15px; margin: 5px 0; background: #f8f9fa; border-radius: 5px;">
+                    <strong>U7:</strong> Antenna Distribution (optional)<br>
+                    <small>A 2003 Antenna Kit</small>
+                </div>
+
+                <div style="border: 2px solid #999; padding: 15px; margin: 5px 0; background: #e9ecef; border-radius: 5px;">
+                    <strong>U8-9:</strong> Power Conditioner / Distribution<br>
+                    <small>Protected power for all rack equipment</small>
+                </div>
+
+                <div style="border: 2px dashed #ccc; padding: 15px; margin: 5px 0; background: white; border-radius: 5px;">
+                    <strong>U10-12:</strong> Empty / Future Expansion<br>
+                    <small>Available for additional equipment</small>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 10px; text-align: center; border-top: 2px solid #dee2e6; font-size: 13px;">
+                Total Rack Power: ~54W (excluding mixer)
+            </div>
+        </div>
+    </div>
+
+    <!-- Power Distribution -->
+    <div class="diagram-container">
+        <div class="diagram-title">Power Distribution & Requirements</div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="border: 2px solid #dc3545; padding: 20px; border-radius: 8px; background: #fff5f5;">
+                <h3 style="margin: 0 0 15px 0; color: #dc3545;">⚡ Circuit 1 (Audio)</h3>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+                    <li>Wireless rack equipment: 54W</li>
+                    <li>Mixing console: ~200W</li>
+                    <li>Accessories & lighting: ~50W</li>
+                    <li><strong>Total: ~300W</strong></li>
+                    <li style="margin-top: 10px; color: #666;">Recommended: 1× 20A @ 220V</li>
+                </ul>
+            </div>
+
+            <div style="border: 2px solid #6f42c1; padding: 20px; border-radius: 8px; background: #f8f5ff;">
+                <h3 style="margin: 0 0 15px 0; color: #6f42c1;">⚡ Circuit 2 (Speakers)</h3>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+                    <li>8× KLA12 elements: 8,000W max</li>
+                    <li>2× KW181 subs: 2,000W max</li>
+                    <li><strong>Total: 10,000W</strong></li>
+                    <li style="margin-top: 10px; color: #666;">Recommended: 1× 20A @ 220V</li>
+                    <li style="color: #666;">(Typical usage: ~40-60% max power)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px;">
+            <strong>⚠️ Important:</strong> All equipment supports 220V/50Hz (Syria standard). Use separate circuits for audio and speakers to prevent interference and ensure stable power delivery.
+        </div>
+    </div>
+
+    <!-- Technical Notes -->
+    <div class="notes-box">
+        <h3>📋 System Setup & Configuration Notes</h3>
+        <ul>
+            <li><strong>Frequency Coordination:</strong> Program all 4 wireless mics + 2 IEMs on non-interfering frequencies (Sennheiser Wireless Systems Manager software recommended)</li>
+            <li><strong>Antenna Placement:</strong> Mount antennas at front of stage for best line-of-sight coverage (100-150m range)</li>
+            <li><strong>Line Array Rigging:</strong> Each array of 4× KLA12 weighs 56kg. Use KLA AF flying frames with 290-300mm box truss. Minimum truss load rating: 300kg per pick point</li>
+            <li><strong>Wired Mic Placement:</strong> Best for fixed podium positions where speakers remain stationary. Eliminates 2 wireless channels from frequency coordination</li>
+            <li><strong>Mixer Routing:</strong> Send separate monitor mixes to each IEM transmitter to customize what each performer hears</li>
+            <li><strong>System Redundancy:</strong> With 4 wireless + 2 wired, you have flexibility to switch if wireless issues occur during event</li>
+            <li><strong>Battery Management:</strong> Charge all batteries night before event. BA 70 batteries provide 8 hours runtime</li>
+            <li><strong>Setup Time:</strong> Allow 2-3 hours for complete system setup and sound check with 2-3 person crew</li>
+        </ul>
+    </div>
+
+    <div class="notes-box" style="background: #f8d7da; border-color: #dc3545;">
+        <h3>⚠️ CRITICAL: Frequency Verification Required</h3>
+        <ul>
+            <li><strong>DO NOT ORDER</strong> equipment until wireless frequencies are verified legal in Syria</li>
+            <li>Contact <strong>Syrian Telecommunications & Post Regulatory Authority (SY-TPRA)</strong></li>
+            <li>Common legal bands: 518-566 MHz, 606-614 MHz (must confirm for Syria)</li>
+            <li>Specify exact frequency band when ordering from manufacturer</li>
+            <li>Wrong frequencies = $10,500 wireless equipment cannot be used and may be confiscated</li>
+            <li>See <a href="Frequency-Verification-Guide.html">Frequency Verification Guide</a> for detailed steps</li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h2 style="margin-top: 0;">Navigation</h2>
+        <p><a href="index.html">← Back to Main Page</a></p>
+        <p><a href="Budget-Comparison-Chart.html">View Budget Comparison</a></p>
+        <p><a href="Technical-Specifications-Reference.html">View Technical Specifications</a></p>
+    </div>
+</body>
+</html>
