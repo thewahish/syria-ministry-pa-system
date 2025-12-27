@@ -44,7 +44,17 @@
       "Bash(sshpass -f /Volumes/Ai/.credentials/server-pass ssh:*)",
       "Bash(sshpass -f /Volumes/Ai/.credentials/server-pass scp root@174.138.91.151:/opt/dify/docker/.env /Volumes/Ai/DIFY-EXPORT/config/)",
       "Bash(sshpass:*)",
-      "Bash(zip:*)"
+      "Bash(zip:*)",
+      "Bash(unzip:*)",
+      "Bash(xargs -I {} sh -c \"echo \"\"=== {} ===\"\" && head -c 5000 \"\"{}\"\" 2>/dev/null | strings | grep -iE \"\"chase|leen|hawasly|checking|2024.*statement|statement.*2024\"\" | head -3\")",
+      "Bash(pdfinfo:*)",
+      "Bash(xargs:*)",
+      "Bash(git fetch:*)",
+      "Bash(GIT_DIR=\".git\" GIT_WORK_TREE=\".\" git status:*)",
+      "Bash(git --no-optional-locks status)",
+      "Bash(git merge:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

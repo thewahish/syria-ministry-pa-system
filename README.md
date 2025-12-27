@@ -68,38 +68,47 @@ Professional audio system with wireless microphones, in-ear monitors, and line a
 
 ## Project Documents
 
-1. **Complete-Shopping-List.md**
-   - Detailed itemized pricing for all packages
-   - Equipment specifications
-   - Package totals with accessories
-   - Warranty information
+### Core Documentation (HTML Format)
+| Document | Description |
+|----------|-------------|
+| `Complete-Shopping-List.html` | Detailed itemized pricing, equipment specs, package totals |
+| `Technical-Specifications-Reference.html` | Complete specs, frequency guide, power requirements |
+| `Quick-Package-Comparison.html` | Side-by-side comparison, decision matrix, 5-year TCO |
+| `Frequency-Verification-Guide.html` | Verify legal frequencies in Syria (MUST READ!) |
+| `Purchase-Order-Template.html` | Pre-filled PO template for Mid-Range package |
 
-2. **Technical-Specifications-Reference.md**
-   - Complete technical specifications for all equipment
-   - Frequency coordination guide
-   - Power requirements
-   - Rigging information
-   - Venue coverage calculations
+### Additional Technical Documents
+| Document | Description |
+|----------|-------------|
+| `index.html` | Project overview and navigation page |
+| `budget-comparison.html` | Detailed budget analysis and comparison |
+| `equipment-specs.html` | Full equipment specifications |
+| `installation-guide.html` | Complete installation procedures |
+| `shipping-guide.html` | Shipping and logistics information |
+| `technical-specifications.html` | Extended technical specs |
+| `technical-study.html` | Technical feasibility study |
 
-3. **Quick-Package-Comparison.md**
-   - Side-by-side package comparison
-   - Decision matrix
-   - Operating cost analysis
-   - 5-year total cost of ownership
-   - Recommendation with justification
+### Visual Diagrams
+| Document | Description |
+|----------|-------------|
+| `System-Architecture-Diagram.html` | System architecture overview |
+| `Equipment-Layout-Diagram.html` | Equipment placement layout |
+| `Budget-Comparison-Chart.html` | Visual budget comparison |
+| `Installation-Timeline.html` | Project timeline visualization |
 
-4. **Frequency-Verification-Guide.md** ⚠️ IMPORTANT
-   - Step-by-step guide to verify legal wireless frequencies in Syria
-   - Contact information for Syrian Telecommunications Authority
-   - How to contact equipment manufacturers for frequency info
-   - Regulatory compliance checklist
-   - MUST READ before ordering equipment
+### Vendor Documents
+| Document | Description |
+|----------|-------------|
+| `Vendor-RFQ-Technical-Requirements.html` | RFQ technical requirements |
 
-5. **Purchase-Order-Template.md**
-   - Ready-to-use purchase order template
-   - Pre-filled with Mid-Range package specifications
-   - All line items and pricing included
-   - Delivery and payment terms sections
+### Supporting Files
+| File | Description |
+|------|-------------|
+| `CHANGES-SUMMARY-2000-PERSON-UPDATE.md` | Summary of updates for 2000-person venue |
+| `UPDATED-PRICING-CALCULATIONS.md` | Updated pricing calculations |
+| `convert-to-html.py` | Python script to convert docs to HTML |
+| `assets/` | Images and visual resources |
+| `OLD/` | Archived previous versions |
 
 ---
 
@@ -430,3 +439,20 @@ For technical questions or to place an order, contact:
 **For Large Events (4-6 speakers):** Mid-Range VALUE Package at $29,300 ($53,220 with installation) provides the best balance of professional quality, performance, and value. Saves $3,220 vs full Mid-Range while delivering identical sound quality through smart use of 4 wireless + 2 wired microphones.
 
 **For Small Events (2-4 speakers):** Budget VALUE Package at $25,920 ($49,840 with installation) delivers professional digital wireless quality and full sound system for $6,610 less than Mid-Range. Perfect for ministry events with 2 fixed positions + 1-2 roaming presenters.
+
+---
+
+## GitHub Repository
+
+[https://github.com/thewahish/syria-ministry-pa-system](https://github.com/thewahish/syria-ministry-pa-system)
+
+## Integration
+
+Part of Obai's Universal AI Development Ecosystem with:
+- 13-Agent Framework with domain-specific pipelines
+- Professional GitHub integration with automated sync
+- Quest-status tracking for progress management
+
+---
+
+**Last Updated:** December 23, 2025
